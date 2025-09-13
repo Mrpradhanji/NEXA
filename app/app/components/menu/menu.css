@@ -15,9 +15,27 @@
     cursor : pointer;
 }
 
+/* Brand logo typography */
+.menu-logo a{
+    font-family: "AvantGardeBold", sans-serif;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    font-size: xx-large;
+}
+
 .menu-close p{
     color: #000;
     cursor: pointer;
+    font-family: "AvantGardeBold", sans-serif;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    font-size: xx-large;
+}
+.menu-open p{
+    font-family: "AvantGardeBold", sans-serif;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    font-size: xx-large;
 }
 
 .menu-overlay{

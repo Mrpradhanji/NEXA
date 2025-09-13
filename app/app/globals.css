@@ -1,5 +1,11 @@
 @import "tailwindcss";
 
+/* CSS Variables for consistent theming */
+:root {
+    --color-background: 0 0% 12%;
+    --color-foreground: 0 0% 100%;
+}
+
 *{
     margin: 0;
     padding: 0;
@@ -8,18 +14,53 @@
 }
 
 body{
-    font-family: "Saans TRIAL";
+    font-family: "AvantGardeBold", sans-serif;
     background: #000;
+    color: #fff;
+    overflow-x: hidden;
 }
 
+/* Base typography */
 a, p {
-    color: #000;
+    color: #fff;
     text-decoration: none;
-    text-transform : uppercase;
+    text-transform: uppercase;
     font-size: 14px;
     font-weight: 500;
-    line-height: 100%;
+    line-height: 1.5;
+    margin: 0 0 1rem 0;
+}
 
+/* Reset default margins */
+h1, h2, h3, h4, h5, h6 {
+    margin: 0 0 1.5rem 0;
+    font-weight: 700;
+    line-height: 1.2;
+    color: #fff;
+}
+
+/* Container class for consistent max-width and padding */
+.container {
+    width: 100%;
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+}
+
+/* Section spacing */
+section {
+    position: relative;
+    padding: 6rem 0;
+}
+
+@media (max-width: 768px) {
+    section {
+        padding: 4rem 0;
+    }
+    
+    .container {
+        padding: 0 1.25rem;
+    }
 }
 
 .page-content {
@@ -53,33 +94,93 @@ a, p {
 }
 
 
-h1{
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    font-size: 5vw;
-    font-weight: 400;
-    letter-spacing: -0.04em;
+.hero-title{
+    font-size: clamp(3rem, 8vw, 8rem);
+    font-weight: 700;
+    letter-spacing: -0.02em;
     color: #fff;
-
+    text-align: center;
+    text-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+    line-height: 0.9;
 }
 
-h1 sup {
+.hero-title sup {
     position: relative;
-    top: -20px;
-    left: 10px;
-    font-size: 1.5vw;
-    letter-spacing:0;
+    top: -0.5em;
+    left: 0.2em;
+    font-size: 0.4em;
+    letter-spacing: 0;
+    opacity: 0.8;
 }
 
-
-@media(max-width:900px){
-    .page-content h1{
-        font-size: 10vw;
+/* Improved responsive design */
+@media (max-width: 768px) {
+    .hero-title {
+        font-size: clamp(2.5rem, 12vw, 4rem);
+        letter-spacing: -0.01em;
     }
+    
+    .hero-title sup {
+        top: -0.3em;
+        left: 0.1em;
+    }
+}
 
-    h1 sup {
-        font-size: 4vw;
+/* Section spacing improvements */
+section {
+    position: relative;
+    z-index: 1;
+    width: 100%;
+    margin: 0;
+    padding-left: 0;
+    padding-right: 0;
+}
+
+/* Ensure proper container behavior */
+.container {
+    width: 100%;
+    max-width: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+/* Smooth scrolling */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Fix any potential layout issues */
+body {
+    overflow-x: hidden;
+    margin: 0;
+    padding: 0;
+}
+
+/* Ensure no trailing spaces */
+* {
+    box-sizing: border-box;
+}
+
+html, body {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+/* Remove any default margins/padding from main content */
+main {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+/* Consistent section padding */
+.section-padding {
+    padding: 6rem 0;
+}
+
+@media (max-width: 768px) {
+    .section-padding {
+        padding: 4rem 0;
     }
 }

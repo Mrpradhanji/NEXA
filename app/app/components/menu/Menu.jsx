@@ -71,7 +71,7 @@ const Menu = () => {
         <div className="menu-container" ref={container}>
             <div className="menu-bar">
                 <div className="menu-logo">
-                    <Link href="/">PlantusMedia </Link>
+                    <Link href="/">PLANTUSMEDIA </Link>
                 </div>
                 <div className="menu-open" onClick={toggleMenu}>
                     <p>Menu</p>
