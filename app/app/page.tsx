@@ -1,10 +1,16 @@
 'use client';
 import React, { useRef, useState } from "react";
 import { Volume2, VolumeX } from "lucide-react";
-import Cards from "./components/Cards";
+import { CardSpotlightDemo } from "./components/Cards";
 import ClientsMarquee from "./components/ClientsMarquee";
 import AboutUs from "./components/AboutUs";
-
+import { Services } from "./components/Services";
+import { ImageCards } from "./components/ImageCards";
+import { BlogSection } from "./components/BlogSection";
+import AgencySection from "./components/Agency";
+import {AnimatedTestimonialsDemo} from "./components/Testimonials";
+//import { HoverImageLinks } from "./components/HoverImageLinks";
+import Footer from "./components/Footer";
 
 
 export default function Home() {
@@ -21,10 +27,10 @@ export default function Home() {
   };
 
   return (
-    <div className="w-full min-h-screen bg-black">
+    <div className="flex flex-col min-h-screen w-full bg-black">
       {/* Hero Section */}
       <section
-        className={`relative w-full h-screen overflow-hidden flex items-center justify-center ${hover ? "cursor-none" : "cursor-pointer"}`}
+        className={`relative w-full h-screen flex items-center justify-center ${hover ? "cursor-none" : "cursor-pointer"} overflow-hidden`}
         onMouseEnter={() => setHover(true)}
         onMouseLeave={() => setHover(false)}
         onMouseMove={(e) => {
@@ -42,13 +48,11 @@ export default function Home() {
           playsInline
           className="absolute inset-0 w-full h-full object-cover"
         />
-        
+
         {/* Hero Title Overlay */}
         <div className="absolute inset-0 flex items-center justify-center z-20 px-4">
-          <div className="text-center max-w-4xl mx-auto">
-            <h1 className="hero-title">
-              PLANTUSMEDIA<sup>®</sup>
-            </h1>
+          <div className="text-center w-full max-w-4xl mx-auto px-4">
+
             <p className="text-white/80 text-lg md:text-xl mt-6 max-w-2xl mx-auto">
               Creating digital experiences that inspire and engage
             </p>
@@ -72,32 +76,25 @@ export default function Home() {
       </section>
 
       {/* Main Content Sections */}
-      <main className="relative z-10 w-full overflow-hidden">
-        <ClientsMarquee />
-        <AboutUs />
-        <Cards />
+      <main className="flex-1 w-full">
         
-        {/* Footer */}
-        <footer className="bg-black border-t border-white/10 py-8">
-          <div className="container mx-auto px-4">
-            <div className="flex flex-col md:flex-row justify-between items-center">
-              <div className="text-white/60 text-sm mb-4 md:mb-0">
-                {new Date().getFullYear()} PlantusMedia. All rights reserved.
-              </div>
-              <div className="flex space-x-6">
-                <a href="#" className="text-white/60 hover:text-white transition-colors">
-                  Instagram
-                </a>
-                <a href="#" className="text-white/60 hover:text-white transition-colors">
-                  Twitter
-                </a>
-                <a href="#" className="text-white/60 hover:text-white transition-colors">
-                  LinkedIn
-                </a>
-              </div>
-            </div>
+        <div className="container mx-auto px-4">
+          <AboutUs />
+          <div className="mb-16">
+          <ClientsMarquee />
           </div>
-        </footer>
+          <Services />
+          <ImageCards />
+          <BlogSection />
+          <AgencySection />
+          <AnimatedTestimonialsDemo />
+          {/* <HoverImageLinks />*/}
+
+        </div>
+
+        {/* Footer */}
+        <Footer />
+
       </main>
     </div>
   );

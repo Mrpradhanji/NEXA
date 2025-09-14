@@ -1,89 +1,54 @@
 "use client";
+import { CardSpotlight } from "./ui/card-spotlight";
 
-import React from "react";
-
-interface Card {
-  title: string;
-  subtitle: string;
-  description: string;
-  image: string;
-}
-
-const cards: Card[] = [
-  {
-    title: "Diligord",
-    subtitle: "Lorem ipsum",
-    description:
-      "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Alias cum repellat velit quae suscipit c.",
-    image: "https://unsplash.it/500/500/",
-  },
-  {
-    title: "Rocogged",
-    subtitle: "Lorem ipsum",
-    description:
-      "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Alias cum repellat velit quae suscipit c.",
-    image: "https://unsplash.it/511/511/",
-  },
-  {
-    title: "Strizzes",
-    subtitle: "Lorem ipsum",
-    description:
-      "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Alias cum repellat velit quae suscipit c.",
-    image: "https://unsplash.it/502/502/",
-  },
-  {
-    title: "Clossyo",
-    subtitle: "Lorem ipsum",
-    description:
-      "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Alias cum repellat velit quae suscipit c.",
-    image: "https://unsplash.it/503/503/",
-  },
-];
-
-export default function Cards() {
+export function CardSpotlightDemo() {
   return (
-    <section className="py-24 bg-black w-full">
-      <div className="container">
-        <div className="text-center mb-16">
-          <h2 className="text-4xl sm:text-5xl font-bold text-white mb-6">
-            Our Portfolio
-          </h2>
-          <div className="w-20 h-0.5 bg-white/30 mx-auto"></div>
-        </div>
-
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 w-full">
-          {cards.map((card, index) => (
-            <div
-              key={index}
-              className="cursor-pointer"
-            >
-              <div className="group [transform-style:preserve-3d] [perspective:1000px] relative h-80 w-full">
-                {/* Front */}
-                <div
-                  className="absolute inset-0 rounded-xl shadow-lg bg-center bg-cover overflow-hidden
-                             [backface-visibility:hidden] transition-transform duration-700 ease-[cubic-bezier(0.4,0.2,0.2,1)] group-hover:[transform:rotateY(-180deg)]"
-                  style={{ backgroundImage: `url(${card.image})` }}
-                >
-                  <div className="absolute inset-0 bg-black/70 rounded-xl flex flex-col items-center justify-center text-white z-10">
-                    <p className="text-2xl font-semibold mb-2 relative after:content-[''] after:block after:w-16 after:h-[2px] after:bg-white after:mx-auto after:mt-2">
-                      {card.title}
-                    </p>
-                    <span className="text-gray-300">{card.subtitle}</span>
-                  </div>
-                </div>
-
-                {/* Back */}
-                <div
-                  className="absolute inset-0 rounded-xl shadow-lg bg-gradient-to-br from-gray-800 to-gray-900 
-                             [transform:rotateY(180deg)] [backface-visibility:hidden] transition-transform duration-700 ease-[cubic-bezier(0.4,0.2,0.2,1)] group-hover:[transform:rotateY(0deg)] flex items-center justify-center text-white p-8"
-                >
-                  <p className="text-center text-lg">{card.description}</p>
-                </div>
-              </div>
-            </div>
-          ))}
-        </div>
+    <CardSpotlight className="h-96 w-96">
+      <p className="text-xl font-bold relative z-20 mt-2 text-white">
+        Authentication steps
+      </p>
+      <div className="text-neutral-200 mt-4 relative z-20">
+        Follow these steps to secure your account:
+        <ul className="list-none  mt-2">
+          <Step title="Enter your email address" />
+          <Step title="Create a strong password" />
+          <Step title="Set up two-factor authentication" />
+          <Step title="Verify your identity" />
+        </ul>
       </div>
-    </section>
+      <p className="text-neutral-300 mt-4 relative z-20 text-sm">
+        Ensuring your account is properly secured helps protect your personal
+        information and data.
+      </p>
+    </CardSpotlight>
   );
 }
+
+const Step = ({ title }: { title: string }) => {
+  return (
+    <li className="flex gap-2 items-start">
+      <CheckIcon />
+      <p className="text-white">{title}</p>
+    </li>
+  );
+};
+
+const CheckIcon = () => {
+  return (
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      width="24"
+      height="24"
+      viewBox="0 0 24 24"
+      fill="currentColor"
+      className="h-4 w-4 text-blue-500 mt-1 shrink-0"
+    >
+      <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+      <path
+        d="M12 2c-.218 0 -.432 .002 -.642 .005l-.616 .017l-.299 .013l-.579 .034l-.553 .046c-4.785 .464 -6.732 2.411 -7.196 7.196l-.046 .553l-.034 .579c-.005 .098 -.01 .198 -.013 .299l-.017 .616l-.004 .318l-.001 .324c0 .218 .002 .432 .005 .642l.017 .616l.013 .299l.034 .579l.046 .553c.464 4.785 2.411 6.732 7.196 7.196l.553 .046l.579 .034c.098 .005 .198 .01 .299 .013l.616 .017l.642 .005l.642 -.005l.616 -.017l.299 -.013l.579 -.034l.553 -.046c4.785 -.464 6.732 -2.411 7.196 -7.196l.046 -.553l.034 -.579c.005 -.098 .01 -.198 .013 -.299l.017 -.616l.005 -.642l-.005 -.642l-.017 -.616l-.013 -.299l-.034 -.579l-.046 -.553c-.464 -4.785 -2.411 -6.732 -7.196 -7.196l-.553 -.046l-.579 -.034a28.058 28.058 0 0 0 -.299 -.013l-.616 -.017l-.318 -.004l-.324 -.001zm2.293 7.293a1 1 0 0 1 1.497 1.32l-.083 .094l-4 4a1 1 0 0 1 -1.32 .083l-.094 -.083l-2 -2a1 1 0 0 1 1.32 -1.497l.094 .083l1.293 1.292l3.293 -3.292z"
+        fill="currentColor"
+        strokeWidth="0"
+      />
+    </svg>
+  );
+};
