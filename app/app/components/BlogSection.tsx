@@ -76,9 +76,9 @@ export function BlogSection() {
             >
               <Link href={`/blog/${post.slug}`}>
                 <div className="relative h-48 overflow-hidden">
-                  <img
-                    src={post.image}
-                    alt={post.title}
+                  <image
+                    href={post.image}
+                    alt = {post.title}
                     className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
@@ -135,7 +135,7 @@ export function BlogSection() {
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
             >
-              View All Posts
+              See Blogs
             </motion.button>
           </Link>
         </motion.div>

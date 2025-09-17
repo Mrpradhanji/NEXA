@@ -1,10 +1,10 @@
 "use client";
 import React from "react";
 import { motion } from "framer-motion";
-import { Services } from "../components/Services";
-import { ImageCards } from "../components/ImageCards";
 import ClientsMarquee from "../components/ClientsMarquee";
 import Footer from "../components/Footer";
+import { LampContainer } from "../components/ui/lamp";
+import CTAButton from "../components/Button";
 
 export default function ServicesPage() {
   const serviceCategories = [
@@ -49,24 +49,14 @@ export default function ServicesPage() {
   return (
     <div className="min-h-screen bg-black">
       {/* Hero Section */}
-      <section className="py-20 px-4">
+      <section className="py-0 px-4">
         <div className="container mx-auto text-center">
-          <motion.h1
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            className="text-5xl md:text-6xl font-bold text-white mb-6"
-          >
-            Our Services
-          </motion.h1>
-          <motion.p
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.2 }}
-            className="text-xl text-gray-300 max-w-3xl mx-auto mb-8"
-          >
-            Accelerating Business Growth Through Digital Marketing for Clients Since 2005
-          </motion.p>
+          <LampContainer>
+            <p className="text-3xl text-white">Accelerating Business Growth Through Digital Marketing for Clients Since 2005</p>
+          </LampContainer>
+          <div className="text-3xl text-white">
+            <p></p>
+          </div>
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
@@ -77,11 +67,11 @@ export default function ServicesPage() {
       </section>
 
       {/* Clients Marquee */}
-      <ClientsMarquee />
+      
 
       {/* Services Overview */}
       <section className="py-24 px-4">
-        <div className="container mx-auto">
+        <div className="container  mx-auto">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -95,10 +85,11 @@ export default function ServicesPage() {
             <div className="w-20 h-0.5 bg-orange-500 mx-auto mb-8"></div>
             <p className="text-gray-300 text-lg max-w-3xl mx-auto leading-relaxed">
               We offer comprehensive digital marketing solutions designed to elevate your brand 
-              and drive sustainable growth in today's competitive landscape.
+              and drive sustainable growth in today&apos;s competitive landscape.
             </p>
           </motion.div>
-
+          {/*Client Marquee*/}
+          <ClientsMarquee />
           {/* Services Grid */}
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {serviceCategories.map((service, index) => (
@@ -149,8 +140,8 @@ export default function ServicesPage() {
             </h2>
             <div className="w-20 h-0.5 bg-orange-500 mx-auto mb-8"></div>
             <p className="text-gray-300 text-lg max-w-3xl mx-auto leading-relaxed">
-              A proven methodology that delivers results through strategic planning, 
-              creative execution, and continuous optimization.
+              Plantusmedia follows a proven methodology that delivers results through strategic planning, creative execution, and continuous optimization.
+              
             </p>
           </motion.div>
 
@@ -191,15 +182,9 @@ export default function ServicesPage() {
               Ready to Get Started?
             </h2>
             <p className="text-gray-300 text-lg max-w-2xl mx-auto mb-8">
-              Let's discuss how we can help accelerate your business growth through strategic digital marketing.
+              Let&apos; discuss how we can help accelerate your business growth through strategic digital marketing.
             </p>
-            <motion.button
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-              className="bg-gradient-to-r from-orange-500 to-orange-600 hover:from-orange-600 hover:to-orange-700 text-white font-semibold px-8 py-4 rounded-full transition-all duration-300 shadow-lg hover:shadow-xl"
-            >
-              Get In Touch
-            </motion.button>
+            <CTAButton label="Get In Touch" />
           </motion.div>
         </div>
       </section>

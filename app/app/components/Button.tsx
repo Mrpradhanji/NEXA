@@ -57,7 +57,7 @@ const CTAButton: React.FC<CTAButtonProps> = ({
           />
         </svg>
       )}
-    </>
+    </> 
   );
 
   const classes = type === "1" ? btn1Classes : btn2Classes;
