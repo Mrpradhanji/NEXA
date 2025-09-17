@@ -19,7 +19,7 @@ const menuLinks = [
 const Menu = () => {
   const container = useRef<HTMLDivElement>(null);
   const [isOpen, setIsOpen] = useState(false);
-  const tl = useRef<GSAPTimeline>();
+  const tl = useRef<gsap.core.Timeline | null>(null);
 
   const toggleMenu = () => setIsOpen(!isOpen);
 
@@ -51,16 +51,17 @@ const Menu = () => {
   }, { scope: container });
 
   useEffect(() => {
-    if (!tl.current) return;
+    const timeline = tl.current;
+    if (!timeline) return;
     if (isOpen) {
       gsap.set('.menu-overlay', { pointerEvents: 'auto' });
-      tl.current.play();
+      timeline.play();
     } else {
-      tl.current.eventCallback('onReverseComplete', () => {
+      timeline.eventCallback('onReverseComplete', () => {
         gsap.set('.menu-overlay', { pointerEvents: 'none' });
-        tl.current.eventCallback('onReverseComplete', null);
+        timeline.eventCallback('onReverseComplete', null);
       });
-      tl.current.reverse();
+      timeline.reverse();
     }
   }, [isOpen]);
 

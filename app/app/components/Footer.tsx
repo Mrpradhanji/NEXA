@@ -1,6 +1,7 @@
 "use client";
 
 import React from "react";
+import Image from "next/image";
 
 export default function Footer() {
   return (
@@ -87,12 +88,12 @@ export default function Footer() {
 
         {/* Logos / Membership badges */}
         <div className="flex flex-wrap items-center gap-6 mt-8 md:mt-0">
-          <img src="/logos/dba.svg" alt="dba" className="h-8 opacity-60" />
-          <img src="/logos/manchester-digital.svg" alt="Manchester Digital" className="h-8 opacity-60" />
-          <img src="/logos/bima.svg" alt="BIMA" className="h-8 opacity-60" />
-          <img src="/logos/dan.svg" alt="DAN" className="h-8 opacity-60" />
-          <img src="/logos/prolificnorth.svg" alt="ProlificNorth" className="h-8 opacity-60" />
-          <img src="/logos/living-wage.svg" alt="Living Wage Employer" className="h-8 opacity-60" />
+          <Image src="/logos/dba.svg" alt="dba" width={120} height={32} className="h-8 w-auto opacity-60" />
+          <Image src="/logos/manchester-digital.svg" alt="Manchester Digital" width={160} height={32} className="h-8 w-auto opacity-60" />
+          <Image src="/logos/bima.svg" alt="BIMA" width={120} height={32} className="h-8 w-auto opacity-60" />
+          <Image src="/logos/dan.svg" alt="DAN" width={120} height={32} className="h-8 w-auto opacity-60" />
+          <Image src="/logos/prolificnorth.svg" alt="ProlificNorth" width={160} height={32} className="h-8 w-auto opacity-60" />
+          <Image src="/logos/living-wage.svg" alt="Living Wage Employer" width={160} height={32} className="h-8 w-auto opacity-60" />
         </div>
       </div>
 

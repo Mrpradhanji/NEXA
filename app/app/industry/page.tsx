@@ -279,7 +279,7 @@ export default function IndustryPage() {
               Ready to Grow Your Industry Presence?
             </h2>
             <p className="text-gray-300 text-lg max-w-2xl mx-auto mb-8">
-              Let's discuss how our industry expertise can help you achieve your business goals 
+              Let&apos;s discuss how our industry expertise can help you achieve your business goals 
               and stay ahead of the competition.
             </p>
             <motion.button

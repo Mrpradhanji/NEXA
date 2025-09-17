@@ -3,6 +3,7 @@ import React from "react";
 import { motion } from "framer-motion";
 import Link from "next/link";
 import { ArrowRight, Calendar, User, Clock, Search } from "lucide-react";
+import Image from "next/image";
 
 export default function BlogPage() {
   const allBlogPosts = [
@@ -174,10 +175,13 @@ export default function BlogPage() {
                   >
                     <div className="grid md:grid-cols-2 gap-0">
                       <div className="relative h-64 md:h-full">
-                        <img
+                        <Image
                           src={featuredPost.image}
                           alt={featuredPost.title}
-                          className="w-full h-full object-cover"
+                          fill
+                          sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 50vw"
+                          className="object-cover"
+                          priority
                         />
                         <div className="absolute inset-0 bg-gradient-to-r from-black/60 via-transparent to-transparent" />
                         <div className="absolute top-4 left-4">
@@ -247,10 +251,12 @@ export default function BlogPage() {
               >
                 <Link href={`/blog/${post.slug}`}>
                   <div className="relative h-48 overflow-hidden">
-                    <img
+                    <Image
                       src={post.image}
                       alt={post.title}
-                      className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                      fill
+                      sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                      className="object-cover transition-transform duration-500 group-hover:scale-110"
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
                     <div className="absolute top-4 left-4">

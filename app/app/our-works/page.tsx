@@ -1,9 +1,9 @@
 "use client";
 import React, { useState } from "react";
 import { motion } from "framer-motion";
-import { ImageCards } from "../components/ImageCards";
 import ClientsMarquee from "../components/ClientsMarquee";
 import Footer from "../components/Footer";
+import Image from "next/image";
 
 export default function OurWorksPage() {
   const [activeFilter, setActiveFilter] = useState("All");
@@ -160,10 +160,12 @@ export default function OurWorksPage() {
                 className="bg-white/5 backdrop-blur-sm rounded-xl overflow-hidden border border-white/10 hover:bg-white/10 hover:border-orange-500/50 transition-all duration-300 group cursor-pointer"
               >
                 <div className="relative h-48 overflow-hidden">
-                  <img
+                  <Image
                     src={project.image}
                     alt={project.title}
-                    className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                    fill
+                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                    className="object-cover transition-transform duration-500 group-hover:scale-110"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent" />
                   <div className="absolute top-4 left-4">
@@ -205,7 +207,7 @@ export default function OurWorksPage() {
                   <motion.button
                     whileHover={{ scale: 1.02 }}
                     whileTap={{ scale: 0.98 }}
-                    className="w-full bg-orange-500 hover:bg-orange-600 text-white font-semibold py-2 rounded-lg transition-colors duration-300"
+                    className="w-full bg-orange-500 hover:bg-orange-600 text-white font-semibold py-2 rounded-lg transition-all duration-300"
                   >
                     View Case Study
                   </motion.button>
@@ -271,7 +273,7 @@ export default function OurWorksPage() {
               Ready to Start Your Project?
             </h2>
             <p className="text-gray-300 text-lg max-w-2xl mx-auto mb-8">
-              Let's discuss how we can help bring your vision to life and achieve your business goals.
+              Let&apos;s discuss how we can help bring your vision to life and achieve your business goals.
             </p>
             <motion.button
               whileHover={{ scale: 1.05 }}

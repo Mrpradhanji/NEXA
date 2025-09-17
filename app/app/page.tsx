@@ -1,7 +1,6 @@
 'use client';
 import React, { useRef, useState } from "react";
 import { Volume2, VolumeX } from "lucide-react";
-import { CardSpotlightDemo } from "./components/Cards";
 import ClientsMarquee from "./components/ClientsMarquee";
 import AboutUs from "./components/AboutUs";
 import { Services } from "./components/Services";

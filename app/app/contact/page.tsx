@@ -76,7 +76,7 @@ const AbsoluteContact = () => {
           Connect.<br />Collaborate.<br />Be Bold.
         </motion.div>
         <div className="mt-8 text-lg font-semibold text-gray-300">
-          "We spark ideas into creative realities."
+          &quot;We spark ideas into creative realities.&quot;
         </div>
       </section>
 
@@ -241,7 +241,7 @@ const AbsoluteContact = () => {
           transition={{ duration: 0.8 }}
           className="text-4xl md:text-6xl font-extrabold text-white drop-shadow-[0_0_15px_rgba(0,0,0,0.5)]"
         >
-          "Creativity takes courage."
+          &quot;Creativity takes courage.&quot;
         </motion.h2>
       </section>
 

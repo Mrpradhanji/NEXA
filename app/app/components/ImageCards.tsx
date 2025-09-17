@@ -2,6 +2,7 @@
 import React, { useState } from "react";
 import { motion } from "framer-motion";
 import CTAButton from "./Button";
+import Image from "next/image";
 
 export function ImageCards() {
   const [flippedCards, setFlippedCards] = useState<number[]>([]);
@@ -114,10 +115,12 @@ export function ImageCards() {
                   style={{ backfaceVisibility: "hidden" }}
                 >
                   <div className="relative w-full h-full rounded-xl overflow-hidden group">
-                    <img
+                    <Image
                       src={card.frontImage}
                       alt={card.backTitle}
-                      className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                      fill
+                      sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                      className="object-cover transition-transform duration-500 group-hover:scale-110"
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent" />
                     <div className="absolute bottom-4 left-4 right-4">

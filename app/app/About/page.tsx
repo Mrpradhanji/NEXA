@@ -5,6 +5,7 @@ import AboutUs from "../components/AboutUs";
 import { AnimatedTestimonialsDemo } from "../components/Testimonials";
 import ClientsMarquee from "../components/ClientsMarquee";
 import Footer from "../components/Footer";
+import Image from "next/image";
 
 export default function AboutPage() {
   const teamMembers = [
@@ -118,7 +119,7 @@ export default function AboutPage() {
             transition={{ duration: 0.8, delay: 0.2 }}
             className="text-xl text-gray-300 max-w-3xl mx-auto mb-8"
           >
-            For nearly two decades, we've been helping businesses transform their digital presence 
+            For nearly two decades, we&apos;ve been helping businesses transform their digital presence 
             and achieve sustainable growth through innovative marketing strategies.
           </motion.p>
           <motion.div
@@ -152,7 +153,7 @@ export default function AboutPage() {
             <div className="w-20 h-0.5 bg-orange-500 mx-auto mb-8"></div>
             <p className="text-gray-300 text-lg max-w-3xl mx-auto leading-relaxed">
               From humble beginnings to industry leadership, our journey has been marked by 
-              innovation, growth, and unwavering commitment to our clients' success.
+              innovation, growth, and unwavering commitment to our clients&apos; success.
             </p>
           </motion.div>
 
@@ -214,10 +215,13 @@ export default function AboutPage() {
                 className="bg-white/5 backdrop-blur-sm rounded-xl overflow-hidden border border-white/10 hover:bg-white/10 hover:border-orange-500/50 transition-all duration-300 group"
               >
                 <div className="relative h-48 overflow-hidden">
-                  <img
+                  <Image
                     src={member.image}
                     alt={member.name}
-                    className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                    fill
+                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 25vw"
+                    className="object-cover transition-transform duration-500 group-hover:scale-110"
+                    priority={index < 2}
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
                 </div>
@@ -303,7 +307,7 @@ export default function AboutPage() {
               Ready to Work With Us?
             </h2>
             <p className="text-gray-300 text-lg max-w-2xl mx-auto mb-8">
-              Let's discuss how our experience and expertise can help you achieve your business goals 
+              Let&apos;s discuss how our experience and expertise can help you achieve your business goals 
               and drive sustainable growth.
             </p>
             <motion.button

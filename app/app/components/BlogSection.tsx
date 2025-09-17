@@ -3,6 +3,7 @@ import React from "react";
 import { motion } from "framer-motion";
 import Link from "next/link";
 import { ArrowRight, Calendar, User } from "lucide-react";
+import Image from "next/image";
 
 export function BlogSection() {
   const blogPosts = [
@@ -76,10 +77,12 @@ export function BlogSection() {
             >
               <Link href={`/blog/${post.slug}`}>
                 <div className="relative h-48 overflow-hidden">
-                  <image
-                    href={post.image}
-                    alt = {post.title}
-                    className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                  <Image
+                    src={post.image}
+                    alt={post.title}
+                    fill
+                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                    className="object-cover transition-transform duration-500 group-hover:scale-110"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
                   <div className="absolute top-4 left-4">
