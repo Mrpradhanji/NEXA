@@ -103,7 +103,7 @@ export default function AboutPage() {
   return (
     <div className="min-h-screen bg-black">
       {/* Hero Section */}
-      <section className="py-20 px-4">
+      <section className="py-24 px-4">
         <div className="container mx-auto text-center">
           <motion.h1
             initial={{ opacity: 0, y: 30 }}
@@ -138,7 +138,8 @@ export default function AboutPage() {
       <ClientsMarquee />
 
       {/* Our Story Section */}
-      <section className="py-24 px-4">
+      <section className="py-24 px-4 relative">
+        <div className="absolute inset-0 bg-gradient-to-b from-transparent via-white/5 to-transparent"></div>
         <div className="container mx-auto">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
