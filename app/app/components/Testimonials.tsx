@@ -14,7 +14,7 @@ export function AnimatedTestimonialsDemo() {
   const testimonials = [
     {
       quote:
-        "The attention to detail and innovative features have completely transformed our workflow. This is exactly what we've been looking for.",
+        "Our process has been totally revolutionized by the creative features and meticulous attention to detail. This is just what we have been seeking.",
       name: "Sarah Chen",
       designation: "Product Manager at TechFlow",
       src: "https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?q=80&w=3560&auto=format&fit=crop",
@@ -28,7 +28,7 @@ export function AnimatedTestimonialsDemo() {
     },
     {
       quote:
-        "This solution has significantly improved our team's productivity. The intuitive interface makes complex tasks simple.",
+        "The productivity of our staff has increased dramatically as a result of this approach. Complicated tasks are made simple by the user-friendly UI.",
       name: "Emily Watson",
       designation: "Operations Director at CloudScale",
       src: "https://images.unsplash.com/photo-1623582854588-d60de57fa33f?q=80&w=3540&auto=format&fit=crop",

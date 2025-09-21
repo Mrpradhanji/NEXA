@@ -2,6 +2,7 @@
 
 import React from "react";
 import Image from "next/image";
+import Link from "next/link";
 
 export default function Footer() {
   return (
@@ -10,10 +11,10 @@ export default function Footer() {
       <div className="max-w-7xl mx-auto flex flex-col md:flex-row md:justify-between md:items-start">
         {/* Left - Big Section Links */}
         <ul className="space-y-4 text-4xl md:text-5xl font-extrabold mb-10 md:mb-0">
-          <li><a href="#work" className="hover:underline transition-all">Work</a></li>
-          <li><a href="#agency" className="hover:underline transition-all">Agency</a></li>
-          <li><a href="#insights" className="hover:underline transition-all">Insights</a></li>
-          <li><a href="#contact" className="hover:underline transition-all">Contact</a></li>
+          <li><Link href="/our-works" className="hover:underline transition-all">Work</Link></li>
+          <li><Link href="/about" className="hover:underline transition-all">Agency</Link></li>
+          <li><Link href="/blog" className="hover:underline transition-all">Insights</Link></li>
+          <li><Link href="/contact" className="hover:underline transition-all">Contact</Link></li>
         </ul>
 
         {/* Right - Grouped Columns */}
@@ -64,36 +65,44 @@ export default function Footer() {
       <div className="flex flex-col md:flex-row md:justify-between items-start">
         <div>
           <div className="text-3xl md:text-4xl font-extrabold mb-3">
-            plantusmedia@gmail.com
+            <a href="mailto:hello@plantusmedia.com" className="hover:underline">
+              hello@plantusmedia.com
+            </a>
           </div>
           <div className="font-bold text-lg mb-4">
-            INDIA: +44 (0)1204 669566 <br />
-            DUBAI: +44 (0)20 4538 8086
+            <a href="tel:+441204669566" className="hover:underline">UK: +44 (0)1204 669566</a> <br />
+            <a href="tel:+442045388086" className="hover:underline">DUBAI: +44 (0)20 4538 8086</a>
           </div>
 
           {/* Social + Quick Links */}
           <div className="flex flex-col md:flex-row gap-8 text-base">
             <ul className="space-y-1 font-medium">
-              <li>→ <a href="#" className="hover:underline">LinkedIn</a></li>
-              <li>→ <a href="#" className="hover:underline">Instagram</a></li>
-              <li>→ <a href="#" className="hover:underline">YouTube</a></li>
+              <li>→ <a href="https://linkedin.com/company/plantusmedia" target="_blank" rel="noopener noreferrer" className="hover:underline">LinkedIn</a></li>
+              <li>→ <a href="https://instagram.com/plantusmedia" target="_blank" rel="noopener noreferrer" className="hover:underline">Instagram</a></li>
+              <li>→ <a href="https://youtube.com/@plantusmedia" target="_blank" rel="noopener noreferrer" className="hover:underline">YouTube</a></li>
             </ul>
             <ul className="space-y-1 font-medium">
-              <li><a href="#" className="hover:underline">Blogs</a></li>
-              <li><a href="#" className="hover:underline">Contact Us</a></li>
-              <li><a href="#" className="hover:underline">Services</a></li>
+              <li><Link href="/blog" className="hover:underline">Blogs</Link></li>
+              <li><Link href="/contact" className="hover:underline">Contact Us</Link></li>
+              <li><Link href="/services" className="hover:underline">Services</Link></li>
             </ul>
           </div>
         </div>
 
         {/* Logos / Membership badges */}
         <div className="flex flex-wrap items-center gap-6 mt-8 md:mt-0">
-          <Image src="/logos/dba.svg" alt="dba" width={120} height={32} className="h-8 w-auto opacity-60" />
-          <Image src="/logos/manchester-digital.svg" alt="Manchester Digital" width={160} height={32} className="h-8 w-auto opacity-60" />
-          <Image src="/logos/bima.svg" alt="BIMA" width={120} height={32} className="h-8 w-auto opacity-60" />
-          <Image src="/logos/dan.svg" alt="DAN" width={120} height={32} className="h-8 w-auto opacity-60" />
-          <Image src="/logos/prolificnorth.svg" alt="ProlificNorth" width={160} height={32} className="h-8 w-auto opacity-60" />
-          <Image src="/logos/living-wage.svg" alt="Living Wage Employer" width={160} height={32} className="h-8 w-auto opacity-60" />
+          <div className="text-center">
+            <div className="text-sm font-semibold mb-2">Certified</div>
+            <div className="text-xs opacity-80">ISO 9001</div>
+          </div>
+          <div className="text-center">
+            <div className="text-sm font-semibold mb-2">Awards</div>
+            <div className="text-xs opacity-80">Best Agency 2024</div>
+          </div>
+          <div className="text-center">
+            <div className="text-sm font-semibold mb-2">Partnerships</div>
+            <div className="text-xs opacity-80">Google Partner</div>
+          </div>
         </div>
       </div>
 
@@ -102,10 +111,11 @@ export default function Footer() {
 
       {/* Bottom Section */}
       <div className="flex flex-col md:flex-row justify-between items-center text-sm text-white text-opacity-80 gap-2">
-        <span>© Plantusmedia 2025.</span>
+        <span>© Plantusmedia 2025. All rights reserved.</span>
         <span className="flex gap-4">
-          <a href="#" className="hover:underline">Privacy.</a>
-          <a href="#" className="hover:underline">Modern Day Slavery Act.</a>
+          <Link href="/privacy" className="hover:underline">Privacy Policy</Link>
+          <Link href="/terms" className="hover:underline">Terms of Service</Link>
+          <Link href="/accessibility" className="hover:underline">Accessibility</Link>
         </span>
       </div>
     </footer>
