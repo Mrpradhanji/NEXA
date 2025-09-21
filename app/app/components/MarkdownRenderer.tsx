@@ -1,0 +1,100 @@
+"use client";
+
+import React from 'react';
+import ReactMarkdown from 'react-markdown';
+import remarkGfm from 'remark-gfm';
+import { Highlight, themes } from 'prism-react-renderer';
+import { type Theme } from 'prism-react-renderer';
+import { type FC, type ReactNode } from 'react';
+
+// Import theme directly from prism-react-renderer
+const vscDarkPlus: Theme = {
+  plain: {
+    color: "#9CDCFE",
+    backgroundColor: "#1E1E1E"
+  },
+  styles: []
+};
+
+interface MarkdownRendererProps {
+  content: string;
+}
+
+interface CodeProps {
+  node?: unknown;
+  inline?: boolean;
+  className?: string;
+  children?: ReactNode;
+  [key: string]: unknown;
+}
+
+export function MarkdownRenderer({ content }: MarkdownRendererProps) {
+  return (
+    <div className="prose dark:prose-invert max-w-none">
+      <ReactMarkdown
+        remarkPlugins={[remarkGfm]}
+        components={{
+          code({ node, inline, className, children, ...props }: CodeProps) {
+            const match = /language-(\w+)/.exec(className || '');
+            return !inline && match ? (
+              <div className="rounded-md overflow-hidden my-4 shadow-lg">
+                <div className="bg-gray-800 text-gray-200 text-xs px-2 py-1 font-mono">
+                  {match[1]}
+                </div>
+                <Highlight
+                  theme={vscDarkPlus}
+                  code={String(children).replace(/\n$/, '')}
+                  language={match[1]}
+                >
+                  {({ className, style, tokens, getLineProps, getTokenProps }) => (
+                    <pre className={className} style={{ ...style, margin: 0, padding: '1rem' }}>
+                      {tokens.map((line, i) => (
+                        <div key={i} {...getLineProps({ line })}>
+                          <span className="line-number">{i + 1}</span>
+                          {line.map((token, key) => (
+                            <span key={key} {...getTokenProps({ token })} />
+                          ))}
+                        </div>
+                      ))}
+                    </pre>
+                  )}
+                </Highlight>
+              </div>
+            ) : (
+              <code
+                className={`bg-gray-100 dark:bg-gray-800 text-gray-800 dark:text-gray-200 px-1 rounded font-mono ${className || ''}`}
+                {...props}
+              >
+                {children}
+              </code>
+            );
+          },
+          img: ({ node, alt, ...props }: { node?: unknown; alt?: string; [key: string]: unknown }) => (
+            <div className="my-6">
+              <img
+                {...props}
+                className="rounded-lg shadow-lg w-full h-auto"
+                alt={alt || 'Blog post image'}
+              />
+              {alt && (
+                <p className="text-center text-sm text-gray-500 mt-2">{alt}</p>
+              )}
+            </div>
+          ),
+          a: ({ node, ...props }: { node?: unknown; [key: string]: unknown }) => (
+            <a
+              {...props}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-blue-600 hover:text-blue-800 dark:text-blue-400 dark:hover:text-blue-300 underline break-words"
+            />
+          ),
+        }}
+      >
+        {content}
+      </ReactMarkdown>
+    </div>
+  );
+}
+
+export default MarkdownRenderer;
