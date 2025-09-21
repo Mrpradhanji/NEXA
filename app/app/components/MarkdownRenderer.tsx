@@ -4,28 +4,37 @@ import React from 'react';
 import ReactMarkdown from 'react-markdown';
 import remarkGfm from 'remark-gfm';
 import { Highlight, themes } from 'prism-react-renderer';
-import { type Theme } from 'prism-react-renderer';
-import { type FC, type ReactNode } from 'react';
+import { type ReactNode } from 'react';
 
-// Import theme directly from prism-react-renderer
-const vscDarkPlus: Theme = {
-  plain: {
-    color: "#9CDCFE",
-    backgroundColor: "#1E1E1E"
-  },
-  styles: []
-};
+// Use the built-in theme from prism-react-renderer
+const vscDarkPlus = themes.vsDark;
 
 interface MarkdownRendererProps {
   content: string;
 }
 
 interface CodeProps {
-  node?: unknown;
+  node?: any;
   inline?: boolean;
   className?: string;
   children?: ReactNode;
-  [key: string]: unknown;
+  [key: string]: any;
+}
+
+interface ImageProps {
+  node?: any;
+  alt?: string;
+  src?: string;
+  className?: string;
+  style?: React.CSSProperties;
+  [key: string]: any;
+}
+
+interface LinkProps {
+  node?: any;
+  href?: string;
+  children?: ReactNode;
+  [key: string]: any;
 }
 
 export function MarkdownRenderer({ content }: MarkdownRendererProps) {
@@ -69,7 +78,7 @@ export function MarkdownRenderer({ content }: MarkdownRendererProps) {
               </code>
             );
           },
-          img: ({ node, alt, ...props }: { node?: unknown; alt?: string; [key: string]: unknown }) => (
+          img: ({ node, alt, ...props }: ImageProps) => (
             <div className="my-6">
               <img
                 {...props}
@@ -81,7 +90,7 @@ export function MarkdownRenderer({ content }: MarkdownRendererProps) {
               )}
             </div>
           ),
-          a: ({ node, ...props }: { node?: unknown; [key: string]: unknown }) => (
+          a: ({ node, ...props }: LinkProps) => (
             <a
               {...props}
               target="_blank"

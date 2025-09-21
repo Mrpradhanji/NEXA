@@ -11,7 +11,7 @@ interface BlogClientProps {
   categories: string[];
 }
 
-export default function BlogClient({ posts, categories }: BlogClientProps) {
+function BlogClient({ posts, categories }: BlogClientProps) {
   const allBlogPosts = posts;
 
   return (
@@ -266,3 +266,5 @@ export default function BlogClient({ posts, categories }: BlogClientProps) {
     </div>
   );
 }
+
+export default BlogClient;
