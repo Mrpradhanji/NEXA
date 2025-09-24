@@ -25,10 +25,10 @@ const CTAButton: React.FC<CTAButtonProps> = ({
 
   // Button 2 classes
   const btn2Classes = `
-    relative inline-block px-6 py-3 text-white font-bold uppercase tracking-wide
+    relative inline-block px-6 py-3 text-orange-600 font-bold uppercase tracking-wide
     transition-all duration-300 overflow-hidden
-    before:content-[''] before:absolute before:top-0 before:left-1/2 before:w-0 before:h-[2px] before:bg-white before:transition-all before:duration-300 before:-translate-x-1/2
-    after:content-[''] after:absolute after:bottom-0 after:left-1/2 after:w-0 after:h-[2px] after:bg-white after:transition-all after:duration-300 after:-translate-x-1/2
+    before:content-[''] before:absolute before:top-0 before:left-1/2 before:w-0 before:h-[2px] before:bg-orange-600 before:transition-all before:duration-300 before:-translate-x-1/2
+    after:content-[''] after:absolute after:bottom-0 after:left-1/2 after:w-0 after:h-[2px] after:bg-orange-600 after:transition-all after:duration-300 after:-translate-x-1/2
     hover:before:w-3/4 hover:after:w-3/4
   `;
 

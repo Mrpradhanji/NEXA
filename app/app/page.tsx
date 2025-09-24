@@ -26,7 +26,7 @@ export default function Home() {
   };
 
   return (
-    <div className="flex flex-col min-h-screen w-full bg-black">
+    <div className="flex flex-col min-h-screen w-full bg-white">
       {/* Hero Section */}
       <section
         className={`relative w-full h-screen flex items-center justify-center ${hover ? "cursor-none" : "cursor-pointer"} overflow-hidden`}
@@ -52,7 +52,7 @@ export default function Home() {
         <div className="absolute inset-0 flex items-center justify-center z-20 px-4">
           <div className="text-center w-full max-w-4xl mx-auto px-4">
 
-            <p className="text-white/80 text-lg md:text-xl mt-6 max-w-2xl mx-auto">
+            <p className="text-white text-lg md:text-xl mt-6 max-w-2xl mx-auto">
               Creating digital experiences that inspire and engage
             </p>
           </div>

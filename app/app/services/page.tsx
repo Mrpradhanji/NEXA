@@ -77,23 +77,20 @@ export default function ServicesPage() {
   ];
 
   return (
-    <div className="min-h-screen bg-black">
+    <div className="min-h-screen bg-white">
       {/* Hero Section */}
       <section className="py-0 px-4 bg-black relative overflow-hidden">
         <div className="container mx-auto text-center relative z-10">
           <LampContainer>
-            <p className="text-4xl md:text-2xl text-gray-300 max-w-3xl mx-auto mb-6">
+            <p className="text-4xl md:text-2xl text-white max-w-3xl mx-auto mb-6">
               Helping businesses like yours achieve their goals since 2018. We
               combine creativity, technology, and strategy to deliver measurable
               results.
             </p>
-            <div className="">
+            <div>
               <CTAButton label="Get Started" />
             </div>
-
-
           </LampContainer>
-
         </div>
 
         {/* Optional gradient overlay */}
@@ -101,7 +98,7 @@ export default function ServicesPage() {
       </section>
 
       {/* Services Overview */}
-      <section className="py-24 px-4">
+      <section className="py-24 px-4 bg-white">
         <div className="container mx-auto">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -110,11 +107,11 @@ export default function ServicesPage() {
             transition={{ duration: 0.6 }}
             className="text-center mb-16"
           >
-            <h2 className="text-4xl sm:text-5xl font-bold text-white leading-tight mb-6">
+            <h2 className="text-4xl sm:text-5xl font-bold text-black leading-tight mb-6">
               What We Provide
             </h2>
             <div className="w-20 h-0.5 bg-orange-500 mx-auto mb-8"></div>
-            <p className="text-gray-300 text-lg max-w-3xl mx-auto leading-relaxed">
+            <p className="text-orange-600 text-lg max-w-3xl mx-auto leading-relaxed">
               We offer comprehensive digital marketing solutions designed to
               elevate your brand and drive sustainable growth in today&apos;s
               competitive landscape.
@@ -131,20 +128,20 @@ export default function ServicesPage() {
                 viewport={{ once: true }}
                 transition={{ duration: 0.6, delay: index * 0.1 }}
                 whileHover={{ y: -5, scale: 1.02 }}
-                className="bg-white/5 backdrop-blur-sm rounded-xl p-8 border border-white/10 hover:bg-white/10 hover:border-orange-500/50 transition-all duration-300 group cursor-pointer"
+                className="bg-white backdrop-blur-sm rounded-xl p-8 border border-black hover:bg-orange-100 hover:border-orange-500/50 transition-all duration-300 group cursor-pointer"
               >
                 <div className="space-y-4">
-                  <h3 className="text-xl font-semibold text-white group-hover:text-orange-400 transition-colors">
+                  <h3 className="text-xl font-semibold text-orange-600 group-hover:text-orange-400 transition-colors">
                     {service.title}
                   </h3>
-                  <p className="text-gray-300 leading-relaxed group-hover:text-gray-200 transition-colors">
+                  <p className="text-black leading-relaxed group-hover:text-black transition-colors">
                     {service.description}
                   </p>
                   <ul className="space-y-2 mt-4">
                     {service.features.map((feature, idx) => (
                       <li
                         key={idx}
-                        className="text-gray-400 text-sm flex items-center"
+                        className="text-black text-sm flex items-center"
                       >
                         <span className="w-2 h-2 bg-orange-500 rounded-full mr-3"></span>
                         {feature}
@@ -170,11 +167,11 @@ export default function ServicesPage() {
             transition={{ duration: 0.6 }}
             className="text-center mb-16"
           >
-            <h2 className="text-4xl sm:text-5xl font-bold text-white leading-tight mb-6">
+            <h2 className="text-4xl sm:text-5xl font-bold text-black leading-tight mb-6">
               Our Process
             </h2>
             <div className="w-20 h-0.5 bg-orange-500 mx-auto mb-8"></div>
-            <p className="text-gray-300 text-lg max-w-3xl mx-auto leading-relaxed">
+            <p className="text-orange-600 text-lg max-w-3xl mx-auto leading-relaxed">
               Plantusmedia follows a proven methodology that delivers results
               through strategic planning, creative execution, and continuous
               optimization.
@@ -192,12 +189,14 @@ export default function ServicesPage() {
               {
                 step: "02",
                 title: "Strategy",
-                description: "Developing a comprehensive digital marketing strategy",
+                description:
+                  "Developing a comprehensive digital marketing strategy",
               },
               {
                 step: "03",
                 title: "Execution",
-                description: "Implementing campaigns with precision and creativity",
+                description:
+                  "Implementing campaigns with precision and creativity",
               },
               {
                 step: "04",
@@ -212,15 +211,15 @@ export default function ServicesPage() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.6, delay: index * 0.1 }}
-                className="text-center"
+                className="text-center bg-white p-6 rounded-xl shadow-md transition-all duration-300 hover:bg-orange-100 cursor-pointer"
               >
                 <div className="text-6xl font-bold text-orange-500 mb-4">
                   {process.step}
                 </div>
-                <h3 className="text-xl font-semibold text-white mb-3">
+                <h3 className="text-xl font-semibold text-black mb-3">
                   {process.title}
                 </h3>
-                <p className="text-gray-300">{process.description}</p>
+                <p className="text-black">{process.description}</p>
               </motion.div>
             ))}
           </div>
@@ -236,10 +235,10 @@ export default function ServicesPage() {
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
           >
-            <h2 className="text-4xl sm:text-5xl font-bold text-white leading-tight mb-6">
+            <h2 className="text-4xl sm:text-5xl font-bold text-black leading-tight mb-6">
               Ready to Get Started?
             </h2>
-            <p className="text-gray-300 text-lg max-w-2xl mx-auto mb-8">
+            <p className="text-black text-lg max-w-2xl mx-auto mb-8">
               Let&apos;s discuss how we can help accelerate your business growth
               through strategic digital marketing.
             </p>

@@ -1,12 +1,12 @@
 import React from "react";
 
 const AgencySection = () => (
-  <section className="bg-black min-h-screen text-white px-8 py-10 flex flex-col items-center font-sans relative">
+  <section className="bg-gray-200 min-h-screen text-black px-8 py-10 flex flex-col items-center font-sans relative">
     <div className="max-w-4xl w-full">
-      <h1 className="text-5xl font-bold mb-4 text-center">
+      <h1 className="text-5xl font-bold mb-4 text-center text-orange-600">
         Working with PLANTUSMEDIA - A Digital Marketing Agency
       </h1>
-      <p className="text-lg mb-8 text-center">
+      <p className="text-lg mb-8 mt-6 text-center">
         Working with a Digital Marketing Agency to develop and manage your business’s online reputation can make or break a business. It entails not only what your business creates and shares, but also encouraging your customers to share their experiences and join your online community. Other benefits of this form of marketing include the highly targeted tools available, as well as the ability to provide customer support - in other words, opportunities too good to be missed by a business.
       </p>
       <p className="text-lg mb-8 text-center">

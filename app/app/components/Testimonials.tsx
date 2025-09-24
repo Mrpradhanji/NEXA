@@ -50,7 +50,7 @@ export function AnimatedTestimonialsDemo() {
   ];
 
   return (
-    <section className="relative py-20 bg-black overflow-hidden">
+    <section className="relative py-20 bg-white overflow-hidden">
       {/* Background flair */}
       <div className="absolute inset-0 -z-10">
         <div className="absolute top-20 left-1/4 w-72 h-72 bg-orange-600/20 blur-[120px] rounded-full" />
@@ -64,11 +64,11 @@ export function AnimatedTestimonialsDemo() {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
           viewport={{ once: true }}
-          className="text-3xl md:text-4xl font-bold text-white mb-4"
+          className="text-3xl md:text-4xl font-bold text-black mb-4"
         >
           We have extensive experience in the following industries
         </motion.h2>
-        <p className="text-neutral-400 max-w-2xl mx-auto mb-10">
+        <p className="text-black max-w-2xl mx-auto mb-10">
           Our solutions span across multiple domains, enabling us to deliver specialized results tailored to your business needs.
         </p>
 
@@ -86,8 +86,8 @@ export function AnimatedTestimonialsDemo() {
               viewport={{ once: true }}
               className="flex flex-col items-center"
             >
-              <span className="text-4xl font-bold text-white">{stat.value}</span>
-              <span className="text-neutral-300 mt-2">{stat.label}</span>
+              <span className="text-4xl font-bold text-orange-600">{stat.value}</span>
+              <span className="text-black mt-2">{stat.label}</span>
             </motion.div>
           ))}
         </div>
@@ -98,11 +98,11 @@ export function AnimatedTestimonialsDemo() {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
           viewport={{ once: true }}
-          className="text-3xl md:text-4xl font-bold text-white mt-20 mb-4"
+          className="text-3xl md:text-4xl font-bold text-black mt-20 mb-4"
         >
           What Our Clients Say
         </motion.h2>
-        <p className="text-neutral-400 max-w-2xl mx-auto mb-10">
+        <p className="text-black max-w-2xl mx-auto mb-10">
           Don’t just take our word for it — see how we’ve helped businesses thrive across various industries.
         </p>
 

@@ -67,7 +67,7 @@ export function ImageCards() {
   };
 
   return (
-    <section className="py-24 bg-black w-full">
+    <section className="py-24 bg-white w-full">
       <div className="container mx-auto px-4">
         {/* Section Header */}
         <motion.div
@@ -77,11 +77,11 @@ export function ImageCards() {
           transition={{ duration: 0.6 }}
           className="text-center mb-16"
         >
-          <h2 className="text-4xl sm:text-5xl font-bold text-white leading-tight mb-6">
+          <h2 className="text-4xl sm:text-5xl font-bold text-black leading-tight mb-6">
             Case Studies
           </h2>
           <div className="w-20 h-0.5 bg-orange-500 mx-auto mb-8"></div>
-          <p className="text-gray-300 text-lg max-w-3xl mx-auto leading-relaxed">
+          <p className="text-orange-600 text-lg max-w-3xl mx-auto leading-relaxed">
             Explore our latest projects and see how we bring creative visions to
             life through innovative design and cutting-edge technology.
           </p>

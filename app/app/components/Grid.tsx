@@ -14,7 +14,7 @@ const industries = [
 
 export default function IndustriesGrid() {
   return (
-    <section className="py-20 bg-black">
+    <section className="py-20 bg-white">
       <div className="max-w-6xl mx-auto px-6 space-y-10">
         {/* First row → 4 cards */}
         <motion.div

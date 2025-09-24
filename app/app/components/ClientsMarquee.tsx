@@ -39,7 +39,7 @@ export default function ClientsMarquee() {
   );
 
   return (
-    <section className="py-12 md:py-16 bg-black border-y border-white/10 w-full overflow-hidden">
+    <section className="py-12 md:py-16 bg-gray-100 border-y border-white/10 w-full overflow-hidden">
       <div className="w-full">
         <div className="relative">
           {/* First row */}

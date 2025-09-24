@@ -15,7 +15,7 @@ function BlogClient({ posts, categories }: BlogClientProps) {
   const allBlogPosts = posts;
 
   return (
-    <div className="min-h-screen bg-black">
+    <div className="min-h-screen bg-white overflow-x-hidden">
       {/* Hero Section */}
       <section className="py-20 px-4">
         <div className="container mx-auto text-center">
@@ -23,7 +23,7 @@ function BlogClient({ posts, categories }: BlogClientProps) {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
-            className="text-5xl md:text-6xl font-bold text-white mb-6"
+            className="text-5xl md:text-6xl font-bold text-black mb-6"
           >
             Our Blog
           </motion.h1>
@@ -31,7 +31,7 @@ function BlogClient({ posts, categories }: BlogClientProps) {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
-            className="text-xl text-gray-300 max-w-3xl mx-auto mb-8"
+            className="text-xl text-black max-w-3xl mx-auto mb-8"
           >
             Insights, strategies, and trends from the world of digital marketing, 
             branding, and technology.
@@ -45,11 +45,11 @@ function BlogClient({ posts, categories }: BlogClientProps) {
             className="max-w-md mx-auto relative"
           >
             <div className="relative">
-              <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 w-5 h-5" />
+              <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-black w-5 h-5" />
               <input
                 type="text"
                 placeholder="Search articles..."
-                className="w-full pl-10 pr-4 py-3 bg-white/10 border border-white/20 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:border-orange-500 focus:bg-white/20 transition-all duration-300"
+                className="w-full pl-10 pr-4 py-3 bg-white/10 border border-black rounded-lg text-black placeholder-gray-400 focus:outline-none focus:border-orange-500 focus:bg-white/20 transition-all duration-300"
               />
             </div>
           </motion.div>
@@ -57,7 +57,7 @@ function BlogClient({ posts, categories }: BlogClientProps) {
       </section>
 
       {/* Categories Filter */}
-      <section className="py-8 px-4 border-b border-white/10">
+      <section className="py-8 px-4 border-b border-black">
         <div className="container mx-auto">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -75,8 +75,8 @@ function BlogClient({ posts, categories }: BlogClientProps) {
                 whileTap={{ scale: 0.95 }}
                 className={`px-6 py-2 rounded-full font-semibold transition-all duration-300 ${
                   category === "All"
-                    ? "bg-orange-500 text-white"
-                    : "bg-white/10 text-gray-300 hover:bg-white/20 hover:text-white"
+                    ? "bg-black text-white"
+                    : "bg-gray-300 text-black hover:bg-black hover:text-white"
                 }`}
               >
                 {category}
@@ -95,14 +95,14 @@ function BlogClient({ posts, categories }: BlogClientProps) {
             transition={{ duration: 0.8, delay: 0.8 }}
             className="mb-12"
           >
-            <h2 className="text-3xl font-bold text-white mb-8">Featured Article</h2>
+            <h2 className="text-3xl font-bold text-black mb-8 text-left">Featured Article</h2>
             {(() => {
               const featuredPost = allBlogPosts.find(post => post.featured);
               return featuredPost ? (
                 <Link href={`/blog/${featuredPost.slug}`}>
                   <motion.article
                     whileHover={{ y: -5 }}
-                    className="bg-white/5 backdrop-blur-sm rounded-2xl overflow-hidden border border-white/10 hover:bg-white/10 hover:border-orange-500/50 transition-all duration-300 cursor-pointer"
+                    className="bg-white/5 backdrop-blur-sm rounded-2xl overflow-hidden border border-black hover:bg-orange-100 hover:border-orange-400 transition-all duration-300 cursor-pointer"
                   >
                     <div className="grid md:grid-cols-2 gap-0">
                       <div className="relative h-64 md:h-full">
@@ -121,14 +121,14 @@ function BlogClient({ posts, categories }: BlogClientProps) {
                           </span>
                         </div>
                       </div>
-                      <div className="p-8 flex flex-col justify-center">
-                        <h3 className="text-2xl md:text-3xl font-bold text-white mb-4">
+                      <div className="p-8 flex flex-col justify-center text-left">
+                        <h3 className="text-2xl md:text-3xl font-bold text-gray-900 mb-4">
                           {featuredPost.title}
                         </h3>
-                        <p className="text-gray-300 leading-relaxed mb-6">
+                        <p className="text-gray-700 leading-relaxed mb-6 text-left">
                           {featuredPost.excerpt}
                         </p>
-                        <div className="flex items-center justify-between text-sm text-gray-400 mb-6">
+                        <div className="flex items-center justify-between text-sm text-gray-600 mb-6">
                           <div className="flex items-center space-x-4">
                             <div className="flex items-center space-x-1">
                               <User className="w-4 h-4" />
@@ -144,7 +144,7 @@ function BlogClient({ posts, categories }: BlogClientProps) {
                             </div>
                           </div>
                         </div>
-                        <div className="flex items-center text-orange-400 font-semibold">
+                        <div className="flex items-center text-gray-700 font-semibold hover:text-gray-900 transition-colors">
                           <span>Read Full Article</span>
                           <ArrowRight className="w-4 h-4 ml-2" />
                         </div>
@@ -165,7 +165,7 @@ function BlogClient({ posts, categories }: BlogClientProps) {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 1 }}
-            className="text-3xl font-bold text-white mb-12"
+            className="text-3xl font-bold text-black mb-12 text-left"
           >
             All Articles
           </motion.h2>
@@ -178,7 +178,7 @@ function BlogClient({ posts, categories }: BlogClientProps) {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: 1.1 + index * 0.1 }}
                 whileHover={{ y: -5 }}
-                className="bg-white/5 backdrop-blur-sm rounded-xl overflow-hidden border border-white/10 hover:bg-white/10 hover:border-orange-500/50 transition-all duration-300 group cursor-pointer"
+                className="bg-white/5 backdrop-blur-sm rounded-xl overflow-hidden border border-black hover:bg-orange-100 hover:border-orange-400 transition-all duration-300 group cursor-pointer"
               >
                 <Link href={`/blog/${post.slug}`}>
                   <div className="relative h-48 overflow-hidden">
@@ -197,15 +197,15 @@ function BlogClient({ posts, categories }: BlogClientProps) {
                     </div>
                   </div>
                   
-                  <div className="p-6">
-                    <h3 className="text-xl font-semibold text-white mb-3 group-hover:text-orange-400 transition-colors line-clamp-2">
+                  <div className="p-6 text-left break-words">
+                    <h3 className="text-xl font-semibold text-gray-900 mb-3 group-hover:text-gray-700 transition-colors line-clamp-2 text-left">
                       {post.title}
                     </h3>
-                    <p className="text-gray-300 leading-relaxed mb-4 line-clamp-3">
+                    <p className="text-gray-700 leading-relaxed mb-4 line-clamp-3 text-left">
                       {post.excerpt}
                     </p>
                     
-                    <div className="flex items-center justify-between text-sm text-gray-400 mb-4">
+                    <div className="flex items-center justify-between text-sm text-gray-600 mb-4">
                       <div className="flex items-center space-x-4">
                         <div className="flex items-center space-x-1">
                           <User className="w-4 h-4" />
@@ -219,7 +219,7 @@ function BlogClient({ posts, categories }: BlogClientProps) {
                       <span>{post.readTime}</span>
                     </div>
                     
-                    <div className="flex items-center text-orange-400 font-semibold group-hover:text-orange-300 transition-colors">
+                    <div className="flex items-center text-gray-700 font-semibold group-hover:text-gray-900 transition-colors">
                       <span>Read More</span>
                       <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />
                     </div>
@@ -232,7 +232,7 @@ function BlogClient({ posts, categories }: BlogClientProps) {
       </section>
 
       {/* Newsletter Signup */}
-      <section className="py-16 px-4 border-t border-white/10">
+      <section className="py-16 px-4 border-t border-black">
         <div className="container mx-auto text-center">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -240,17 +240,17 @@ function BlogClient({ posts, categories }: BlogClientProps) {
             transition={{ duration: 0.8, delay: 1.5 }}
             className="max-w-2xl mx-auto"
           >
-            <h2 className="text-3xl font-bold text-white mb-4">
+            <h2 className="text-3xl font-bold text-black mb-4">
               Stay Updated
             </h2>
-            <p className="text-gray-300 mb-8">
+            <p className="text-black mb-8">
               Get the latest insights and strategies delivered to your inbox.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 max-w-md mx-auto">
               <input
                 type="email"
                 placeholder="Enter your email"
-                className="flex-1 px-4 py-3 bg-white/10 border border-white/20 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:border-orange-500 focus:bg-white/20 transition-all duration-300"
+                className="flex-1 px-4 py-3 bg-white/10 border border-black rounded-lg text-black placeholder-gray-500 focus:outline-none focus:border-orange-500 focus:bg-white/20 transition-all duration-300"
               />
               <motion.button
                 whileHover={{ scale: 1.05 }}

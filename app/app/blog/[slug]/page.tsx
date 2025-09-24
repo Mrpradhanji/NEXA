@@ -1,12 +1,12 @@
 "use client";
 
-import React from 'react';
-import Image from 'next/image';
-import Link from 'next/link';
-import { Calendar, Clock, ArrowLeft, Tag } from 'lucide-react';
-import { format } from 'date-fns';
-import { getPostBySlug, getRelatedPosts } from '../data';
-import { MarkdownRenderer } from '../../components/MarkdownRenderer';
+import React from "react";
+import Image from "next/image";
+import Link from "next/link";
+import { Calendar, Clock, ArrowLeft, Tag } from "lucide-react";
+import { format } from "date-fns";
+import { getPostBySlug, getRelatedPosts } from "../data";
+import { MarkdownRenderer } from "../../components/MarkdownRenderer";
 
 interface Props {
   params: Promise<{ slug: string }>;
@@ -21,9 +21,11 @@ export default function BlogPostPage({ params }: Props) {
     return (
       <div className="min-h-screen flex flex-col items-center justify-center bg-black text-white p-4">
         <h1 className="text-3xl font-bold mb-4">Post Not Found</h1>
-        <p className="text-gray-300 mb-6">The requested blog post could not be found.</p>
-        <Link 
-          href="/blog" 
+        <p className="text-gray-300 mb-6">
+          The requested blog post could not be found.
+        </p>
+        <Link
+          href="/blog"
           className="px-6 py-2 bg-orange-500 text-white rounded-lg hover:bg-orange-600 transition-colors flex items-center"
         >
           <ArrowLeft className="w-4 h-4 mr-2" />
@@ -33,27 +35,28 @@ export default function BlogPostPage({ params }: Props) {
     );
   }
 
-  const formattedDate = format(new Date(post.date), 'MMMM d, yyyy');
+  const formattedDate = format(new Date(post.date), "MMMM d, yyyy");
 
   return (
-    <div className="min-h-screen bg-black text-white">
+    <div className="min-h-screen bg-black text-white overflow-x-hidden">
       {/* Header */}
       <header className="bg-gradient-to-r from-gray-900 to-black py-16 px-4">
         <div className="container mx-auto max-w-5xl">
-          <Link 
-            href="/blog" 
+          <Link
+            href="/blog"
             className="inline-flex items-center text-orange-400 hover:text-orange-300 mb-8 transition-colors"
           >
             <ArrowLeft className="w-4 h-4 mr-2" />
             Back to Blog
           </Link>
-          
+
+          {/* Tags */}
           <div className="flex flex-wrap gap-2 mb-6">
             <span className="px-3 py-1 bg-orange-500 text-white text-sm font-medium rounded-full">
               {post.category}
             </span>
             {post.tags.map((tag) => (
-              <span 
+              <span
                 key={tag}
                 className="px-3 py-1 bg-white/10 text-white/80 text-sm font-medium rounded-full flex items-center"
               >
@@ -62,10 +65,13 @@ export default function BlogPostPage({ params }: Props) {
               </span>
             ))}
           </div>
-          
-          <h1 className="text-4xl md:text-5xl font-bold mb-6">{post.title}</h1>
-          
+
+          <h1 className="text-4xl md:text-5xl font-bold mb-6 text-left">
+            {post.title}
+          </h1>
+
           <div className="flex flex-wrap items-center gap-6 text-gray-300 text-sm">
+            {/* Author */}
             <div className="flex items-center">
               <div className="w-10 h-10 rounded-full bg-white/10 mr-3 overflow-hidden">
                 <Image
@@ -81,10 +87,14 @@ export default function BlogPostPage({ params }: Props) {
                 <p className="text-xs text-gray-400">{post.author.role}</p>
               </div>
             </div>
+
+            {/* Date */}
             <div className="flex items-center">
               <Calendar className="w-4 h-4 mr-2 text-orange-400" />
               {formattedDate}
             </div>
+
+            {/* Read Time */}
             <div className="flex items-center">
               <Clock className="w-4 h-4 mr-2 text-orange-400" />
               {post.readTime}
@@ -94,7 +104,7 @@ export default function BlogPostPage({ params }: Props) {
       </header>
 
       {/* Main Content */}
-      <main className="container mx-auto max-w-4xl px-4 py-12">
+      <main className="container mx-auto max-w-4xl px-4 py-12 text-left break-words overflow-x-hidden">
         <div className="relative w-full h-96 md:h-[500px] rounded-xl overflow-hidden mb-12">
           <Image
             src={post.image}
@@ -105,7 +115,7 @@ export default function BlogPostPage({ params }: Props) {
           />
         </div>
 
-        <article className="prose prose-invert max-w-none">
+        <article className="prose prose-invert max-w-none text-left break-words">
           <MarkdownRenderer content={post.content} />
         </article>
 
@@ -121,13 +131,30 @@ export default function BlogPostPage({ params }: Props) {
                 className="object-cover w-full h-full"
               />
             </div>
-            <div>
-              <h3 className="text-xl font-bold mb-2">About {post.author.name.split(' ')[0]}</h3>
+            <div className="text-left">
+              <h3 className="text-xl font-bold mb-2">
+                About {post.author.name.split(" ")[0]}
+              </h3>
               <p className="text-gray-300 mb-3">{post.author.bio}</p>
               <div className="flex space-x-4">
-                <a href="#" className="text-orange-400 hover:text-orange-300 transition-colors">Twitter</a>
-                <a href="#" className="text-orange-400 hover:text-orange-300 transition-colors">LinkedIn</a>
-                <a href="#" className="text-orange-400 hover:text-orange-300 transition-colors">Website</a>
+                <a
+                  href="#"
+                  className="text-orange-400 hover:text-orange-300 transition-colors"
+                >
+                  Twitter
+                </a>
+                <a
+                  href="#"
+                  className="text-orange-400 hover:text-orange-300 transition-colors"
+                >
+                  LinkedIn
+                </a>
+                <a
+                  href="#"
+                  className="text-orange-400 hover:text-orange-300 transition-colors"
+                >
+                  Website
+                </a>
               </div>
             </div>
           </div>
@@ -139,8 +166,8 @@ export default function BlogPostPage({ params }: Props) {
             <h2 className="text-2xl font-bold mb-8">You Might Also Like</h2>
             <div className="grid md:grid-cols-2 gap-8">
               {relatedPosts.map((relatedPost) => (
-                <Link 
-                  key={relatedPost.id} 
+                <Link
+                  key={relatedPost.id}
                   href={`/blog/${relatedPost.slug}`}
                   className="group block"
                 >
@@ -162,17 +189,17 @@ export default function BlogPostPage({ params }: Props) {
                       </p>
                       <div className="flex items-center text-sm text-orange-400">
                         Read more
-                        <svg 
-                          className="w-4 h-4 ml-1 transition-transform group-hover:translate-x-1" 
-                          fill="none" 
-                          viewBox="0 0 24 24" 
+                        <svg
+                          className="w-4 h-4 ml-1 transition-transform group-hover:translate-x-1"
+                          fill="none"
+                          viewBox="0 0 24 24"
                           stroke="currentColor"
                         >
-                          <path 
-                            strokeLinecap="round" 
-                            strokeLinejoin="round" 
-                            strokeWidth={2} 
-                            d="M9 5l7 7-7 7" 
+                          <path
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                            strokeWidth={2}
+                            d="M9 5l7 7-7 7"
                           />
                         </svg>
                       </div>
@@ -187,22 +214,22 @@ export default function BlogPostPage({ params }: Props) {
 
       {/* Back to top */}
       <div className="fixed bottom-8 right-8">
-        <button 
-          onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+        <button
+          onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
           className="p-3 bg-orange-500 rounded-full hover:bg-orange-600 transition-colors shadow-lg"
           aria-label="Back to top"
         >
-          <svg 
-            className="w-5 h-5" 
-            fill="none" 
-            viewBox="0 0 24 24" 
+          <svg
+            className="w-5 h-5"
+            fill="none"
+            viewBox="0 0 24 24"
             stroke="currentColor"
           >
-            <path 
-              strokeLinecap="round" 
-              strokeLinejoin="round" 
-              strokeWidth={2} 
-              d="M5 15l7-7 7 7" 
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              strokeWidth={2}
+              d="M5 15l7-7 7 7"
             />
           </svg>
         </button>
