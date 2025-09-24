@@ -38,7 +38,7 @@ const Menu = () => {
     };
     window.addEventListener('keydown', handleKey);
     return () => window.removeEventListener('keydown', handleKey);
-  }, [isOpen]);
+  }, [isOpen, toggleMenu]);
 
   // Remove body lock on unmount
   useEffect(() => {

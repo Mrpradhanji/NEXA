@@ -5,6 +5,7 @@ import ReactMarkdown from 'react-markdown';
 import remarkGfm from 'remark-gfm';
 import { Highlight, themes } from 'prism-react-renderer';
 import { type ReactNode } from 'react';
+import Image from 'next/image';
 
 // Use the built-in theme from prism-react-renderer
 const vscDarkPlus = themes.vsDark;
@@ -14,27 +15,20 @@ interface MarkdownRendererProps {
 }
 
 interface CodeProps {
-  node?: any;
   inline?: boolean;
   className?: string;
   children?: ReactNode;
-  [key: string]: any;
 }
 
 interface ImageProps {
-  node?: any;
   alt?: string;
   src?: string | Blob;
   className?: string;
-  style?: React.CSSProperties;
-  [key: string]: any;
 }
 
 interface LinkProps {
-  node?: any;
   href?: string;
   children?: ReactNode;
-  [key: string]: any;
 }
 
 export function MarkdownRenderer({ content }: MarkdownRendererProps) {
@@ -43,7 +37,7 @@ export function MarkdownRenderer({ content }: MarkdownRendererProps) {
       <ReactMarkdown
         remarkPlugins={[remarkGfm]}
         components={{
-          code({ node, inline, className, children, ...props }: CodeProps) {
+          code({ inline, className, children }: CodeProps) {
             const match = /language-(\w+)/.exec(className || '');
             return !inline && match ? (
               <div className="rounded-md overflow-hidden my-4 shadow-lg">
@@ -72,31 +66,34 @@ export function MarkdownRenderer({ content }: MarkdownRendererProps) {
             ) : (
               <code
                 className={`bg-gray-100 dark:bg-gray-800 text-gray-800 dark:text-gray-200 px-1 rounded font-mono break-words ${className || ''}`}
-                {...props}
               >
                 {children}
               </code>
             );
           },
-          img: ({ node, alt, ...props }: ImageProps) => (
+          img: ({ alt, src, className }: ImageProps) => (
             <div className="my-6">
-              <img
-                {...props}
-                className="rounded-lg shadow-lg w-full h-auto max-w-full"
+              <Image
+                src={src as string || ''}
                 alt={alt || 'Blog post image'}
+                width={800}
+                height={400}
+                className={`rounded-lg shadow-lg w-full h-auto max-w-full ${className || ''}`}
               />
               {alt && (
                 <p className="text-center text-sm text-gray-500 mt-2">{alt}</p>
               )}
             </div>
           ),
-          a: ({ node, ...props }: LinkProps) => (
+          a: ({ href, children }: LinkProps) => (
             <a
-              {...props}
+              href={href}
               target="_blank"
               rel="noopener noreferrer"
               className="text-blue-600 hover:text-blue-800 dark:text-blue-400 dark:hover:text-blue-300 underline break-words break-all"
-            />
+            >
+              {children}
+            </a>
           ),
         }}
       >
