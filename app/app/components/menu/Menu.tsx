@@ -3,14 +3,11 @@ import React, { useState, useRef, useEffect } from 'react';
 import './menu.css';
 import Link from 'next/link';
 import gsap from 'gsap';
-import { useGSAP } from '@gsap/react';
-gsap.registerPlugin(useGSAP);
 
 const menuLinks = [
   { name: 'Home', href: '/' },
   { name: 'Services', href: '/services' },
   { name: 'Industry', href: '/industry' },
-  { name: 'Blogs', href: '/blog' },
   { name: 'About', href: '/about' },
   { name: 'Our Works', href: '/our-works' },
   { name: 'Contact', href: '/contact' },
@@ -38,7 +35,7 @@ const Menu = () => {
     };
     window.addEventListener('keydown', handleKey);
     return () => window.removeEventListener('keydown', handleKey);
-  }, [isOpen, toggleMenu]);
+  }, [isOpen]);
 
   // Remove body lock on unmount
   useEffect(() => {
@@ -47,61 +44,59 @@ const Menu = () => {
     };
   }, []);
 
-  useGSAP(
-    () => {
-      const q = gsap.utils.selector(container);
-      const closed = 'polygon(0% 0%, 100% 0%, 100% 0%, 0% 0%)';
-      const open = 'polygon(0% 0%,100% 0%, 100% 100%, 0% 100%)';
+  // GSAP Animation Setup
+  useEffect(() => {
+    if (!container.current) return;
 
-      gsap.set(q('.menu-link-item-holder'), { y: 75, opacity: 0 });
-      gsap.set(q('.menu-info, .menu-preview'), { y: 30, opacity: 0 });
-      gsap.set(q('.menu-overlay'), { clipPath: closed });
+    const q = gsap.utils.selector(container);
+    const closed = 'polygon(0% 0%, 100% 0%, 100% 0%, 0% 0%)';
+    const open = 'polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%)';
 
-      tl.current = gsap
-        .timeline({ paused: true })
-        .fromTo(
-          q('.menu-overlay'),
-          { clipPath: closed },
-          { clipPath: open, duration: 1, ease: 'power4.inOut' }
-        )
-        .to(
-          q('.menu-link-item-holder'),
-          {
-            y: 0,
-            opacity: 1,
-            duration: 0.9,
-            stagger: 0.08,
-            ease: 'power4.out',
-          },
-          '<0.25'
-        )
-        .to(
-          q('.menu-info, .menu-preview'),
-          { y: 0, opacity: 1, duration: 0.6, ease: 'power3.out' },
-          '-=0.3'
-        );
+    gsap.set(q('.menu-link-item-holder'), { y: 75, opacity: 0 });
+    gsap.set(q('.menu-info, .menu-preview'), { y: 30, opacity: 0 });
+    gsap.set(q('.menu-overlay'), { clipPath: closed, pointerEvents: 'none' });
 
-      // pointer-events reset after reverse
-      tl.current.eventCallback('onReverseComplete', () => {
-        gsap.set(q('.menu-overlay'), { pointerEvents: 'none' });
-      });
-    },
-    { scope: container }
-  );
+    tl.current = gsap
+      .timeline({ paused: true })
+      .to(q('.menu-overlay'), {
+        clipPath: open,
+        duration: 1,
+        ease: 'power4.inOut',
+        pointerEvents: 'auto',
+      })
+      .to(
+        q('.menu-link-item-holder'),
+        {
+          y: 0,
+          opacity: 1,
+          duration: 0.9,
+          stagger: 0.08,
+          ease: 'power4.out',
+        },
+        '<0.25'
+      )
+      .to(
+        q('.menu-info, .menu-preview'),
+        { y: 0, opacity: 1, duration: 0.6, ease: 'power3.out' },
+        '-=0.3'
+      );
 
+    tl.current.eventCallback('onReverseComplete', () => {
+      gsap.set(q('.menu-overlay'), { pointerEvents: 'none' });
+    });
+  }, []);
+
+  // Play or reverse timeline
   useEffect(() => {
     const timeline = tl.current;
     if (!timeline) return;
 
     if (isOpen) {
       gsap.set('.menu-overlay', { pointerEvents: 'auto' });
-
-      // Focus trap: focus first link
       const firstLink = overlayRef.current?.querySelector<HTMLElement>(
         '.menu-link-item-holder a'
       );
       firstLink?.focus();
-
       timeline.play();
     } else {
       timeline.reverse();
@@ -121,15 +116,17 @@ const Menu = () => {
           aria-expanded={isOpen}
           role="button"
           tabIndex={0}
-          onKeyDown={(e) => (e.key === 'Enter' || e.key === ' ') && toggleMenu()}
+          onKeyDown={(e) =>
+            (e.key === 'Enter' || e.key === ' ') && toggleMenu()
+          }
         >
-          <p>Menu</p>
+          <p>MENU</p>
         </div>
       </div>
 
       {/* Overlay */}
       <div className="menu-overlay" ref={overlayRef}>
-        {/* Top Bar */}
+        {/* Top Bar in overlay */}
         <div className="menu-overlay-bar">
           <div className="menu-logo">
             <Link href="/">PLANTUSMEDIA</Link>
@@ -147,7 +144,7 @@ const Menu = () => {
           </div>
         </div>
 
-        {/* Links Section (centered) */}
+        {/* Links Section */}
         <div className="menu-links">
           {menuLinks.map((link, index) => (
             <div className="menu-link-item" key={index}>
@@ -160,63 +157,6 @@ const Menu = () => {
           ))}
         </div>
 
-        {/* Info & Social Section */}
-        <div className="menu-info">
-          <div className="menu-info-col">
-            <p>
-              <a href="mailto:hello@plantusmedia.com">
-                hello@plantusmedia.com
-              </a>
-            </p>
-            <p>
-              <a href="tel:+441204669566">+44 (0)1204 669566</a>
-            </p>
-          </div>
-          <div className="menu-info-col social-row">
-            <a
-              href="https://linkedin.com/company/plantusmedia"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              LinkedIn ↗
-            </a>
-            <a
-              href="https://instagram.com/plantusmedia"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Instagram ↗
-            </a>
-            <a
-              href="https://youtube.com/@plantusmedia"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              YouTube ↗
-            </a>
-            <a
-              href="https://behance.net/plantusmedia"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Behance ↗
-            </a>
-            <a
-              href="https://dribbble.com/plantusmedia"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Dribbble ↗
-            </a>
-          </div>
-        </div>
-
-        {/* Preview */}
-        <div className="menu-preview">
-          <Link href="/our-works">
-            <p>View Showreel</p>
-          </Link>
-        </div>
       </div>
     </div>
   );
