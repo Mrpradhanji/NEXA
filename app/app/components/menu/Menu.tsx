@@ -1,8 +1,10 @@
 'use client';
 import React, { useState, useRef, useEffect } from 'react';
-import './menu.css';
+import Image from 'next/image';
 import Link from 'next/link';
 import gsap from 'gsap';
+import { motion } from 'framer-motion';
+import './menu.css';
 
 const menuLinks = [
   { name: 'Home', href: '/' },
@@ -53,7 +55,6 @@ const Menu = () => {
     const open = 'polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%)';
 
     gsap.set(q('.menu-link-item-holder'), { y: 75, opacity: 0 });
-    gsap.set(q('.menu-info, .menu-preview'), { y: 30, opacity: 0 });
     gsap.set(q('.menu-overlay'), { clipPath: closed, pointerEvents: 'none' });
 
     tl.current = gsap
@@ -74,11 +75,6 @@ const Menu = () => {
           ease: 'power4.out',
         },
         '<0.25'
-      )
-      .to(
-        q('.menu-info, .menu-preview'),
-        { y: 0, opacity: 1, duration: 0.6, ease: 'power3.out' },
-        '-=0.3'
       );
 
     tl.current.eventCallback('onReverseComplete', () => {
@@ -108,7 +104,15 @@ const Menu = () => {
       {/* Top bar */}
       <div className="menu-bar">
         <div className="menu-logo">
-          <Link href="/">PLANTUSMEDIA</Link>
+          <Link href="/">
+            <Image
+              src="/images/logo.png"
+              alt="PlantusMedia Logo"
+              width={110}
+              height={40}
+              priority
+            />
+          </Link>
         </div>
         <div
           className="menu-open"
@@ -129,7 +133,15 @@ const Menu = () => {
         {/* Top Bar in overlay */}
         <div className="menu-overlay-bar">
           <div className="menu-logo">
-            <Link href="/">PLANTUSMEDIA</Link>
+            <Link href="/">
+              <Image
+                src="/images/logo.png"
+                alt="PlantusMedia Logo"
+                width={150}
+                height={50}
+                priority
+              />
+            </Link>
           </div>
           <div
             className="menu-close"
@@ -156,7 +168,6 @@ const Menu = () => {
             </div>
           ))}
         </div>
-
       </div>
     </div>
   );

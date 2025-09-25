@@ -18,7 +18,7 @@
     "framer-motion": "^12.23.12",
     "gsap": "^3.13.0",
     "lucide-react": "^0.544.0",
-    "motion": "^12.23.12",
+    "motion": "^12.23.21",
     "next": "15.5.3",
     "prism-react-renderer": "^2.4.1",
     "react": "19.1.0",

@@ -1,5 +1,5 @@
 "use client";
-import { CardSpotlight } from "./ui/card-spotlight";
+import { CometCard } from "./ui/comet-card";
 import { motion } from "framer-motion";
 
 export function Services() {
@@ -51,8 +51,23 @@ export function Services() {
     },
   ];
 
+  // Motion variants for staggered animation
+  const containerVariants = {
+    hidden: {},
+    visible: {
+      transition: {
+        staggerChildren: 0.1,
+      },
+    },
+  };
+
+  const cardVariants = {
+    hidden: { opacity: 0, y: 40 },
+    visible: { opacity: 1, y: 0, transition: { duration: 0.5, ease: "easeOut" } },
+  };
+
   return (
-    <div className="flex flex-col items-center justify-center space-y-10 py-24 px-4">
+    <div className="flex flex-col items-center justify-center space-y-16 py-24 px-4">
       {/* Animated Heading */}
       <motion.h2
         initial={{ opacity: 0, y: 40 }}
@@ -65,21 +80,32 @@ export function Services() {
       </motion.h2>
 
       {/* Grid for Cards */}
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+      <motion.div
+        className="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
+        variants={containerVariants}
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true }}
+      >
         {services.map((service, index) => (
-          <CardSpotlight
-            key={index}
-            className="w-80 bg-white border border-black hover:bg-orange-100 hover:border-orange-600 transition-all duration-300"
-          >
-            <p className="text-xl font-bold relative z-20 mt-2 text-orange-600">
-              {service.title}
-            </p>
-            <div className="text-black mt-4 relative z-20 leading-relaxed">
-              {service.description}
-            </div>
-          </CardSpotlight>
+          <motion.div key={index} variants={cardVariants}>
+            <CometCard>
+              <button
+                type="button"
+                className="flex w-full flex-col items-stretch rounded-[16px] border border-black bg-white p-4 transition-transform duration-500 ease-out hover:bg-orange-100 hover:scale-105 hover:-translate-y-2 hover:shadow-2xl"
+                aria-label={service.title}
+              >
+                <div className="flex flex-col">
+                  <p className="text-xl font-bold text-orange-600">{service.title}</p>
+                  <div className="mt-2 text-sm text-gray-800 leading-relaxed">
+                    {service.description}
+                  </div>
+                </div>
+              </button>
+            </CometCard>
+          </motion.div>
         ))}
-      </div>
+      </motion.div>
     </div>
   );
 }
