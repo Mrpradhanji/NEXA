@@ -3,7 +3,6 @@ import React, { useState, useRef, useEffect } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 import gsap from 'gsap';
-import { motion } from 'framer-motion';
 import './menu.css';
 
 const menuLinks = [

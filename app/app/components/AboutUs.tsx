@@ -17,7 +17,7 @@ export default function AboutUs() {
           >
             {/* Heading */}
             <div className="space-y-6 mb-8 lg:mb-0">
-              <h2 className="text-4xl sm:text-5xl font-bold text-black leading-tight text-orange-600">
+              <h2 className="text-4xl sm:text-5xl font-bold leading-tight text-orange-600">
                 About PLANTUSMEDIA
               </h2>
               <div className="w-20 h-0.5 bg-white/30 mx-auto lg:mx-0"></div>
