@@ -77,22 +77,11 @@
 }
 
 .menu-link-item-holder a {
-  color: #fff;
-  font-size: clamp(2rem, 8vw, 4.5rem);
-  font-weight: 700;
-  line-height: 1.1;
   text-decoration: none;
-  display: inline-block;
-  transition: opacity 0.3s ease, transform 0.3s ease;
 }
 
-.menu-link-item-holder a:hover {
-  opacity: 0.8;
-  transform: translateY(-2px);
-}
-
-.menu-link-item-holder a:active {
-  opacity: 0.7;
+.menu-link {
+  text-decoration: none;
 }
 
 /* Info Section */

@@ -3,8 +3,8 @@ import React from "react";
 import { motion } from "framer-motion";
 import ClientsMarquee from "../components/ClientsMarquee";
 import Footer from "../components/Footer";
-import { LampContainer } from "../components/ui/lamp";
 import CTAButton from "../components/Button";
+import ParticleRing from "../components/ParticleRing";
 
 export default function ServicesPage() {
   const serviceCategories = [
@@ -81,16 +81,11 @@ export default function ServicesPage() {
       {/* Hero Section */}
       <section className="py-0 px-4 bg-black relative overflow-hidden">
         <div className="container mx-auto text-center relative z-10">
-          <LampContainer>
-            <p className="text-4xl md:text-2xl text-white max-w-3xl mx-auto mb-6">
-              Helping businesses like yours achieve their goals since 2018. We
-              combine creativity, technology, and strategy to deliver measurable
-              results.
-            </p>
-            <div>
-              <CTAButton label="Get Started" />
-            </div>
-          </LampContainer>
+          <div className="relative w-full h-[90vh]">
+            <ParticleRing />
+
+          </div>
+
         </div>
 
         {/* Optional gradient overlay */}

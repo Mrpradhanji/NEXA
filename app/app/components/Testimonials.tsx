@@ -1,119 +1,55 @@
 "use client";
-import { motion } from "framer-motion";
-import { AnimatedTestimonials } from "./ui/animated-testimonial";
-import IndustriesGrid from "./Grid"; // industries grid we built earlier
-import CTAButton from "./Button"; // make sure this is your Button component
 
-const stats = [
-  { label: "Clients Served", value: "500+" },
-  { label: "Years of Experience", value: "15+" },
-  { label: "Countries Reached", value: "10+" },
-];
+import React from "react";
+import { InfiniteMovingCards } from "./ui/infinite-moving-cards";
 
-export function AnimatedTestimonialsDemo() {
-  const testimonials = [
-    {
-      quote:
-        "Our process has been totally revolutionized by the creative features and meticulous attention to detail. This is just what we have been seeking.",
-      name: "Sarah Chen",
-      designation: "Product Manager at TechFlow",
-      src: "https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?q=80&w=3560&auto=format&fit=crop",
-    },
-    {
-      quote:
-        "Implementation was seamless and the results exceeded our expectations. The platform's flexibility is remarkable.",
-      name: "Michael Rodriguez",
-      designation: "CTO at InnovateSphere",
-      src: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?q=80&w=3540&auto=format&fit=crop",
-    },
-    {
-      quote:
-        "The productivity of our staff has increased dramatically as a result of this approach. Complicated tasks are made simple by the user-friendly UI.",
-      name: "Emily Watson",
-      designation: "Operations Director at CloudScale",
-      src: "https://images.unsplash.com/photo-1623582854588-d60de57fa33f?q=80&w=3540&auto=format&fit=crop",
-    },
-    {
-      quote:
-        "Outstanding support and robust features. It's rare to find a product that delivers on all its promises.",
-      name: "James Kim",
-      designation: "Engineering Lead at DataPro",
-      src: "https://images.unsplash.com/photo-1636041293178-808a6762ab39?q=80&w=3464&auto=format&fit=crop",
-    },
-    {
-      quote:
-        "The scalability and performance have been game-changing for our organization. Highly recommend to any growing business.",
-      name: "Lisa Thompson",
-      designation: "VP of Technology at FutureNet",
-      src: "https://images.unsplash.com/photo-1624561172888-ac93c696e10c?q=80&w=2592&auto=format&fit=crop",
-    },
-  ];
-
+export function InfiniteMovingCardsDemo() {
   return (
-    <section className="relative py-20 bg-white overflow-hidden">
-      {/* Background flair */}
-      <div className="absolute inset-0 -z-10">
-        <div className="absolute top-20 left-1/4 w-72 h-72 bg-orange-600/20 blur-[120px] rounded-full" />
-        <div className="absolute bottom-20 right-1/4 w-72 h-72 bg-purple-600/20 blur-[120px] rounded-full" />
-      </div>
+    <div className="w-full h-[40rem] flex flex-col antialiased bg-black dark:bg-white dark:bg-grid-orange/[0.5] items-center justify-center relative overflow-hidden">
+      {/* Heading */}
+      <h2 className="text-4xl sm:text-5xl font-bold text-black text-center mb-10">
+        What Our Client&apos;s Say
+      </h2>
 
-      <div className="max-w-6xl mx-auto px-6 text-center">
-        {/* Industries Heading */}
-        <motion.h2
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
-          viewport={{ once: true }}
-          className="text-3xl md:text-4xl font-bold text-black mb-4"
-        >
-          We have extensive experience in the following industries
-        </motion.h2>
-        <p className="text-black max-w-2xl mx-auto mb-10">
-          Our solutions span across multiple domains, enabling us to deliver specialized results tailored to your business needs.
-        </p>
-
-        {/* Industries Grid */}
-        <IndustriesGrid />
-
-        {/* Stats Section */}
-        <div className="grid grid-cols-1 sm:grid-cols-3 gap-8 mt-20">
-          {stats.map((stat, i) => (
-            <motion.div
-              key={i}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ delay: i * 0.2, duration: 0.6 }}
-              viewport={{ once: true }}
-              className="flex flex-col items-center"
-            >
-              <span className="text-4xl font-bold text-orange-600">{stat.value}</span>
-              <span className="text-black mt-2">{stat.label}</span>
-            </motion.div>
-          ))}
-        </div>
-
-        {/* Testimonials Heading */}
-        <motion.h2
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
-          viewport={{ once: true }}
-          className="text-3xl md:text-4xl font-bold text-black mt-20 mb-4"
-        >
-          What Our Clients Say
-        </motion.h2>
-        <p className="text-black max-w-2xl mx-auto mb-10">
-          Don’t just take our word for it — see how we’ve helped businesses thrive across various industries.
-        </p>
-
-        {/* Testimonials */}
-        <AnimatedTestimonials testimonials={testimonials} />
-
-        {/* CTA - Type 1 Button */}
-        <div className="mt-16">
-          <CTAButton label="Get Started Today" type="1" href="/contact" />
-        </div>
-      </div>
-    </section>
+      <InfiniteMovingCards
+        items={testimonials}
+        direction="left"
+        speed="slow"
+        pauseOnHover={true}
+        className="w-full"
+      />
+    </div>
   );
 }
+
+const testimonials = [
+  {
+    quote:
+      "It was the best of times, it was the worst of times, it was the age of wisdom, it was the age of foolishness, it was the epoch of belief, it was the epoch of incredulity, it was the season of Light, it was the season of Darkness, it was the spring of hope, it was the winter of despair.",
+    name: "Charles Dickens",
+    title: "A Tale of Two Cities",
+  },
+  {
+    quote:
+      "To be, or not to be, that is the question: Whether 'tis nobler in the mind to suffer The slings and arrows of outrageous fortune, Or to take Arms against a Sea of troubles, And by opposing end them: to die, to sleep.",
+    name: "William Shakespeare",
+    title: "Hamlet",
+  },
+  {
+    quote: "All that we see or seem is but a dream within a dream.",
+    name: "Edgar Allan Poe",
+    title: "A Dream Within a Dream",
+  },
+  {
+    quote:
+      "It is a truth universally acknowledged, that a single man in possession of a good fortune, must be in want of a wife.",
+    name: "Jane Austen",
+    title: "Pride and Prejudice",
+  },
+  {
+    quote:
+      "Call me Ishmael. Some years ago—never mind how long precisely—having little or no money in my purse, and nothing particular to interest me on shore, I thought I would sail about a little and see the watery part of the world.",
+    name: "Herman Melville",
+    title: "Moby-Dick",
+  },
+];

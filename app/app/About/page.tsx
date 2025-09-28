@@ -1,5 +1,6 @@
 "use client";
 import React, { useRef } from "react";
+import Link from "next/link";
 import {
   Lightbulb,
   Star,
@@ -10,7 +11,7 @@ import {
 } from "lucide-react";
 import { motion, useScroll, useSpring } from "framer-motion";
 import AboutUs from "../components/AboutUs";
-import { AnimatedTestimonialsDemo } from "../components/Testimonials";
+import { InfiniteMovingCardsDemo } from "../components/Testimonials";
 import ClientsMarquee from "../components/ClientsMarquee";
 import Footer from "../components/Footer";
 import CTAButton from "../components/Button";
@@ -36,7 +37,11 @@ export default function AboutPage() {
       role: "CEO & Founder",
       bio: "With over 15 years in digital marketing, Sarah leads our strategic vision and client relationships.",
       image: "/images/hero-image.jpg",
-      expertise: ["Strategic Planning", "Client Relations", "Business Development"],
+      expertise: [
+        "Strategic Planning",
+        "Client Relations",
+        "Business Development",
+      ],
     },
     {
       name: "Michael Chen",
@@ -50,7 +55,11 @@ export default function AboutPage() {
       role: "Technical Lead",
       bio: "Alex ensures our technical solutions are robust, scalable, and deliver exceptional user experiences.",
       image: "/images/hero-image.jpg",
-      expertise: ["Web Development", "Technical Architecture", "Performance Optimization"],
+      expertise: [
+        "Web Development",
+        "Technical Architecture",
+        "Performance Optimization",
+      ],
     },
     {
       name: "Emma Wilson",
@@ -333,22 +342,12 @@ export default function AboutPage() {
       </section>
 
       {/* Testimonials */}
-      <section className="py-24 px-4 bg-gray-50">
-        <div className="container mx-auto text-center mb-16">
-          <h2 className="text-4xl sm:text-5xl font-bold text-black mb-6">
-            What Our Clients Say
-          </h2>
-          <div className="w-20 h-0.5 bg-orange-500 mx-auto mb-8"></div>
-          <p className="text-orange-600 text-lg max-w-3xl mx-auto">
-            Hear directly from our partners about the impact we&apos;ve made
-            together.
-          </p>
-        </div>
-        <AnimatedTestimonialsDemo />
-      </section>
+        
+        <InfiniteMovingCardsDemo />
+      
 
       {/* CTA Section */}
-      <section className="py-24 px-4 bg-orange-500 text-center text-white">
+      <section className="py-24 px-4 bg-white text-center text-black">
         <div className="container mx-auto">
           <h2 className="text-4xl sm:text-5xl font-bold mb-6">
             Ready to Grow with Us?
@@ -357,7 +356,11 @@ export default function AboutPage() {
             Let&apos;s collaborate to create digital experiences that captivate,
             engage, and drive results.
           </p>
-          <CTAButton text="Get Started Today" link="/contact" />
+          <Link href="/contact">
+            <div className="mt-16">
+              <CTAButton label="Get Started Today" type="1" />
+            </div>
+          </Link>
         </div>
       </section>
 

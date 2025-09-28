@@ -2,6 +2,7 @@
 
 import React, { useState } from "react";
 import { motion, useMotionValue, useTransform } from "framer-motion";
+import RevealLinks from "../components/RevealLinks";
 
 const orange = "text-orange-500";
 
@@ -245,26 +246,14 @@ const AbsoluteContact = () => {
         </motion.h2>
       </section>
 
+      {/* Reveal Links Section */}
+      
+
       {/* Footer */}
       <footer className="bg-orange-500 py-12 px-8 mt-10 text-white relative z-20">
-        <div className="flex items-center gap-10 justify-center text-2xl font-bold space-x-8 mb-10">
-          {socialLinks.map((link) => (
-            <motion.a
-              key={link.label}
-              href={link.url}
-              target="_blank"
-              rel="noopener noreferrer"
-              whileHover={{ y: -8, scale: 1.15 }}
-              className="inline-block transition-transform"
-              aria-label={link.label}
-            >
-              <i className={link.icon}></i> <span className="ml-2">{link.label}</span>
-            </motion.a>
-          ))}
-        </div>
-        <div className="text-[65px] md:text-[100px] font-extrabold tracking-tighter mt-8 drop-shadow-[0_0_25px_rgba(255,100,0,1)]">
-          PLANTUSMEDIA
-        </div>
+       
+       
+        <RevealLinks />
       </footer>
     </div>
   );

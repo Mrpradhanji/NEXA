@@ -3,6 +3,8 @@ import React, { useState, useRef, useEffect } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 import gsap from 'gsap';
+import FlipLink from './FlipLink';
+import AnimatedHamburgerButton from '../AnimatedHamburgerButton';
 import './menu.css';
 
 const menuLinks = [
@@ -123,7 +125,11 @@ const Menu = () => {
             (e.key === 'Enter' || e.key === ' ') && toggleMenu()
           }
         >
-          <p>MENU</p>
+          <AnimatedHamburgerButton 
+            active={isOpen}
+            onClick={toggleMenu}
+            className="h-12 w-12"
+          />
         </div>
       </div>
 
@@ -151,7 +157,11 @@ const Menu = () => {
               (e.key === 'Enter' || e.key === ' ') && toggleMenu()
             }
           >
-            <p>Close</p>
+            <AnimatedHamburgerButton 
+              active={isOpen}
+              onClick={toggleMenu}
+              className="h-12 w-12"
+            />
           </div>
         </div>
 
@@ -160,9 +170,12 @@ const Menu = () => {
           {menuLinks.map((link, index) => (
             <div className="menu-link-item" key={index}>
               <div className="menu-link-item-holder" onClick={toggleMenu}>
-                <Link href={link.href} className="menu-link">
+                <FlipLink 
+                  href={link.href} 
+                  className="menu-link"
+                >
                   {link.name}
-                </Link>
+                </FlipLink>
               </div>
             </div>
           ))}
