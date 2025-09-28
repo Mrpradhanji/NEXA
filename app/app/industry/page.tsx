@@ -1,7 +1,6 @@
 "use client";
 import React from "react";
 import { motion } from "framer-motion";
-import ClientsMarquee from "../components/ClientsMarquee";
 import Footer from "../components/Footer";
 import {
   FaBullseye,
@@ -149,32 +148,84 @@ export default function IndustryPage() {
   return (
     <div className="min-h-screen bg-white">
       {/* Hero Section */}
-      <section className="py-20 px-4">
-        <div className="container mx-auto text-center">
-          <motion.h1
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            className="text-5xl md:text-6xl font-bold text-black mb-6"
-          >
-            Industries We Serve
-          </motion.h1>
-          <motion.p
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.2 }}
-            className="text-xl text-black max-w-3xl mx-auto mb-8"
-          >
-            With deep expertise across diverse industries, we understand the
-            unique challenges and opportunities each sector presents.
-          </motion.p>
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.4 }}
-            className="w-20 h-0.5 bg-orange-500 mx-auto"
-          ></motion.div>
+      <section className="relative py-24 px-4 overflow-hidden bg-gradient-to-br from-gray-50 to-white">
+        {/* Background pattern */}
+        <div className="absolute inset-0 opacity-5">
+          <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/always-grey.png')] bg-repeat"></div>
         </div>
+
+        <div className="container mx-auto relative z-10">
+          <div className="max-w-4xl mx-auto text-center">
+            
+
+            <motion.h1
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: 0.1 }}
+              className="text-5xl md:text-6xl lg:text-7xl font-bold text-gray-900 mb-6 leading-tight"
+            >
+              Tailored Digital Solutions for{" "}
+              <span className="text-orange-500">Your Industry</span>
+            </motion.h1>
+
+            <motion.p
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: 0.2 }}
+              className="text-xl text-gray-600 max-w-3xl mx-auto mb-10 leading-relaxed"
+            >
+              We combine deep industry knowledge with cutting-edge digital
+              strategies to deliver measurable results. Our expertise spans
+              across multiple sectors, each with tailored solutions that drive
+              growth and innovation.
+            </motion.p>
+
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: 0.3 }}
+              className="flex flex-col sm:flex-row justify-center gap-4 mb-12"
+            >
+              <a
+                href="#industries"
+                className="px-8 py-4 text-base font-medium text-white bg-orange-500 rounded-lg shadow-lg hover:bg-orange-600 transition-all duration-300 transform hover:-translate-y-1 focus:outline-none focus:ring-2 focus:ring-orange-500 focus:ring-offset-2"
+              >
+                Explore Industries
+              </a>
+              <a
+                href="/contact"
+                className="px-8 py-4 text-base font-medium text-orange-600 bg-white border-2 border-orange-500 rounded-lg shadow-lg hover:bg-orange-50 transition-all duration-300 transform hover:-translate-y-1 focus:outline-none focus:ring-2 focus:ring-orange-500 focus:ring-offset-2"
+              >
+                Get a Free Consultation
+              </a>
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, scale: 0.9 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.5, delay: 0.4 }}
+              className="flex flex-wrap justify-center gap-2 max-w-2xl mx-auto"
+            >
+              {[
+                "Technology",
+                "E-commerce",
+                "Finance",
+                "Healthcare",
+                "Education",
+              ].map((industry, index) => (
+                <span
+                  key={index}
+                  className="px-4 py-2 text-sm font-medium text-gray-700 bg-white rounded-full shadow-sm border border-gray-200 hover:shadow-md transition-all duration-300"
+                >
+                  {industry}
+                </span>
+              ))}
+            </motion.div>
+          </div>
+        </div>
+
+        {/* Animated dots background */}
+        <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-white to-transparent z-10"></div>
       </section>
 
       {/* Stats Section */}
@@ -199,9 +250,6 @@ export default function IndustryPage() {
           </div>
         </div>
       </section>
-
-      {/* Clients Marquee */}
-      <ClientsMarquee />
 
       {/* Industries Grid */}
       <section className="py-24 px-4">

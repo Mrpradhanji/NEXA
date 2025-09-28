@@ -5,19 +5,28 @@ import { InfiniteMovingCards } from "./ui/infinite-moving-cards";
 
 export function InfiniteMovingCardsDemo() {
   return (
-    <div className="w-full h-[40rem] flex flex-col antialiased bg-black dark:bg-white dark:bg-grid-orange/[0.5] items-center justify-center relative overflow-hidden">
+    <div className="w-full min-h-[28rem] sm:min-h-[32rem] md:min-h-[40rem] py-12 sm:py-16 md:py-20 flex flex-col antialiased bg-black dark:bg-white dark:bg-grid-orange/[0.5] items-center justify-center relative overflow-hidden px-4 sm:px-6">
       {/* Heading */}
-      <h2 className="text-4xl sm:text-5xl font-bold text-black text-center mb-10">
-        What Our Client&apos;s Say
-      </h2>
+      <div className="w-full max-w-7xl mx-auto text-center mb-8 sm:mb-12 md:mb-16 px-4">
+        <h2 className="text-2xl xs:text-3xl sm:text-4xl md:text-5xl font-bold text-white dark:text-black mb-3 sm:mb-4">
+          What Our Clients Say
+        </h2>
+        <div className="w-16 sm:w-20 h-0.5 bg-orange-500 mx-auto mb-4 sm:mb-6"></div>
+        <p className="text-gray-300 dark:text-gray-600 text-sm sm:text-base md:text-lg max-w-3xl mx-auto">
+          Hear from businesses that have transformed their digital presence with
+          us
+        </p>
+      </div>
 
-      <InfiniteMovingCards
-        items={testimonials}
-        direction="left"
-        speed="slow"
-        pauseOnHover={true}
-        className="w-full"
-      />
+      <div className="w-full max-w-7xl mx-auto">
+        <InfiniteMovingCards
+          items={testimonials}
+          direction="left"
+          speed="slow"
+          pauseOnHover={true}
+          className="w-full [&>div>ul>li]:w-[280px] [&>div>ul>li]:xs:w-[320px] [&>div>ul>li]:sm:w-[380px] [&>div>ul>li]:md:w-[420px] [&>div>ul>li]:lg:w-[480px] [&>div>ul>li]:px-4 [&>div>ul>li]:py-6 [&>div>ul>li]:sm:py-8"
+        />
+      </div>
     </div>
   );
 }
@@ -25,31 +34,32 @@ export function InfiniteMovingCardsDemo() {
 const testimonials = [
   {
     quote:
-      "It was the best of times, it was the worst of times, it was the age of wisdom, it was the age of foolishness, it was the epoch of belief, it was the epoch of incredulity, it was the season of Light, it was the season of Darkness, it was the spring of hope, it was the winter of despair.",
-    name: "Charles Dickens",
-    title: "A Tale of Two Cities",
+      "Working with this team transformed our online presence. Their strategic approach and attention to detail resulted in a 200% increase in our web traffic and a significant boost in conversions.",
+    name: "Sarah Johnson",
+    title: "CEO, TechStart Inc.",
   },
   {
     quote:
-      "To be, or not to be, that is the question: Whether 'tis nobler in the mind to suffer The slings and arrows of outrageous fortune, Or to take Arms against a Sea of troubles, And by opposing end them: to die, to sleep.",
-    name: "William Shakespeare",
-    title: "Hamlet",
-  },
-  {
-    quote: "All that we see or seem is but a dream within a dream.",
-    name: "Edgar Allan Poe",
-    title: "A Dream Within a Dream",
+      "The level of creativity and technical expertise brought to our project was exceptional. They delivered beyond our expectations, creating a seamless user experience that perfectly represents our brand.",
+    name: "Michael Chen",
+    title: "Marketing Director, BrandVista",
   },
   {
     quote:
-      "It is a truth universally acknowledged, that a single man in possession of a good fortune, must be in want of a wife.",
-    name: "Jane Austen",
-    title: "Pride and Prejudice",
+      "From the initial consultation to the final delivery, the team demonstrated professionalism and deep industry knowledge. Our new website has received overwhelming positive feedback from our clients.",
+    name: "Emily Rodriguez",
+    title: "Founder, CreativeMinds",
   },
   {
     quote:
-      "Call me Ishmael. Some years ago—never mind how long precisely—having little or no money in my purse, and nothing particular to interest me on shore, I thought I would sail about a little and see the watery part of the world.",
-    name: "Herman Melville",
-    title: "Moby-Dick",
+      "Their data-driven approach to digital marketing helped us identify new opportunities and optimize our campaigns. We've seen a 150% ROI since partnering with them.",
+    name: "David Kim",
+    title: "Head of Growth, NextGen Solutions",
+  },
+  {
+    quote:
+      "The team's ability to understand our vision and translate it into a stunning digital experience was impressive. They were responsive, collaborative, and delivered on time and on budget.",
+    name: "Lisa Thompson",
+    title: "CMO, InnovateX",
   },
 ];

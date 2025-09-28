@@ -1,10 +1,21 @@
 "use client";
-import React from "react";
+import React, { Suspense } from "react";
 import { motion } from "framer-motion";
-import ClientsMarquee from "../components/ClientsMarquee";
-import Footer from "../components/Footer";
-import CTAButton from "../components/Button";
-import ParticleRing from "../components/ParticleRing";
+import dynamic from "next/dynamic";
+
+// Lazy load heavy components
+const ParticleRing = dynamic(() => import("../components/ParticleRing"), {
+  ssr: false,
+  loading: () => <div className="h-[90vh] flex items-center justify-center text-white">Loading...</div>,
+});
+const Footer = dynamic(() => import("../components/Footer"), {
+  ssr: false,
+  loading: () => <div className="text-center py-10 text-black">Loading footer...</div>,
+});
+const CTAButton = dynamic(() => import("../components/Button"), {
+  ssr: false,
+  loading: () => <button className="px-6 py-3 bg-orange-500 text-white rounded-lg">Loading...</button>,
+});
 
 export default function ServicesPage() {
   const serviceCategories = [
@@ -82,10 +93,16 @@ export default function ServicesPage() {
       <section className="py-0 px-4 bg-black relative overflow-hidden">
         <div className="container mx-auto text-center relative z-10">
           <div className="relative w-full h-[90vh]">
-            <ParticleRing />
-
+            <Suspense
+              fallback={
+                <div className="h-[90vh] flex items-center justify-center text-white">
+                  Loading effect...
+                </div>
+              }
+            >
+              <ParticleRing />
+            </Suspense>
           </div>
-
         </div>
 
         {/* Optional gradient overlay */}
@@ -149,8 +166,6 @@ export default function ServicesPage() {
           </div>
         </div>
       </section>
-
-      <ClientsMarquee />
 
       {/* Process Section */}
       <section className="py-24 px-4 bg-white/5">
@@ -237,12 +252,17 @@ export default function ServicesPage() {
               Let&apos;s discuss how we can help accelerate your business growth
               through strategic digital marketing.
             </p>
-            <CTAButton label="Get In Touch" />
+            <Suspense fallback={<button className="px-6 py-3 bg-orange-500 text-white rounded-lg">Loading...</button>}>
+              <CTAButton label="Get In Touch" />
+            </Suspense>
           </motion.div>
         </div>
       </section>
 
-      <Footer />
+      {/* Footer */}
+      <Suspense fallback={<div className="text-center py-10 text-black">Loading footer...</div>}>
+        <Footer />
+      </Suspense>
     </div>
   );
 }

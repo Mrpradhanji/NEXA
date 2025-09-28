@@ -124,15 +124,6 @@ export default function OurWorksPage() {
   ];
 
   const processSteps = ["Discover", "Design", "Develop", "Launch", "Optimize"];
-  const techStack = [
-    "React",
-    "Next.js",
-    "Node.js",
-    "Figma",
-    "WordPress",
-    "Tailwind CSS",
-  ];
-
   return (
     <div className="min-h-screen bg-white text-black">
       {/* Hero Section */}
