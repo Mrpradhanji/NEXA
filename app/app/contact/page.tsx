@@ -1,6 +1,7 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
+import emailjs from "@emailjs/browser";
 import { motion, useMotionValue, useTransform } from "framer-motion";
 import RevealLinks from "../components/RevealLinks";
 
@@ -40,12 +41,68 @@ const AbsoluteContact = () => {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [message, setMessage] = useState("");
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [statusMessage, setStatusMessage] = useState<string | null>(null);
+  const [statusError, setStatusError] = useState<string | null>(null);
+
+  // Initialize EmailJS once on mount
+  useEffect(() => {
+    const publicKey = process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY as string;
+    if (publicKey) {
+      try {
+        emailjs.init({ publicKey });
+      } catch {
+        // noop - will be caught on send
+      }
+    }
+  }, []);
 
   // Magnetic button logic
   const x = useMotionValue(0);
   const y = useMotionValue(0);
   const rotateX = useTransform(y, [-50, 50], [15, -15]);
   const rotateY = useTransform(x, [-50, 50], [-15, 15]);
+
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    setStatusMessage(null);
+    setStatusError(null);
+
+    if (!about || !name || !email) {
+      setStatusError("Please fill in all required fields.");
+      return;
+    }
+
+    setIsSubmitting(true);
+    try {
+      const serviceId = process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID as string;
+      const templateId = process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID as string;
+
+      if (!serviceId || !templateId) {
+        throw new Error("Email service is not configured.");
+      }
+
+      const templateParams = {
+        about,
+        name,
+        email,
+        message,
+        to_email: "plantusmedia1@gmail.com",
+      };
+
+      await emailjs.send(serviceId, templateId, templateParams);
+
+      setStatusMessage("Thanks! Your message has been sent.");
+      setAbout("");
+      setName("");
+      setEmail("");
+      setMessage("");
+    } catch (err) {
+      setStatusError("Sorry, something went wrong. Please try again.");
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
 
   return (
     <div className="relative font-sans bg-black min-h-screen text-white overflow-hidden">
@@ -103,7 +160,7 @@ const AbsoluteContact = () => {
             <div className="text-3xl font-extrabold tracking-tight">
               <span className={orange}>Work with us</span>
             </div>
-            <div className="text-2xl font-bold">studio@plantusmedia.com</div>
+            <div className="text-2xl font-bold">plantusmedia1@gmail.com</div>
             <div className={orange + " text-xl font-semibold"}>Talk to us</div>
             <div className="text-lg font-bold">India: 01204 669566</div>
           </div>
@@ -114,7 +171,7 @@ const AbsoluteContact = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
             className="grid grid-cols-1 md:grid-cols-2 gap-6 text-white items-stretch mt-6"
-            onSubmit={(e) => e.preventDefault()}
+            onSubmit={handleSubmit}
             aria-label="Contact Form"
           >
             {/* Left Column */}
@@ -191,11 +248,23 @@ const AbsoluteContact = () => {
                 whileHover={{ scale: 1.08, backgroundColor: "#FF5800" }}
                 whileTap={{ scale: 0.96 }}
                 type="submit"
-                className="mt-4 md:mt-0 font-bold text-lg text-orange-400 hover:underline px-6 py-3 border border-orange-400 rounded-full transition-shadow self-start"
+                className="mt-4 md:mt-0 font-bold text-lg text-orange-400 hover:underline px-6 py-3 border border-orange-400 rounded-full transition-shadow self-start disabled:opacity-60 disabled:cursor-not-allowed"
+                disabled={isSubmitting}
                 aria-label="Submit"
               >
-                Submit
+                {isSubmitting ? "Sending..." : "Submit"}
               </motion.button>
+
+              {statusMessage && (
+                <div className="text-green-400 text-sm mt-2" aria-live="polite">
+                  {statusMessage}
+                </div>
+              )}
+              {statusError && (
+                <div className="text-red-400 text-sm mt-2" aria-live="assertive">
+                  {statusError}
+                </div>
+              )}
             </div>
           </motion.form>
         </motion.div>
