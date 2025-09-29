@@ -3,7 +3,7 @@ import React, { useRef } from "react";
 import { Canvas, useFrame } from "@react-three/fiber";
 import { OrbitControls, Sphere } from "@react-three/drei";
 import { pointsInner, pointsOuter } from "../lib/utils";
-
+import BubbleText from "./bubble-text/BubbleCode";
 const ParticleRing = () => {
   return (
     <div className="relative">
@@ -17,10 +17,9 @@ const ParticleRing = () => {
         <pointLight position={[-30, 0, -30]} intensity={5} />
         <GlowingParticleRing />
       </Canvas>
-
-      <h1 className="absolute top-[50%] left-[50%] -translate-x-[50%] -translate-y-[50%] text-white font-medium text-2xl md:text-5xl pointer-events-none text-center drop-shadow-lg px-4">
-        Helping businesses like yours achieve their goals since 2018. We combine creativity, technology, and strategy to deliver measurable results.
-      </h1>
+      <div className="absolute inset-0 flex items-center justify-center">
+        <BubbleText text="Helping businesses achieve their goals since 2018" />
+      </div>
     </div>
   );
 };
@@ -37,7 +36,9 @@ const GlowingParticleRing = () => {
 
       // Pulsating scale animation for particles
       ref.current.children.forEach((child, i) => {
-        child.scale.setScalar(1 + Math.sin(clock.getElapsedTime() * 2 + i) * 0.2);
+        child.scale.setScalar(
+          1 + Math.sin(clock.getElapsedTime() * 2 + i) * 0.2
+        );
       });
     }
   });
