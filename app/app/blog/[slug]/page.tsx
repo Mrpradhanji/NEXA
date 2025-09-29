@@ -1,6 +1,7 @@
 "use client";
 
 import React from "react";
+import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import { Calendar, Clock, ArrowLeft, Tag } from "lucide-react";
@@ -36,6 +37,7 @@ export default function BlogPostPage({ params }: Props) {
   }
 
   const formattedDate = format(new Date(post.date), "MMMM d, yyyy");
+  const ogImage = `/opengraph-image?title=${encodeURIComponent(post.title)}`;
 
   return (
     <div className="min-h-screen bg-black text-white overflow-x-hidden">
@@ -234,6 +236,111 @@ export default function BlogPostPage({ params }: Props) {
           </svg>
         </button>
       </div>
+      {/* Article JSON-LD */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "Article",
+            headline: post.title,
+            description: post.excerpt,
+            image: [
+              `https://plantusmedia.com${post.image}`,
+              `https://plantusmedia.com${ogImage}`,
+            ],
+            datePublished: new Date(post.date).toISOString(),
+            author: {
+              "@type": "Person",
+              name: post.author.name,
+            },
+            publisher: {
+              "@type": "Organization",
+              name: "Plantus Media",
+              logo: {
+                "@type": "ImageObject",
+                url: "https://plantusmedia.com/images/logo.png",
+              },
+            },
+            mainEntityOfPage: {
+              "@type": "WebPage",
+              "@id": `https://plantusmedia.com/blog/${post.slug}`,
+            },
+          }),
+        }}
+      />
+      {/* Breadcrumb JSON-LD */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "BreadcrumbList",
+            itemListElement: [
+              {
+                "@type": "ListItem",
+                position: 1,
+                name: "Home",
+                item: "https://plantusmedia.com/",
+              },
+              {
+                "@type": "ListItem",
+                position: 2,
+                name: "Blog",
+                item: "https://plantusmedia.com/blog",
+              },
+              {
+                "@type": "ListItem",
+                position: 3,
+                name: post.title,
+                item: `https://plantusmedia.com/blog/${post.slug}`,
+              },
+            ],
+          }),
+        }}
+      />
     </div>
   );
+}
+
+export async function generateMetadata(
+  { params }: Props
+): Promise<Metadata> {
+  // Using React.use in component; here we must resolve params as well
+  const resolved = await params;
+  const { getPostBySlug } = await import("../data");
+  const post = getPostBySlug(resolved.slug);
+
+  if (!post) {
+    return {
+      title: "Post Not Found",
+      robots: { index: false, follow: false },
+    };
+  }
+
+  const title = `${post.title}`;
+  const description = post.excerpt || post.content.slice(0, 160);
+  const url = `/blog/${post.slug}`;
+  const image = post.image || "/images/hero-image.jpg";
+
+  return {
+    title,
+    description,
+    alternates: { canonical: url },
+    openGraph: {
+      type: "article",
+      title,
+      description,
+      url: `https://plantusmedia.com${url}`,
+      images: [{ url: image }],
+      authors: [post.author.name],
+      publishedTime: new Date(post.date).toISOString(),
+    },
+    twitter: {
+      card: "summary_large_image",
+      title,
+      description,
+      images: [{ url: image }],
+    },
+  };
 }

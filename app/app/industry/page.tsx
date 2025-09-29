@@ -2,6 +2,7 @@
 import React from "react";
 import { motion } from "framer-motion";
 import Footer from "../components/Footer";
+import Breadcrumbs from "../components/Breadcrumbs";
 import {
   FaBullseye,
   FaChartLine,
@@ -227,6 +228,11 @@ export default function IndustryPage() {
         {/* Animated dots background */}
         <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-white to-transparent z-10"></div>
       </section>
+
+      {/* Breadcrumbs - placed after hero */}
+      <div className="container mx-auto px-4 pt-4">
+        <Breadcrumbs items={[{ label: "Home", href: "/" }, { label: "Industry" }]} />
+      </div>
 
       {/* Stats Section */}
       <section className="py-16 px-4 bg-white/5">

@@ -12,7 +12,7 @@ const menuLinks = [
   { name: 'Services', href: '/services' },
   { name: 'Industry', href: '/industry' },
   { name: 'About', href: '/about' },
-  { name: 'Our Works', href: '/our-works' },
+  { name: 'Our-Works', href: '/our-works' },
   { name: 'Contact', href: '/contact' },
 ];
 

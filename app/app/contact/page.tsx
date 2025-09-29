@@ -4,6 +4,7 @@ import React, { useEffect, useState } from "react";
 import emailjs from "@emailjs/browser";
 import { motion, useMotionValue, useTransform } from "framer-motion";
 import RevealLinks from "../components/RevealLinks";
+import Breadcrumbs from "../components/Breadcrumbs";
 
 const orange = "text-orange-500";
 
@@ -154,6 +155,11 @@ const AbsoluteContact = () => {
       >
         <path fill="currentColor" d="M0,64L1440,224L1440,320L0,320Z"></path>
       </svg>
+
+      {/* Breadcrumbs - placed after hero */}
+      <div className="container mx-auto px-4 pt-4 relative z-20">
+        <Breadcrumbs items={[{ label: "Home", href: "/" }, { label: "Contact" }]} />
+      </div>
 
       {/* Contact & Locations */}
       <section className="flex flex-col md:flex-row items-start justify-center max-w-6xl mx-auto px-4 py-12 gap-12 z-20 relative">
@@ -329,6 +335,45 @@ const AbsoluteContact = () => {
       <footer className="bg-orange-500 py-12 px-8 mt-10 text-white relative z-20">
         <RevealLinks />
       </footer>
+  {/* LocalBusiness + ContactPoint JSON-LD */}
+  <script
+    type="application/ld+json"
+    dangerouslySetInnerHTML={{
+      __html: JSON.stringify({
+        "@context": "https://schema.org",
+        "@type": "LocalBusiness",
+        name: "Plantus Media",
+        url: "https://plantusmedia.com",
+        email: "plantusmedia1@gmail.com",
+        telephone: "+44 (0)1204 669566",
+        address: [
+          {
+            "@type": "PostalAddress",
+            streetAddress: "Rugby House, Hampson Street",
+            addressLocality: "Horwich",
+            postalCode: "BL6 7JH",
+            addressCountry: "UK",
+          },
+          {
+            "@type": "PostalAddress",
+            streetAddress: "3rd Floor, 86-90 Paul Street",
+            addressLocality: "London",
+            postalCode: "EC2A 4NE",
+            addressCountry: "UK",
+          },
+        ],
+        contactPoint: [
+          {
+            "@type": "ContactPoint",
+            telephone: "+44 (0)1204 669566",
+            contactType: "sales",
+            areaServed: "GB",
+            availableLanguage: ["en"],
+          },
+        ],
+      }),
+    }}
+  />
     </div>
   );
 };

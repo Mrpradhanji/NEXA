@@ -2,6 +2,7 @@
 import React, { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import Footer from "../components/Footer";
+import Breadcrumbs from "../components/Breadcrumbs";
 import Image from "next/image";
 import { InfiniteMovingCardsDemo } from "../components/Testimonials";
 
@@ -152,6 +153,11 @@ export default function OurWorksPage() {
           className="w-20 h-0.5 bg-orange-500 mx-auto"
         ></motion.div>
       </section>
+
+      {/* Breadcrumbs - placed after hero */}
+      <div className="container mx-auto px-4 pt-4">
+        <Breadcrumbs items={[{ label: "Home", href: "/" }, { label: "Our Works" }]} />
+      </div>
 
       {/* Filter Section */}
       <section className="py-8 px-4 border-b border-black">

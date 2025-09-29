@@ -12,7 +12,7 @@ const Example = () => {
 const BubbleText = () => {
   return (
     <h2 className="text-center text-5xl font-thin text-white">
-      {"Helping businesses achieve their goals since 2018".split("").map((child, idx) => (
+      {"Helping Businesses Achieve Their Goals Since 2018".split("").map((child, idx) => (
         <span className={styles.hoverText} key={idx}>
           {child}
         </span>

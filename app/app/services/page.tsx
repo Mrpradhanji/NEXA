@@ -2,6 +2,7 @@
 import React, { Suspense } from "react";
 import { motion } from "framer-motion";
 import dynamic from "next/dynamic";
+import Breadcrumbs from "../components/Breadcrumbs";
 
 // Lazy load heavy components
 const ParticleRing = dynamic(() => import("../components/ParticleRing"), {
@@ -109,9 +110,42 @@ export default function ServicesPage() {
         <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-b from-black/70 to-black/30 pointer-events-none"></div>
       </section>
 
+      {/* Breadcrumbs - placed after hero */}
+      <div className="container mx-auto px-4 pt-4">
+        <Breadcrumbs items={[{ label: "Home", href: "/" }, { label: "Services" }]} />
+      </div>
+
       {/* Services Overview */}
       <section className="py-24 px-4 bg-white">
         <div className="container mx-auto">
+          {/* FAQPage JSON-LD */}
+          <script
+            type="application/ld+json"
+            dangerouslySetInnerHTML={{
+              __html: JSON.stringify({
+                "@context": "https://schema.org",
+                "@type": "FAQPage",
+                mainEntity: [
+                  {
+                    "@type": "Question",
+                    name: "What services does Plantus Media offer?",
+                    acceptedAnswer: {
+                      "@type": "Answer",
+                      text: "We provide SEO, content marketing, paid media, web design and development, and branding.",
+                    },
+                  },
+                  {
+                    "@type": "Question",
+                    name: "Do you offer technical SEO?",
+                    acceptedAnswer: {
+                      "@type": "Answer",
+                      text: "Yes, we perform technical SEO audits, fixes, and ongoing optimization.",
+                    },
+                  },
+                ],
+              }),
+            }}
+          />
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -166,6 +200,31 @@ export default function ServicesPage() {
           </div>
         </div>
       </section>
+
+      {/* Service schema JSON-LD */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "Service",
+            name: "Digital Marketing Services",
+            provider: {
+              "@type": "Organization",
+              name: "Plantus Media",
+              url: "https://plantusmedia.com",
+            },
+            areaServed: "GB",
+            serviceType: [
+              "SEO",
+              "Content Marketing",
+              "Paid Media",
+              "Web Design and Development",
+              "Branding",
+            ],
+          }),
+        }}
+      />
 
       {/* Process Section */}
       <section className="py-24 px-4 bg-white/5">
