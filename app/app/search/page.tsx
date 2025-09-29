@@ -18,7 +18,7 @@ export default function SearchPage({ searchParams }: { searchParams: { q?: strin
           />
         </form>
         {q && (
-          <p className="text-gray-600 mb-4">{results.length} result(s) for "{q}"</p>
+          <p className="text-gray-600 mb-4">{results.length} result(s) for &quot;{q}&quot;</p>
         )}
         <ul className="space-y-4">
           {results.map((post) => (

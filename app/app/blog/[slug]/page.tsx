@@ -1,6 +1,3 @@
-"use client";
-
-import React from "react";
 import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
@@ -8,14 +5,14 @@ import { Calendar, Clock, ArrowLeft, Tag } from "lucide-react";
 import { format } from "date-fns";
 import { getPostBySlug, getRelatedPosts } from "../data";
 import { MarkdownRenderer } from "../../components/MarkdownRenderer";
+import BackToTopButton from "../../components/BackToTopButton";
 
 interface Props {
-  params: Promise<{ slug: string }>;
+  params: { slug: string };
 }
 
 export default function BlogPostPage({ params }: Props) {
-  const resolvedParams = React.use(params);
-  const post = getPostBySlug(resolvedParams.slug);
+  const post = getPostBySlug(params.slug);
   const relatedPosts = post ? getRelatedPosts(post) : [];
 
   if (!post) {
@@ -215,27 +212,7 @@ export default function BlogPostPage({ params }: Props) {
       </main>
 
       {/* Back to top */}
-      <div className="fixed bottom-8 right-8">
-        <button
-          onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
-          className="p-3 bg-orange-500 rounded-full hover:bg-orange-600 transition-colors shadow-lg"
-          aria-label="Back to top"
-        >
-          <svg
-            className="w-5 h-5"
-            fill="none"
-            viewBox="0 0 24 24"
-            stroke="currentColor"
-          >
-            <path
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              strokeWidth={2}
-              d="M5 15l7-7 7 7"
-            />
-          </svg>
-        </button>
-      </div>
+      <BackToTopButton />
       {/* Article JSON-LD */}
       <script
         type="application/ld+json"
@@ -306,10 +283,8 @@ export default function BlogPostPage({ params }: Props) {
 export async function generateMetadata(
   { params }: Props
 ): Promise<Metadata> {
-  // Using React.use in component; here we must resolve params as well
-  const resolved = await params;
   const { getPostBySlug } = await import("../data");
-  const post = getPostBySlug(resolved.slug);
+  const post = getPostBySlug(params.slug);
 
   if (!post) {
     return {

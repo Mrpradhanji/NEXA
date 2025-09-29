@@ -76,12 +76,6 @@ export default function AboutUs() {
                 height={600}
                 className="w-full h-full object-cover"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
-              <div className="absolute bottom-6 left-6 text-white">
-                <p className="text-sm opacity-90 font-medium">
-                  Our creative team at work
-                </p>
-              </div>
             </div>
           </motion.div>
         </div>

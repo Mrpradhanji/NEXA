@@ -15,8 +15,8 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   metadataBase: new URL("https://plantusmedia.com"),
   title: {
-    default: "Plantus Media | Digital Marketing, SEO, and Growth",
-    template: "%s | Plantus Media",
+    default: "PLANTUSMEDIA | Digital Marketing, SEO, and Growth",
+    template: "%s | PlantusMedia",
   },
   description:
     "Plantus Media is a digital marketing agency helping businesses grow with SEO, content, paid media, and high-converting websites.",
@@ -46,8 +46,8 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     url: "https://plantusmedia.com/",
-    siteName: "Plantus Media",
-    title: "Plantus Media | Digital Marketing, SEO, and Growth",
+    siteName: "PLANTUSMEDIA",
+    title: "PLANTUSMEDIA | Digital Marketing, SEO, and Growth",
     description:
       "Plantus Media is a digital marketing agency helping businesses grow with SEO, content, paid media, and high-converting websites.",
     images: [
@@ -55,7 +55,7 @@ export const metadata: Metadata = {
         url: "/images/hero-image.jpg",
         width: 1200,
         height: 630,
-        alt: "Plantus Media",
+        alt: "PLANTUSMEDIA",
       },
     ],
   },
@@ -67,12 +67,12 @@ export const metadata: Metadata = {
     images: [
       {
         url: "/opengraph-image?title=Plantus%20Media",
-        alt: "Plantus Media",
+        alt: "PLANTUSMEDIA",
       },
     ],
   },
   icons: {
-    icon: "/favicon.ico",
+    icon: "./favicon.ico",
   },
   themeColor: "#ff5800",
   manifest: "/site.webmanifest",
@@ -100,7 +100,7 @@ export default function RootLayout({
             __html: JSON.stringify({
               "@context": "https://schema.org",
               "@type": "Organization",
-              name: "Plantus Media",
+              name: "PLANTUSMEDIA",
               url: "https://plantusmedia.com",
               logo: "https://plantusmedia.com/images/logo.png",
               sameAs: [
@@ -118,7 +118,7 @@ export default function RootLayout({
             __html: JSON.stringify({
               "@context": "https://schema.org",
               "@type": "WebSite",
-              name: "Plantus Media",
+              name: "PLANTUSMEDIA",
               url: "https://plantusmedia.com",
               potentialAction: {
                 "@type": "SearchAction",

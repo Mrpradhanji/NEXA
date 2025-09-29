@@ -8,7 +8,7 @@ const AgencySection = () => (
       </h1>
       <p className="text-lg mb-8 mt-6 text-center">
         Working with a Digital Marketing Agency to develop and manage your
-        business’s online reputation can make or break a business. It entails
+        business&apos;s online reputation can make or break a business. It entails
         not only what your business creates and shares, but also encouraging
         your customers to share their experiences and join your online
         community. Other benefits of this form of marketing include the highly
@@ -22,7 +22,7 @@ const AgencySection = () => (
         applicable to you. However, having a well rounded and well-executed
         strategy is paramount. The agency you work with should be experienced in
         your industry, with a portfolio of work to show for it. We invite you to
-        have a look at the businesses we’ve worked with, assisting them with
+        have a look at the businesses we&apos;ve worked with, assisting them with
         various marketing services that have helped them level up.
       </p>
       <hr className="border-gray-800 my-10" />
@@ -31,7 +31,7 @@ const AgencySection = () => (
           <p className="text-lg">
             When the Digital Marketing Agency begins working with you, they will
             develop a strategy which includes specific goals and plans. It
-            includes extensive research and will map out your business’s planned
+            includes extensive research and will map out your business&apos;s planned
             digital footprint. They will then call on their team of creatives to
             work on the content creation, which should be designed to satisfy
             and convert your audiences. It will include various forms of digital
@@ -46,7 +46,7 @@ const AgencySection = () => (
             reporting on their results. Analysis and insights are a final yet
             paramount task for marketers to illustrate what they have been able
             to achieve with acute accuracy, as that is one of digital
-            marketing’s most valued benefits.
+            marketing&apos;s most valued benefits.
           </p>
         </div>
       </div>
