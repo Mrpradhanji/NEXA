@@ -111,13 +111,17 @@ const AbsoluteContact = () => {
         animate={{ x: [0, 40, -40, 0], y: [0, -60, 60, 0] }}
         transition={{ duration: 30, repeat: Infinity, ease: "linear" }}
         className="absolute top-[-180px] left-[5%] w-[600px] h-[600px] blur-[180px] opacity-40 z-0 pointer-events-none"
-        style={{ background: "linear-gradient(135deg,#FF5800,#E040FB,#7C3AED)" }}
+        style={{
+          background: "linear-gradient(135deg,#FF5800,#E040FB,#7C3AED)",
+        }}
       />
       <motion.div
         animate={{ x: [0, -80, 80, 0], y: [0, 95, -95, 0] }}
         transition={{ duration: 36, repeat: Infinity, ease: "linear" }}
         className="absolute bottom-[-220px] right-[6%] w-[450px] h-[450px] blur-[130px] opacity-40 z-0 pointer-events-none"
-        style={{ background: "linear-gradient(120deg,#7C3AED,#FF5800,#E040FB)" }}
+        style={{
+          background: "linear-gradient(120deg,#7C3AED,#FF5800,#E040FB)",
+        }}
       />
 
       {/* Noise overlay */}
@@ -131,7 +135,11 @@ const AbsoluteContact = () => {
           transition={{ duration: 0.8 }}
           className="text-6xl md:text-7xl font-extrabold leading-tight text-white drop-shadow-[0_0_35px_rgba(0,0,0,0.5)]"
         >
-          Connect.<br />Collaborate.<br />Be Bold.
+          Connect.
+          <br />
+          Collaborate.
+          <br />
+          Be Bold.
         </motion.div>
         <div className="mt-8 text-lg font-semibold text-gray-300">
           &quot;We spark ideas into creative realities.&quot;
@@ -316,12 +324,9 @@ const AbsoluteContact = () => {
       </section>
 
       {/* Reveal Links Section */}
-      
 
       {/* Footer */}
       <footer className="bg-orange-500 py-12 px-8 mt-10 text-white relative z-20">
-       
-       
         <RevealLinks />
       </footer>
     </div>
