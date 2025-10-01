@@ -5,7 +5,7 @@ import Link from "next/link";
 
 export default function Footer() {
   return (
-    <footer className="bg-orange-600 text-white pt-12 px-8 md:px-20">
+    <footer className="bg-orange-500 text-white pt-12 px-8 md:px-20">
       {/* Top Links Section */}
       <div className="max-w-7xl mx-auto flex flex-col md:flex-row md:justify-between md:items-start">
         {/* Left - Big Section Links */}
@@ -16,6 +16,8 @@ export default function Footer() {
           <li><Link href="/contact" className="hover:underline transition-all">Contact</Link></li>
         </ul>
 
+        {/*If we have more than*/}
+        <div className=""></div>
         {/* Right - Grouped Columns */}
         <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-left w-full md:w-auto">
           <div>
