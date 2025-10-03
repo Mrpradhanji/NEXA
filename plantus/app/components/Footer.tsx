@@ -5,11 +5,11 @@ import Link from "next/link";
 
 export default function Footer() {
   return (
-    <footer className="bg-orange-500 text-white pt-12 px-4 sm:px-6 md:px-10 lg:px-20 font-[Borna]">
+    <footer className="bg-orange-500 text-white pt-12 px-8 md:px-20 font-[Borna]">
       {/* Top Links Section */}
-      <div className="max-w-7xl mx-auto flex flex-col md:flex-row md:justify-between md:items-start gap-8">
+      <div className="max-w-7xl mx-auto flex flex-col md:flex-row md:justify-between md:items-start">
         {/* Left - Big Section Links */}
-        <ul className="space-y-3 sm:space-y-4 text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-extrabold mb-8 md:mb-0">
+        <ul className="space-y-4 text-4xl md:text-5xl font-extrabold mb-10 md:mb-0">
           <li><Link href="/our-works" className="hover:underline transition-all">Work</Link></li>
           <li><Link href="/about" className="hover:underline transition-all">Agency</Link></li>
           <li><Link href="/blog" className="hover:underline transition-all">Insights</Link></li>
@@ -19,10 +19,10 @@ export default function Footer() {
         {/*If we have more than*/}
         <div className=""></div>
         {/* Right - Grouped Columns */}
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-8 text-left w-full md:w-auto">
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-left w-full md:w-auto">
           <div>
-            <h4 className="font-bold text-lg sm:text-xl mb-2">Brand</h4>
-            <ul className="space-y-1 text-sm sm:text-base">
+            <h4 className="font-bold text-xl mb-2">Brand</h4>
+            <ul className="space-y-1">
               <li>Brand Workshops</li>
               <li>Brand Strategy</li>
               <li>Brand Creation</li>
@@ -30,8 +30,8 @@ export default function Footer() {
             </ul>
           </div>
           <div>
-            <h4 className="font-bold text-lg sm:text-xl mb-2">Digital</h4>
-            <ul className="space-y-1 text-sm sm:text-base">
+            <h4 className="font-bold text-xl mb-2">Digital</h4>
+            <ul className="space-y-1">
               <li>Digital Workshops</li>
               <li>Digital Strategy</li>
               <li>Web Design</li>
@@ -39,8 +39,8 @@ export default function Footer() {
             </ul>
           </div>
           <div>
-            <h4 className="font-bold text-lg sm:text-xl mb-2">Campaign</h4>
-            <ul className="space-y-1 text-sm sm:text-base">
+            <h4 className="font-bold text-xl mb-2">Campaign</h4>
+            <ul className="space-y-1">
               <li>Campaign Strategy</li>
               <li>Campaign Concepts</li>
               <li>Campaign Development</li>
@@ -48,8 +48,8 @@ export default function Footer() {
             </ul>
           </div>
           <div>
-            <h4 className="font-bold text-lg sm:text-xl mb-2">Content</h4>
-            <ul className="space-y-1 text-sm sm:text-base">
+            <h4 className="font-bold text-xl mb-2">Content</h4>
+            <ul className="space-y-1">
               <li>Social Media Content</li>
               <li>Copywriting</li>
               <li>Photography</li>
@@ -63,20 +63,20 @@ export default function Footer() {
       <hr className="border-white border-opacity-30 my-10" />
 
       {/* Middle Section with Email + Social Links */}
-      <div className="flex flex-col md:flex-row md:justify-between items-start gap-8">
+      <div className="flex flex-col md:flex-row md:justify-between items-start">
         <div>
           <div className="text-2xl sm:text-3xl md:text-4xl font-extrabold mb-3 break-words">
-            <a href="mailto:plantusmediaconsulting@gmail.com" className="hover:underline">
+            <a href="mailto:hello@plantusmedia.com" className="hover:underline inline-block max-w-full break-all">
               plantusmediaconsulting@gmail.com
             </a>
           </div>
-          <div className="font-bold text-base sm:text-lg mb-4">
+          <div className="font-bold text-lg mb-4">
             <a href="tel:+918368344943" className="hover:underline">IND: +91 8368344943</a> <br />
 
           </div>
 
           {/* Social + Quick Links */}
-          <div className="flex flex-col md:flex-row gap-6 md:gap-8 text-sm sm:text-base">
+          <div className="flex flex-col md:flex-row gap-8 text-base">
             <ul className="space-y-1 font-medium">
               <li>→ <a href="https://linkedin.com/company/plantusmedia" target="_blank" rel="noopener noreferrer" className="hover:underline">LinkedIn</a></li>
               <li>→ <a href="https://instagram.com/plantusmedia" target="_blank" rel="noopener noreferrer" className="hover:underline">Instagram</a></li>
@@ -91,18 +91,18 @@ export default function Footer() {
         </div>
 
         {/* Logos / Membership badges */}
-        <div className="flex flex-wrap items-center gap-4 sm:gap-6 mt-4 md:mt-0">
+        <div className="flex flex-wrap items-center gap-6 mt-8 md:mt-0">
           <div className="text-center">
-            <div className="text-xs sm:text-sm font-semibold mb-1 sm:mb-2">Certified</div>
-            <div className="text-[11px] sm:text-xs opacity-80">ISO 9001</div>
+            <div className="text-sm font-semibold mb-2">Certified</div>
+            <div className="text-xs opacity-80">ISO 9001</div>
           </div>
           <div className="text-center">
-            <div className="text-xs sm:text-sm font-semibold mb-1 sm:mb-2">Awards</div>
-            <div className="text-[11px] sm:text-xs opacity-80">Best Agency 2024</div>
+            <div className="text-sm font-semibold mb-2">Awards</div>
+            <div className="text-xs opacity-80">Best Agency 2024</div>
           </div>
           <div className="text-center">
-            <div className="text-xs sm:text-sm font-semibold mb-1 sm:mb-2">Partnerships</div>
-            <div className="text-[11px] sm:text-xs opacity-80">Google Partner</div>
+            <div className="text-sm font-semibold mb-2">Partnerships</div>
+            <div className="text-xs opacity-80">Google Partner</div>
           </div>
         </div>
       </div>
@@ -111,7 +111,7 @@ export default function Footer() {
       <hr className="border-white border-opacity-30 my-8" />
 
       {/* Bottom Section */}
-      <div className="flex flex-col md:flex-row justify-between items-center text-xs sm:text-sm text-white text-opacity-80 gap-2">
+      <div className="flex flex-col md:flex-row justify-between items-center text-sm text-white text-opacity-80 gap-2">
         <span>© Plantusmedia 2025. All rights reserved.</span>
         <span className="flex gap-4">
           <Link href="/privacy" className="hover:underline">Privacy Policy</Link>

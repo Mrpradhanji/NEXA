@@ -10,7 +10,7 @@ export function ImageCards() {
   const imageCards = [
     {
       id: 1,
-      frontImage: "/images/hero-image.jpg",
+      frontImage: "/images/social.jpg",
       backTitle: "Digital Strategy",
       backDescription:
         "Comprehensive digital marketing strategies tailored to your business goals.",
@@ -26,7 +26,7 @@ export function ImageCards() {
     },
     {
       id: 3,
-      frontImage: "/images/hero-image.jpg",
+      frontImage: "/images/web.jpg",
       backTitle: "Web Development",
       backDescription:
         "Modern, responsive websites that provide exceptional user experiences.",
@@ -34,7 +34,7 @@ export function ImageCards() {
     },
     {
       id: 4,
-      frontImage: "/images/3.png.jpg",
+      frontImage: "/images/content.jpg",
       backTitle: "Content Marketing",
       backDescription:
         "Engaging content that tells your story and drives meaningful connections.",
@@ -42,7 +42,7 @@ export function ImageCards() {
     },
     {
       id: 5,
-      frontImage: "/images/hero-image.jpg",
+      frontImage: "/images/media.jpg",
       backTitle: "Social Media",
       backDescription:
         "Strategic social media management to build communities and amplify your brand.",
@@ -50,7 +50,7 @@ export function ImageCards() {
     },
     {
       id: 6,
-      frontImage: "/images/3.png.jpg",
+      frontImage: "/images/insights.jpg",
       backTitle: "Analytics & Insights",
       backDescription:
         "Data-driven insights and performance tracking to optimize your marketing efforts.",
