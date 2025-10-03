@@ -47,28 +47,27 @@ export function BlogSection() {
   ];
 
   return (
-    <section className="py-24 bg-white w-full">
-      <div className="container mx-auto px-4">
+    <section className="py-16 sm:py-20 md:py-24 bg-white w-full font-[Borna]">
+      <div className="container mx-auto px-4 sm:px-6 md:px-8">
         {/* Section Header */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="text-center mb-16"
+          className="text-center mb-10 md:mb-16"
         >
-          <h2 className="text-4xl sm:text-5xl font-bold text-black leading-tight mb-6">
+          <h2 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-black leading-tight mb-4 md:mb-6">
             Latest Insights
           </h2>
-          <div className="w-20 h-0.5 bg-orange-500 mx-auto mb-8"></div>
-          <p className="text-orange-600 text-lg max-w-3xl mx-auto leading-relaxed">
+          <p className="text-orange-600 text-base sm:text-lg md:text-xl max-w-3xl mx-auto leading-relaxed">
             Stay ahead of the curve with our latest thoughts on digital
             marketing, branding, and emerging technologies.
           </p>
         </motion.div>
 
         {/* Blog Posts Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8 mb-10 md:mb-12">
           {blogPosts.map((post, index) => (
             <motion.article
               key={post.id}
@@ -77,10 +76,10 @@ export function BlogSection() {
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: index * 0.1 }}
               whileHover={{ y: -5 }}
-              className="bg-white border border-gray-300 hover:bg-orange-100 hover:border-orange-600 transition-all duration-300 group cursor-pointer rounded-xl overflow-hidden"
+              className="bg-white border border-gray-300 md:hover:bg-orange-100 md:hover:border-orange-600 transition-all duration-300 group cursor-pointer rounded-xl overflow-hidden"
             >
               <Link href={`/blog/${post.slug}`}>
-                <div className="relative h-48 overflow-hidden">
+                <div className="relative h-44 sm:h-48 overflow-hidden">
                   <Image
                     src={post.image}
                     alt={post.title}
@@ -90,22 +89,22 @@ export function BlogSection() {
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent" />
                   <div className="absolute top-4 left-4">
-                    <span className="px-3 py-1 bg-orange-500 text-white text-sm font-semibold rounded-full">
+                    <span className="px-3 py-1 bg-orange-500 text-white text-xs sm:text-sm font-semibold rounded-full">
                       {post.category}
                     </span>
                   </div>
                 </div>
 
-                <div className="p-6 text-left break-words">
-                  <h3 className="text-xl font-semibold text-gray-900 mb-3 group-hover:text-orange-600 transition-colors line-clamp-2 text-left">
+                <div className="p-5 md:p-6 text-left break-words">
+                  <h3 className="text-lg sm:text-xl font-semibold text-gray-900 mb-2 md:mb-3 group-hover:text-orange-600 transition-colors line-clamp-2 text-left">
                     {post.title}
                   </h3>
-                  <p className="text-gray-600 leading-relaxed mb-4 line-clamp-3 text-left break-words group-hover:text-gray-800 transition-colors">
+                  <p className="text-gray-600 leading-relaxed mb-3 md:mb-4 line-clamp-3 text-left break-words group-hover:text-gray-800 transition-colors text-sm sm:text-base">
                     {post.excerpt}
                   </p>
 
-                  <div className="flex items-center justify-between text-sm text-gray-500 mb-4">
-                    <div className="flex items-center space-x-4">
+                  <div className="flex items-center justify-between text-xs sm:text-sm text-gray-500 mb-3 md:mb-4">
+                    <div className="flex items-center space-x-3 sm:space-x-4">
                       <div className="flex items-center space-x-1">
                         <User className="w-4 h-4" />
                         <span>{post.author}</span>
@@ -137,7 +136,7 @@ export function BlogSection() {
           className="text-center"
         >
           <Link href="/blog">
-            <div className="mt-16">
+            <div className="mt-12 md:mt-16">
               <CTAButton label="Get Started Today" type="1" />
             </div>
           </Link>

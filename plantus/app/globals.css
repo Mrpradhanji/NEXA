@@ -1,3 +1,74 @@
+@font-face {
+  font-family: 'Anton';
+  src: url('/Anton-Regular.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Borna';
+  src: url('/Borna-Regular.otf') format('opentype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Borna';
+  src: url('/Borna-Italic.otf') format('opentype');
+  font-weight: 400;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Borna';
+  src: url('/Borna-Medium.otf') format('opentype');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Borna';
+  src: url('/Borna-MediumItalic.otf') format('opentype');
+  font-weight: 500;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Borna';
+  src: url('/Borna-SemiBold.otf') format('opentype');
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Borna';
+  src: url('/Borna-SemiBoldItalic.otf') format('opentype');
+  font-weight: 600;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Borna';
+  src: url('/Borna-Bold.otf') format('opentype');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Borna';
+  src: url('/Borna-BoldItalic.otf') format('opentype');
+  font-weight: 700;
+  font-style: italic;
+  font-display: swap;
+}
 
 @import "tailwindcss";
 
@@ -9,4 +80,39 @@
       transform: translate(calc(-50% - 0.5rem));
     }
   }
+
+  /* Tailwind v4 font token for custom Weight font */
+  --font-weight: "Weight", "WeightSans", "Inter", sans-serif;
+}
+
+/* Single-file Weight.ttf in /public */
+@font-face {
+  font-family: "Weight";
+  src: url("/Weight.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* Direct utility class to force the font without relying on token build */
+.font-weight {
+  font-family: "Weight", "WeightSans", "Inter", sans-serif;
+}
+
+
+
+@font-face {
+  font-family: "WeightSans";
+  src: url("/fonts/weight-sans/WeightSans-Regular.woff2") format("woff2"),
+       url("/fonts/weight-sans/WeightSans-Regular.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "WeightSans";
+  src: url("/fonts/weight-sans/WeightSans-Bold.woff2") format("woff2"),
+       url("/fonts/weight-sans/WeightSans-Bold.woff") format("woff");
+  font-weight: bold;
+  font-style: normal;
 }

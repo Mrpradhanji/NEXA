@@ -2,6 +2,8 @@
 import React, { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import Footer from "../components/Footer";
+import Link from "next/link";
+const MotionLink = motion(Link);
 import Breadcrumbs from "../components/Breadcrumbs";
 import Image from "next/image";
 import { InfiniteMovingCardsDemo } from "../components/Testimonials";
@@ -126,7 +128,7 @@ export default function OurWorksPage() {
 
   const processSteps = ["Discover", "Design", "Develop", "Launch", "Optimize"];
   return (
-    <div className="min-h-screen bg-white text-black">
+    <div className="min-h-screen bg-white text-black font-[Borna]">
       {/* Hero Section */}
       <section className="py-20 px-4 text-center">
         <motion.h1
@@ -357,13 +359,14 @@ export default function OurWorksPage() {
           Let&apos;s discuss how we can help bring your vision to life and
           achieve your business goals.
         </p>
-        <motion.button
+        <MotionLink
+          href="/contact"
           whileHover={{ scale: 1.05 }}
           whileTap={{ scale: 0.95 }}
-          className="bg-orange-500 text-white font-semibold px-8 py-4 rounded-full transition-all duration-300 shadow-lg hover:shadow-xl"
+          className="inline-block bg-orange-500 text-white font-semibold px-8 py-4 rounded-full transition-all duration-300 shadow-lg hover:shadow-xl"
         >
           Start Your Project
-        </motion.button>
+        </MotionLink>
       </section>
 
       <Footer />

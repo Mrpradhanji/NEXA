@@ -73,7 +73,7 @@ export default function AboutPage() {
   ];
 
   return (
-    <div className="min-h-screen bg-white">
+    <div className="min-h-screen bg-white font-[Borna]">
       {/* Hero Section */}
       <section className="relative py-16 sm:py-20 md:py-24 lg:py-32 px-4 sm:px-6 md:px-8 bg-gradient-to-br from-orange-50 via-white to-orange-50 overflow-hidden">
         <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[300px] h-[300px] sm:w-[400px] sm:h-[400px] md:w-[500px] md:h-[500px] lg:w-[600px] lg:h-[600px] bg-orange-200 opacity-20 rounded-full animate-pulse"></div>

@@ -18,6 +18,7 @@ export default function Home() {
   const [muted, setMuted] = useState(true);
   const [hover, setHover] = useState(false);
   const [mousePos, setMousePos] = useState({ x: 0, y: 0 });
+  const [isTouch, setIsTouch] = useState(false);
 
   const toggleMute = () => {
     if (videoRef.current) {
@@ -30,10 +31,10 @@ export default function Home() {
     <div className="flex flex-col min-h-screen w-full bg-white">
       {/* Hero Section */}
       <section
-        className={`relative w-full h-screen flex items-center justify-center ${
+        className={`relative w-full min-h-[70vh] md:h-screen bg-white flex items-center justify-center ${
           hover ? "cursor-none" : "cursor-pointer"
         } overflow-hidden`}
-        onMouseEnter={() => setHover(true)}
+        onMouseEnter={() => !isTouch && setHover(true)}
         onMouseLeave={() => setHover(false)}
         onMouseMove={(e) => {
           const rect = (
@@ -41,7 +42,15 @@ export default function Home() {
           ).getBoundingClientRect();
           setMousePos({ x: e.clientX - rect.left, y: e.clientY - rect.top });
         }}
-        onClick={toggleMute}
+        onPointerDown={(e) => {
+          if (e.pointerType === "touch") {
+            setIsTouch(true);
+            setHover(false);
+          }
+        }}
+        onClick={(e) => {
+          if (!isTouch) toggleMute();
+        }}
       >
         <video
           ref={videoRef}
@@ -50,19 +59,30 @@ export default function Home() {
           loop
           muted={muted}
           playsInline
-          className="absolute inset-0 w-full h-full object-cover"
+          className="absolute inset-0 w-full h-full object-cover object-center scale-[1.12] sm:scale-100"
         />
 
         {/* Hero Title Overlay */}
         <div className="absolute inset-0 flex items-center justify-center z-20 px-4">
           <div className="text-center w-full max-w-4xl mx-auto px-4">
-            <p className="text-white text-lg md:text-xl mt-6 max-w-2xl mx-auto">
-              Creating digital experiences that inspire and engage
+            <p className="text-white text-base sm:text-lg md:text-xl mt-6 max-w-2xl mx-auto font-weight-graphicxe">
+            We are Your one-stop to get all digital services. Learn more how we work to provide you the best by understanding your business as well as the industry requirements.
             </p>
+            {/* Mobile mute toggle */}
+            <div className="mt-4 flex justify-center md:hidden">
+              <button
+                type="button"
+                onClick={toggleMute}
+                className="inline-flex items-center gap-2 rounded-full bg-black/60 px-4 py-2 text-white"
+              >
+                {muted ? <VolumeX className="w-5 h-5" /> : <Volume2 className="w-5 h-5" />}
+                <span className="text-sm">{muted ? "Unmute" : "Mute"}</span>
+              </button>
+            </div>
           </div>
         </div>
 
-        {hover && (
+        {hover && !isTouch && (
           <div
             className="absolute z-30 pointer-events-none"
             style={{
@@ -94,7 +114,7 @@ export default function Home() {
           <InfiniteMovingCardsDemo />
           {/* <HoverImageLinks />*/}
           {/* CTA Section */}
-          <section className="py-24 px-4 bg-white text-center text-black">
+          <section className="py-24 px-4 bg-white text-center text-black font-[Borna]">
             <div className="container mx-auto">
               <h2 className="text-4xl sm:text-5xl font-bold mb-6">
                 Ready to Grow with Us?

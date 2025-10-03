@@ -12,8 +12,8 @@ export const InfiniteMovingCards = ({
 }: {
   items: {
     quote: string;
-    name: string;
-    title: string;
+    name?: string;
+    title?: string;
     color?: string; // Optional gradient/color for each card
   }[];
   direction?: "left" | "right";
@@ -62,6 +62,21 @@ export const InfiniteMovingCards = ({
     }
   };
 
+  // Mobile/Pointer pause support (press & hold to pause)
+  const pauseAnimation = () => {
+    if (!pauseOnHover) return;
+    if (scrollerRef.current) {
+      scrollerRef.current.style.animationPlayState = "paused";
+    }
+  };
+
+  const resumeAnimation = () => {
+    if (!pauseOnHover) return;
+    if (scrollerRef.current) {
+      scrollerRef.current.style.animationPlayState = "running";
+    }
+  };
+
   return (
     <div
       ref={containerRef}
@@ -69,6 +84,13 @@ export const InfiniteMovingCards = ({
         "scroller relative z-20 max-w-7xl overflow-hidden [mask-image:linear-gradient(to_right,transparent,#ffffff_20%,#ff5800_80%,transparent)]",
         className
       )}
+      onPointerDown={pauseAnimation}
+      onPointerUp={resumeAnimation}
+      onPointerCancel={resumeAnimation}
+      onTouchStart={pauseAnimation}
+      onTouchEnd={resumeAnimation}
+      onMouseEnter={pauseOnHover ? pauseAnimation : undefined}
+      onMouseLeave={pauseOnHover ? resumeAnimation : undefined}
     >
       <ul
         ref={scrollerRef}
@@ -80,9 +102,9 @@ export const InfiniteMovingCards = ({
       >
         {items.map((item, idx) => (
           <li
-            key={item.name + idx}
+            key={`${item.name ?? "item"}-${idx}`}
             className={cn(
-              "relative w-[350px] max-w-full shrink-0 rounded-2xl border border-b-0 px-8 py-6 md:w-[450px]",
+              "relative w-[260px] xs:w-[300px] sm:w-[360px] md:w-[420px] lg:w-[480px] max-w-full shrink-0 rounded-2xl border border-b-0 px-6 sm:px-8 py-5 sm:py-6",
               item.color
                 ? item.color
                 : "bg-gradient-to-b from-orange-200 to-orange-400 dark:from-gray-800 dark:to-gray-900",
@@ -94,15 +116,15 @@ export const InfiniteMovingCards = ({
                 aria-hidden="true"
                 className="user-select-none pointer-events-none absolute -top-0.5 -left-0.5 -z-1 h-[calc(100%_+_4px)] w-[calc(100%_+_4px)]"
               ></div>
-              <span className="relative z-20 text-sm leading-[1.6] font-normal text-neutral-800 dark:text-gray-100">
+              <span className="relative z-20 text-sm sm:text-base leading-[1.7] font-normal text-neutral-800 dark:text-gray-100">
                 {item.quote}
               </span>
               <div className="relative z-20 mt-6 flex flex-row items-center">
                 <span className="flex flex-col gap-1">
-                  <span className="text-sm leading-[1.6] font-semibold text-neutral-600 dark:text-gray-400">
+                  <span className="text-xs sm:text-sm leading-[1.6] font-semibold text-neutral-600 dark:text-gray-400">
                     {item.name}
                   </span>
-                  <span className="text-sm leading-[1.6] font-normal text-neutral-500 dark:text-gray-400">
+                  <span className="text-xs sm:text-sm leading-[1.6] font-normal text-neutral-500 dark:text-gray-400">
                     {item.title}
                   </span>
                 </span>

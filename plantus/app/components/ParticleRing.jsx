@@ -1,73 +1,26 @@
 "use client";
-import React, { useRef } from "react";
-import { Canvas, useFrame } from "@react-three/fiber";
-import { OrbitControls, Sphere } from "@react-three/drei";
-import { pointsInner, pointsOuter } from "../lib/utils";
-import BubbleText from "./bubble-text/BubbleCode";
+import dynamic from "next/dynamic";
+
+// Dynamically import Spline with no SSR
+const Spline = dynamic(() => import("@splinetool/react-spline"), {
+  ssr: false,
+});
+
 const ParticleRing = () => {
   return (
-    <div className="relative">
-      <Canvas
-        camera={{ position: [10, -7.5, -5] }}
-        style={{ height: "100vh", background: "#000000" }} // <-- black background
-      >
-        <OrbitControls maxDistance={20} minDistance={10} enablePan={false} />
-        <ambientLight intensity={0.3} />
-        <directionalLight position={[5, 10, 5]} intensity={1} />
-        <pointLight position={[-30, 0, -30]} intensity={5} />
-        <GlowingParticleRing />
-      </Canvas>
-      <div className="absolute inset-0 flex items-center justify-center">
-        <BubbleText text="Helping businesses achieve their goals since 2018" />
+    <div className="relative w-full h-screen">
+      <Spline
+        scene="https://prod.spline.design/Lb8HAdKFyMp1Slbh/scene.splinecode"
+        className="w-full h-full"
+      />
+      <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
+        <div className="text-center px-4">
+          <p className="text-orange-600 text-7xl font-[Borna] font-bold">
+            Helping businesses achieve their goals since 2018
+          </p>
+        </div>
       </div>
     </div>
-  );
-};
-
-const GlowingParticleRing = () => {
-  const ref = useRef(null);
-
-  useFrame(({ clock }) => {
-    if (ref.current) {
-      // Multi-axis rotation
-      ref.current.rotation.x = clock.getElapsedTime() * 0.02;
-      ref.current.rotation.y = clock.getElapsedTime() * 0.03;
-      ref.current.rotation.z = clock.getElapsedTime() * 0.05;
-
-      // Pulsating scale animation for particles
-      ref.current.children.forEach((child, i) => {
-        child.scale.setScalar(
-          1 + Math.sin(clock.getElapsedTime() * 2 + i) * 0.2
-        );
-      });
-    }
-  });
-
-  return (
-    <group ref={ref}>
-      {pointsInner.map((point) => (
-        <Particle key={point.idx} position={point.position} />
-      ))}
-      {pointsOuter.map((point) => (
-        <Particle key={point.idx} position={point.position} />
-      ))}
-    </group>
-  );
-};
-
-const Particle = ({ position }) => {
-  const orange = "#f97316"; // Tailwind orange-500
-
-  return (
-    <Sphere position={position} args={[0.12, 16, 16]}>
-      <meshStandardMaterial
-        color={orange}
-        emissive={orange}
-        emissiveIntensity={1}
-        roughness={0.4}
-        metalness={0.6}
-      />
-    </Sphere>
   );
 };
 

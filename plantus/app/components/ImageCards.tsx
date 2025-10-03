@@ -67,28 +67,27 @@ export function ImageCards() {
   };
 
   return (
-    <section className="py-24 bg-white w-full">
-      <div className="container mx-auto px-4">
+    <section className="py-16 sm:py-20 md:py-24 bg-white w-full">
+      <div className="container mx-auto px-4 sm:px-6 md:px-8">
         {/* Section Header */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="text-center mb-16"
+          className="text-center mb-6"
         >
-          <h2 className="text-4xl sm:text-5xl font-bold text-black leading-tight mb-6">
+          <h2 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-['Borna'] font-bold text-black leading-tight mb-4">
             Case Studies
           </h2>
-          <div className="w-20 h-0.5 bg-orange-500 mx-auto mb-8"></div>
-          <p className="text-orange-600 text-lg max-w-3xl mx-auto leading-relaxed">
+          <p className="text-orange-600 text-base sm:text-lg md:text-xl max-w-3xl mx-auto leading-relaxed font-[Borna]">
             Explore our latest projects and see how we bring creative visions to
             life through innovative design and cutting-edge technology.
           </p>
         </motion.div>
 
         {/* Image Cards Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
           {imageCards.map((card, index) => (
             <motion.div
               key={card.id}
@@ -100,7 +99,7 @@ export function ImageCards() {
               style={{ perspective: "1000px" }}
             >
               <motion.div
-                className="relative w-full h-80 cursor-pointer"
+                className="relative w-full h-64 sm:h-72 md:h-80 cursor-pointer"
                 style={{ transformStyle: "preserve-3d" }}
                 animate={{
                   rotateY: flippedCards.includes(card.id) ? 180 : 0,
@@ -111,7 +110,7 @@ export function ImageCards() {
               >
                 {/* Front of Card */}
                 <div
-                  className="absolute inset-0 w-full h-full backface-hidden"
+                  className="absolute inset-0 w-full h-full backface-hidden font-[Borna]"
                   style={{ backfaceVisibility: "hidden" }}
                 >
                   <div className="relative w-full h-full rounded-xl overflow-hidden group">
@@ -124,13 +123,13 @@ export function ImageCards() {
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent" />
                     <div className="absolute bottom-4 left-4 right-4">
-                      <span className="inline-block px-3 py-1 bg-orange-500 text-white text-sm font-semibold rounded-full mb-2">
+                      <span className="inline-block px-3 py-1 bg-orange-500 text-white text-xs sm:text-sm font-semibold rounded-full mb-2">
                         {card.category}
                       </span>
-                      <h3 className="text-white text-xl font-bold mb-2">
+                      <h3 className="text-white text-lg sm:text-xl font-bold mb-2">
                         {card.backTitle}
                       </h3>
-                      <p className="text-white/80 text-sm">Click to learn more</p>
+                      <p className="text-white/80 text-xs sm:text-sm">Click to learn more</p>
                     </div>
                     <div className="absolute top-4 right-4">
                       <motion.div
@@ -158,22 +157,22 @@ export function ImageCards() {
 
                 {/* Back of Card */}
                 <div
-                  className="absolute inset-0 w-full h-full backface-hidden"
+                  className="absolute inset-0 w-full h-full backface-hidden font-[Borna]"
                   style={{
                     backfaceVisibility: "hidden",
                     transform: "rotateY(180deg)",
                   }}
                 >
-                  <div className="w-full h-full bg-gradient-to-br from-gray-900 to-black rounded-xl p-6 border border-orange-500/20 overflow-visible">
+                  <div className="w-full h-full bg-gradient-to-br from-gray-900 to-black rounded-xl p-5 md:p-6 border border-orange-500/20 overflow-visible">
                     <div className="flex flex-col justify-between h-full">
                       <div>
-                        <span className="inline-block px-3 py-1 bg-orange-500 text-white text-sm font-semibold rounded-full mb-4">
+                        <span className="inline-block px-3 py-1 bg-orange-500 text-white text-xs sm:text-sm font-semibold rounded-full mb-4">
                           {card.category}
                         </span>
-                        <h3 className="text-white text-xl font-bold mb-4">
+                        <h3 className="text-white text-lg sm:text-xl font-bold mb-4">
                           {card.backTitle}
                         </h3>
-                        <p className="text-gray-300 leading-relaxed">
+                        <p className="text-gray-300 leading-relaxed text-sm sm:text-base">
                           {card.backDescription}
                         </p>
                       </div>
@@ -199,7 +198,7 @@ export function ImageCards() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6, delay: 0.8 }}
-          className="text-center mt-16"
+          className="text-center mt-12 md:mt-16"
         >
           {/* Main CTA also uses Button 1 */}
           <CTAButton label="View All Projects" type="2" href="/portfolio" />

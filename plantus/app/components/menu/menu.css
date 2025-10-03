@@ -16,11 +16,12 @@
 
 .menu-bar a,
 .menu-open p {
-  color: #000;
+  color: #fff;
   cursor: pointer;
-  font-family: "BornaBold", sans-serif;
-  font-weight: 700;
-  letter-spacing: -0.02em;
+  font-family: 'Borna', sans-serif;
+  font-weight: 700; /* Bold weight */
+  text-transform: uppercase;
+  letter-spacing: 1px;
 }
 
 /* Brand logo */
@@ -50,7 +51,7 @@
   pointer-events: none;
   overflow-y: auto;
   -webkit-overflow-scrolling: touch;
-  font-family: "BornaBold", sans-serif;
+  font-family: 'Borna', sans-serif;
 }
 
 /* Top bar inside overlay */
@@ -72,23 +73,37 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  gap: 1rem;
   padding: 2em 0;
 }
 
 .menu-link-item-holder a {
   text-decoration: none;
+  font-family: 'Borna', sans-serif;
+  font-weight: 800; /* Bold weight */
+  font-size: clamp(2rem, 6vw, 3.75rem);
+  line-height: 1.1;
+  color: #fff;
+  position: relative;
+  transition: color 0.3s ease;
+  display: block;
+  margin: 0.15em 0; /* tighter vertical spacing */
 }
 
-.menu-link {
-  text-decoration: none;
+/* Tighter vertical rhythm between items */
+.menu-link-item {
+  margin: 0.15em 0;
+}
+
+.menu-link-item-holder a:hover {
+  color: black;
+  text-decoration: underline;
 }
 
 /* Info Section */
 .menu-info {
   display: flex;
   flex-wrap: wrap;
-  gap: 2rem;
+  gap: 1rem;
   margin-top: 2rem;
   padding: 1rem 0;
   border-top: 1px solid rgba(0,0,0,0.1);
@@ -132,8 +147,8 @@
 
 .menu-preview p,
 .menu-preview a {
-  font-family: "BornaBold", sans-serif;
-  font-weight: 700;
+  font-family: 'Borna', sans-serif;
+  font-weight: 200;
   font-size: 1.25rem;
   color: #000;
   text-decoration: none;
@@ -153,13 +168,15 @@
 /* Responsive */
 @media (max-width: 1024px) {
   .menu-link-item-holder a {
-    font-size: clamp(1.75rem, 7vw, 3.5rem);
+    font-size: clamp(1.5rem, 6.5vw, 3rem);
+    line-height: 1.15;
   }
 }
 
 @media (max-width: 640px) {
   .menu-link-item-holder a {
-    font-size: clamp(1.5rem, 8vw, 2.5rem);
+    font-size: clamp(1.25rem, 7vw, 2rem);
+    line-height: 1.2;
   }
   .menu-info p,
   .menu-info a {
@@ -169,7 +186,7 @@
   .menu-preview a {
     font-size: 1.1rem;
   }
-  }
+}
 
 /* Body lock when menu open */
 body.menu-open {

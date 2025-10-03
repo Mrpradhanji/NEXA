@@ -3,6 +3,7 @@ import React, { Suspense } from "react";
 import { motion } from "framer-motion";
 import dynamic from "next/dynamic";
 import Breadcrumbs from "../components/Breadcrumbs";
+import { title } from "process";
 
 // Lazy load heavy components
 const ParticleRing = dynamic(() => import("../components/ParticleRing"), {
@@ -32,9 +33,9 @@ export default function ServicesPage() {
       ],
     },
     {
-      title: "Website Design & Development",
+      title: "Website Development",
       description:
-        "Modern, responsive websites that provide exceptional user experiences and drive conversions.",
+        "We start the development only after having a detailed session with the clients to make sure that we understand their needs entirely.",
       features: [
         "UI/UX Design",
         "Responsive Development",
@@ -89,7 +90,7 @@ export default function ServicesPage() {
   ];
 
   return (
-    <div className="min-h-screen bg-white">
+    <div className="min-h-screen bg-white font-[Borna]">
       {/* Hero Section */}
       <section className="py-0 px-4 bg-black relative overflow-hidden">
         <div className="container mx-auto text-center relative z-10">
@@ -116,7 +117,7 @@ export default function ServicesPage() {
       </div>
 
       {/* Services Overview */}
-      <section className="py-24 px-4 bg-white">
+      <section className="py-16 sm:py-20 md:py-24 px-4 bg-white">
         <div className="container mx-auto">
           {/* FAQPage JSON-LD */}
           <script
@@ -151,13 +152,12 @@ export default function ServicesPage() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
-            className="text-center mb-16"
+            className="text-center mb-10 md:mb-16"
           >
-            <h2 className="text-4xl sm:text-5xl font-bold text-black leading-tight mb-6">
+            <h2 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-black leading-tight mb-4 md:mb-6">
               What We Provide
             </h2>
-            <div className="w-20 h-0.5 bg-orange-500 mx-auto mb-8"></div>
-            <p className="text-orange-600 text-lg max-w-3xl mx-auto leading-relaxed">
+            <p className="text-orange-600 text-base sm:text-lg md:text-xl max-w-3xl mx-auto leading-relaxed">
               We offer comprehensive digital marketing solutions designed to
               elevate your brand and drive sustainable growth in today&apos;s
               competitive landscape.
@@ -165,7 +165,7 @@ export default function ServicesPage() {
           </motion.div>
 
           {/* Services Grid */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
             {serviceCategories.map((service, index) => (
               <motion.div
                 key={index}
@@ -174,20 +174,20 @@ export default function ServicesPage() {
                 viewport={{ once: true }}
                 transition={{ duration: 0.6, delay: index * 0.1 }}
                 whileHover={{ y: -5, scale: 1.02 }}
-                className="bg-white backdrop-blur-sm rounded-xl p-8 border border-black hover:bg-orange-100 hover:border-orange-500/50 transition-all duration-300 group cursor-pointer"
+                className="bg-white backdrop-blur-sm rounded-xl p-6 md:p-8 border border-black md:hover:bg-orange-100 md:hover:border-orange-500/50 transition-all duration-300 group cursor-pointer"
               >
                 <div className="space-y-4">
-                  <h3 className="text-xl font-semibold text-orange-600 group-hover:text-orange-400 transition-colors">
+                  <h3 className="text-lg sm:text-xl font-semibold text-orange-600 group-hover:text-orange-400 transition-colors">
                     {service.title}
                   </h3>
-                  <p className="text-black leading-relaxed group-hover:text-black transition-colors">
+                  <p className="text-black leading-relaxed group-hover:text-black transition-colors text-sm sm:text-base">
                     {service.description}
                   </p>
                   <ul className="space-y-2 mt-4">
                     {service.features.map((feature, idx) => (
                       <li
                         key={idx}
-                        className="text-black text-sm flex items-center"
+                        className="text-black text-xs sm:text-sm flex items-center"
                       >
                         <span className="w-2 h-2 bg-orange-500 rounded-full mr-3"></span>
                         {feature}
@@ -227,27 +227,26 @@ export default function ServicesPage() {
       />
 
       {/* Process Section */}
-      <section className="py-24 px-4 bg-white/5">
+      <section className="py-16 sm:py-20 md:py-24 px-4 bg-white/5">
         <div className="container mx-auto">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
-            className="text-center mb-16"
+            className="text-center mb-10 md:mb-16"
           >
-            <h2 className="text-4xl sm:text-5xl font-bold text-black leading-tight mb-6">
+            <h2 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-black leading-tight mb-4 md:mb-6">
               Our Process
             </h2>
-            <div className="w-20 h-0.5 bg-orange-500 mx-auto mb-8"></div>
-            <p className="text-orange-600 text-lg max-w-3xl mx-auto leading-relaxed">
+            <p className="text-orange-600 text-base sm:text-lg md:text-xl max-w-3xl mx-auto leading-relaxed">
               Plantusmedia follows a proven methodology that delivers results
               through strategic planning, creative execution, and continuous
               optimization.
             </p>
           </motion.div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8">
             {[
               {
                 step: "01",
@@ -280,15 +279,15 @@ export default function ServicesPage() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.6, delay: index * 0.1 }}
-                className="text-center bg-white p-6 rounded-xl shadow-md transition-all duration-300 hover:bg-orange-100 cursor-pointer"
+                className="text-center bg-white p-5 md:p-6 rounded-xl shadow-md transition-all duration-300 md:hover:bg-orange-100 cursor-pointer"
               >
-                <div className="text-6xl font-bold text-orange-500 mb-4">
+                <div className="text-4xl sm:text-5xl md:text-6xl font-bold text-orange-500 mb-3 md:mb-4">
                   {process.step}
                 </div>
-                <h3 className="text-xl font-semibold text-black mb-3">
+                <h3 className="text-lg sm:text-xl font-semibold text-black mb-2 md:mb-3">
                   {process.title}
                 </h3>
-                <p className="text-black">{process.description}</p>
+                <p className="text-black text-sm sm:text-base">{process.description}</p>
               </motion.div>
             ))}
           </div>
@@ -296,7 +295,7 @@ export default function ServicesPage() {
       </section>
 
       {/* CTA Section */}
-      <section className="py-24 px-4">
+      <section className="py-16 sm:py-20 md:py-24 px-4">
         <div className="container mx-auto text-center">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -307,7 +306,7 @@ export default function ServicesPage() {
             <h2 className="text-4xl sm:text-5xl font-bold text-black leading-tight mb-6">
               Ready to Get Started?
             </h2>
-            <p className="text-black text-lg max-w-2xl mx-auto mb-8">
+            <p className="text-black text-base sm:text-lg max-w-2xl mx-auto mb-8">
               Let&apos;s discuss how we can help accelerate your business growth
               through strategic digital marketing.
             </p>

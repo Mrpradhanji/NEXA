@@ -4,9 +4,9 @@ import Image from "next/image";
 
 export default function AboutUs() {
   return (
-    <section className="py-24 bg-white w-full">
+    <section className="py-16 sm:py-20 md:py-24 bg-white w-full">
       <div className="container px-4 sm:px-6 md:px-8 mx-auto">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 items-center">
           {/* Left side - Content */}
           <motion.div
             initial={{ opacity: 0, x: -50 }}
@@ -17,30 +17,23 @@ export default function AboutUs() {
           >
             {/* Heading */}
             <div className="space-y-6 mb-8 lg:mb-0">
-              <h2 className="text-4xl sm:text-5xl font-bold leading-tight text-orange-600">
-                About PLANTUSMEDIA
+              <h2 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl leading-tight font-['Borna'] font-bold text-orange-600">
+                About Plantusmedia
               </h2>
-              <div className="w-20 h-0.5 bg-orange-500 mx-auto lg:mx-0"></div>
             </div>
 
             {/* Paragraphs */}
-            <div className="space-y-6 text-black text-lg leading-relaxed">
-              <p>
-                We are a leading digital marketing agency specializing in
-                creating innovative strategies that drive growth and engagement.
-                Our team combines creativity with cutting-edge technology to
-                deliver exceptional results for our clients.
+            <div className="space-y-6">
+              <p className="font-['Borna'] text-base sm:text-lg md:text-xl font-light leading-relaxed sm:leading-8 text-black">
+              We, at Plantus Media, know your requirements intimately and re-imagine the web beyond traditional boundaries. Our experts understand how crucial it is to have a digital presence for your business. We leverage the latest technology the internet has to offer and provide you stunning digital solutions. 
               </p>
-              <p>
-                With years of experience in the industry, we understand the
-                evolving digital landscape and help businesses navigate it
-                successfully. From brand strategy to performance marketing, we
-                provide comprehensive solutions tailored to your needs.
+              <p className="font-['Borna'] text-base sm:text-lg md:text-xl font-light leading-relaxed sm:leading-8 text-black">
+              We strive to help you in achieving your business targets by implementing a time-proven digital strategy that has delivered results for thousands of customers. We are a full-grown digital marketing company that specializes in various aspects of digital content such as web design and development, social media marketing, branding and logo design, content creation, search engine optimization, etc. We value the trust you have in our services with a promise to deliver you stellar results for your marketing goals.
               </p>
             </div>
 
             {/* Stats Cards */}
-            <dl className="grid grid-cols-1 sm:grid-cols-3 gap-4 w-full mt-8">
+            <dl className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 w-full mt-8">
               {[
                 { value: "10+", label: "Years Experience" },
                 { value: "500+", label: "Projects" },
@@ -52,8 +45,10 @@ export default function AboutUs() {
                 >
                   <dt className="sr-only">{stat.label}</dt>
                   <dd>
-                    <span className="text-2xl font-bold block">{stat.value}</span>
-                    <p className="text-sm mt-2 opacity-90">{stat.label}</p>
+                    <span className="text-xl sm:text-2xl font-bold block">
+                      {stat.value}
+                    </span>
+                    <p className="text-xs sm:text-sm mt-2 opacity-90">{stat.label}</p>
                   </dd>
                 </div>
               ))}

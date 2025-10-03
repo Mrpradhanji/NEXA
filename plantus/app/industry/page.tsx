@@ -147,7 +147,7 @@ export default function IndustryPage() {
   ];
 
   return (
-    <div className="min-h-screen bg-white">
+    <div className="min-h-screen bg-white font-[Borna]">
       {/* Hero Section */}
       <section className="relative py-24 px-4 overflow-hidden bg-gradient-to-br from-gray-50 to-white">
         {/* Background pattern */}
@@ -267,11 +267,10 @@ export default function IndustryPage() {
             transition={{ duration: 0.6 }}
             className="text-center mb-16"
           >
-            <h2 className="text-4xl sm:text-5xl font-bold text-black leading-tight mb-6">
+            <h2 className="text-7xl font-bold text-black leading-tight mb-6">
               Our Industry Expertise
             </h2>
-            <div className="w-20 h-0.5 bg-orange-500 mx-auto mb-8"></div>
-            <p className="text-black text-lg max-w-3xl mx-auto leading-relaxed">
+            <p className="text-orange-600 text-lg max-w-3xl mx-auto leading-relaxed">
               We bring specialized knowledge and proven strategies to help
               businesses in various industries achieve their digital marketing
               goals.
@@ -290,10 +289,10 @@ export default function IndustryPage() {
                 className="bg-white rounded-xl p-8 border border-black hover:bg-orange-100 hover:border-orange-500 transition-all duration-300 group cursor-pointer"
               >
                 <div className="space-y-4">
-                  <h3 className="text-xl font-semibold text-black group-hover:text-orange-600 transition-colors">
+                  <h3 className="text-xl font-semibold text-orange-600 group-hover:text-orange-600 transition-colors">
                     {industry.title}
                   </h3>
-                  <p className="text-gray-700 leading-relaxed group-hover:text-black transition-colors">
+                  <p className="text-black leading-relaxed group-hover:text-black transition-colors">
                     {industry.description}
                   </p>
                   <div className="space-y-3">
@@ -333,11 +332,10 @@ export default function IndustryPage() {
             transition={{ duration: 0.6 }}
             className="text-center mb-16"
           >
-            <h2 className="text-4xl sm:text-5xl font-bold text-black leading-tight mb-6">
+            <h2 className="text-7xl font-bold text-black leading-tight mb-6">
               Why Industry Expertise Matters
             </h2>
-            <div className="w-20 h-0.5 bg-orange-500 mx-auto mb-8"></div>
-            <p className="text-black text-lg max-w-3xl mx-auto leading-relaxed">
+            <p className="text-orange-600 text-lg max-w-3xl mx-auto leading-relaxed">
               Our deep understanding of industry-specific challenges and
               opportunities allows us to deliver targeted, effective solutions.
             </p>

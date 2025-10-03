@@ -5,7 +5,7 @@ import Link from "next/link";
 
 export default function Footer() {
   return (
-    <footer className="bg-orange-500 text-white pt-12 px-8 md:px-20">
+    <footer className="bg-orange-500 text-white pt-12 px-8 md:px-20 font-[Borna]">
       {/* Top Links Section */}
       <div className="max-w-7xl mx-auto flex flex-col md:flex-row md:justify-between md:items-start">
         {/* Left - Big Section Links */}

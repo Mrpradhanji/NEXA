@@ -10,23 +10,16 @@ const orange = "text-orange-500";
 
 const locations = [
   {
-    city: "Bolton",
-    phone: "+44 (0)1204 669566",
-    addr: ["Rugby House, Hampson Street", "Horwich, BL6 7JH"],
-    map: "https://maps.google.com/?q=Rugby+House+Horwich+BL6+7JH",
+    city: "Ghaziabad",
+    phone: "+91 8368344943",
+    addr: [
+      "SE 87A",
+      "Jaipurua Sunrise Plaza",
+      "Ahinsa Khand 1",
+      "Indirapuram, Ghaziabad, Uttar Pradesh, India - 201014",
+    ],
+    map: "https://maps.app.goo.gl/X49k9SfbfqgpT61RA",
   },
-  {
-    city: "London",
-    phone: "+44 (0)20 4538 8086",
-    addr: ["3rd Floor, 86-90 Paul Street", "London, EC2A 4NE"],
-    map: "https://maps.google.com/?q=86-90+Paul+Street+London+EC2A+4NE",
-  },
-];
-
-const socialLinks = [
-  { label: "LinkedIn", icon: "fa-brands fa-linkedin", url: "#" },
-  { label: "Instagram", icon: "fa-brands fa-instagram", url: "#" },
-  { label: "YouTube", icon: "fa-brands fa-youtube", url: "#" },
 ];
 
 const aboutOptions = [
@@ -46,19 +39,19 @@ const AbsoluteContact = () => {
   const [statusMessage, setStatusMessage] = useState<string | null>(null);
   const [statusError, setStatusError] = useState<string | null>(null);
 
-  // Initialize EmailJS once on mount
+  // EmailJS init
   useEffect(() => {
     const publicKey = process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY as string;
     if (publicKey) {
       try {
         emailjs.init({ publicKey });
       } catch {
-        // noop - will be caught on send
+        // ignore
       }
     }
   }, []);
 
-  // Magnetic button logic
+  // Magnetic button motion
   const x = useMotionValue(0);
   const y = useMotionValue(0);
   const rotateX = useTransform(y, [-50, 50], [15, -15]);
@@ -80,7 +73,7 @@ const AbsoluteContact = () => {
       const templateId = process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID as string;
 
       if (!serviceId || !templateId) {
-        throw new Error("Email service is not configured.");
+        throw new Error("Email service not configured");
       }
 
       const templateParams = {
@@ -93,13 +86,13 @@ const AbsoluteContact = () => {
 
       await emailjs.send(serviceId, templateId, templateParams);
 
-      setStatusMessage("Thanks! Your message has been sent.");
+      setStatusMessage("✅ Thanks! Your message has been sent.");
       setAbout("");
       setName("");
       setEmail("");
       setMessage("");
-    } catch (err) {
-      setStatusError("Sorry, something went wrong. Please try again.");
+    } catch {
+      setStatusError("❌ Sorry, something went wrong. Please try again.");
     } finally {
       setIsSubmitting(false);
     }
@@ -107,47 +100,22 @@ const AbsoluteContact = () => {
 
   return (
     <div className="relative font-sans bg-black min-h-screen text-white overflow-hidden">
-      {/* Parallax gradient blobs */}
-      <motion.div
-        animate={{ x: [0, 40, -40, 0], y: [0, -60, 60, 0] }}
-        transition={{ duration: 30, repeat: Infinity, ease: "linear" }}
-        className="absolute top-[-180px] left-[5%] w-[600px] h-[600px] blur-[180px] opacity-40 z-0 pointer-events-none"
-        style={{
-          background: "linear-gradient(135deg,#FF5800,#E040FB,#7C3AED)",
-        }}
-      />
-      <motion.div
-        animate={{ x: [0, -80, 80, 0], y: [0, 95, -95, 0] }}
-        transition={{ duration: 36, repeat: Infinity, ease: "linear" }}
-        className="absolute bottom-[-220px] right-[6%] w-[450px] h-[450px] blur-[130px] opacity-40 z-0 pointer-events-none"
-        style={{
-          background: "linear-gradient(120deg,#7C3AED,#FF5800,#E040FB)",
-        }}
-      />
-
-      {/* Noise overlay */}
-      <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/noise.png')] opacity-10 pointer-events-none z-10"></div>
-
-      {/* Header: Hero */}
+      {/* Hero */}
       <section className="py-28 text-center relative z-20">
         <motion.div
           initial={{ opacity: 0, y: 40 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
-          className="text-6xl md:text-7xl font-extrabold leading-tight text-white drop-shadow-[0_0_35px_rgba(0,0,0,0.5)]"
+          className="text-6xl md:text-7xl font-extrabold leading-tight"
         >
-          Connect.
-          <br />
-          Collaborate.
-          <br />
-          Be Bold.
+          Connect. <br /> Collaborate. <br /> Be Bold.
         </motion.div>
         <div className="mt-8 text-lg font-semibold text-gray-300">
           &quot;We spark ideas into creative realities.&quot;
         </div>
       </section>
 
-      {/* Divider Wave */}
+      {/* Divider */}
       <svg
         className="w-full h-16 text-orange-500"
         viewBox="0 0 1440 320"
@@ -156,14 +124,14 @@ const AbsoluteContact = () => {
         <path fill="currentColor" d="M0,64L1440,224L1440,320L0,320Z"></path>
       </svg>
 
-      {/* Breadcrumbs - placed after hero */}
+      {/* Breadcrumbs */}
       <div className="container mx-auto px-4 pt-4 relative z-20">
         <Breadcrumbs items={[{ label: "Home", href: "/" }, { label: "Contact" }]} />
       </div>
 
-      {/* Contact & Locations */}
+      {/* Contact & Location */}
       <section className="flex flex-col md:flex-row items-start justify-center max-w-6xl mx-auto px-4 py-12 gap-12 z-20 relative">
-        {/* Animated Glass Contact Card */}
+        {/* Contact Form Card */}
         <motion.div
           initial={{ opacity: 0, scale: 0.92 }}
           animate={{ opacity: 1, scale: 1 }}
@@ -171,28 +139,27 @@ const AbsoluteContact = () => {
           className="flex-1 bg-black bg-opacity-70 backdrop-blur-lg rounded-3xl shadow-2xl border border-orange-500 border-opacity-20 p-10 space-y-10"
         >
           <div className="text-center space-y-2">
-            <div className="text-3xl font-extrabold tracking-tight">
+            <div className="text-3xl font-extrabold">
               <span className={orange}>Work with us</span>
             </div>
             <div className="text-2xl font-bold">plantusmedia1@gmail.com</div>
             <div className={orange + " text-xl font-semibold"}>Talk to us</div>
-            <div className="text-lg font-bold">India: 01204 669566</div>
+            <a href="tel:+918368344943" className="text-lg font-bold underline">
+              India: +91 8368344943
+            </a>
           </div>
 
-          {/* Modern Two-column Form */}
+          {/* ✅ Full Form here */}
           <motion.form
+            onSubmit={handleSubmit}
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
             className="grid grid-cols-1 md:grid-cols-2 gap-6 text-white items-stretch mt-6"
-            onSubmit={handleSubmit}
-            aria-label="Contact Form"
           >
             {/* Left Column */}
             <div className="flex flex-col gap-4">
-              <label className="text-orange-400 text-sm font-semibold mb-1">
-                Type of enquiry
-              </label>
+              <label className="text-orange-400 text-sm font-semibold">Type of enquiry</label>
               <select
                 value={about}
                 onChange={(e) => setAbout(e.target.value)}
@@ -207,53 +174,44 @@ const AbsoluteContact = () => {
                 ))}
               </select>
 
-              <label className="text-orange-400 text-sm font-semibold mb-1">
-                Name
-              </label>
+              <label className="text-orange-400 text-sm font-semibold">Name</label>
               <input
                 type="text"
                 placeholder="Name*"
                 className="border-b border-orange-400 bg-transparent py-2 outline-none text-lg"
                 required
                 value={name}
-                aria-label="Your Name"
                 onChange={(e) => setName(e.target.value)}
               />
 
-              <label className="text-orange-400 text-sm font-semibold mb-1">
-                Email Address
-              </label>
+              <label className="text-orange-400 text-sm font-semibold">Email Address</label>
               <input
                 type="email"
                 placeholder="Email*"
                 className="border-b border-orange-400 bg-transparent py-2 outline-none text-lg"
                 required
                 value={email}
-                aria-label="Email Address"
                 onChange={(e) => setEmail(e.target.value)}
               />
             </div>
 
             {/* Right Column */}
             <div className="flex flex-col gap-4">
-              <label className="text-orange-400 text-sm font-semibold mb-1">
-                Message
-              </label>
+              <label className="text-orange-400 text-sm font-semibold">Message</label>
               <textarea
                 rows={6}
                 placeholder="Message"
-                className="border-b border-orange-400 bg-transparent py-2 outline-none text-lg h-full resize-none"
+                className="border-b border-orange-400 bg-transparent py-2 outline-none text-lg resize-none h-full"
                 value={message}
-                aria-label="Message"
                 onChange={(e) => setMessage(e.target.value)}
               />
 
-              <div className="text-xs text-gray-400 text-left leading-tight mt-1 md:mt-auto">
+              <div className="text-xs text-gray-400 mt-2">
                 By submitting this form, I agree Plantusmedia may use my data as
                 described in the privacy policy.
               </div>
 
-              {/* Magnetic Button */}
+              {/* Magnetic Submit Button */}
               <motion.button
                 style={{ x, y, rotateX, rotateY, z: 100 }}
                 drag
@@ -262,28 +220,23 @@ const AbsoluteContact = () => {
                 whileHover={{ scale: 1.08, backgroundColor: "#FF5800" }}
                 whileTap={{ scale: 0.96 }}
                 type="submit"
-                className="mt-4 md:mt-0 font-bold text-lg text-orange-400 hover:underline px-6 py-3 border border-orange-400 rounded-full transition-shadow self-start disabled:opacity-60 disabled:cursor-not-allowed"
                 disabled={isSubmitting}
-                aria-label="Submit"
+                className="mt-4 font-bold text-lg text-orange-400 border border-orange-400 rounded-full px-6 py-3"
               >
                 {isSubmitting ? "Sending..." : "Submit"}
               </motion.button>
 
               {statusMessage && (
-                <div className="text-green-400 text-sm mt-2" aria-live="polite">
-                  {statusMessage}
-                </div>
+                <div className="text-green-400 text-sm mt-2">{statusMessage}</div>
               )}
               {statusError && (
-                <div className="text-red-400 text-sm mt-2" aria-live="assertive">
-                  {statusError}
-                </div>
+                <div className="text-red-400 text-sm mt-2">{statusError}</div>
               )}
             </div>
           </motion.form>
         </motion.div>
 
-        {/* Locations */}
+        {/* Location Card */}
         <motion.div
           initial={{ opacity: 0, x: 30 }}
           animate={{ opacity: 1, x: 0 }}
@@ -297,19 +250,15 @@ const AbsoluteContact = () => {
               className="bg-gray-900 bg-opacity-70 backdrop-blur rounded-xl p-7 space-y-3 shadow-xl w-full"
             >
               <div className={orange + " text-2xl font-bold"}>{city}</div>
-              <div className={orange + " text-xs"}>{phone}</div>
+              <a href={`tel:${phone}`} className={orange + " text-xs underline"}>
+                {phone}
+              </a>
               <div className="text-sm font-medium text-gray-200">
                 {addr.map((line) => (
                   <div key={line}>{line}</div>
                 ))}
               </div>
-              <a
-                href={map}
-                target="_blank"
-                rel="noopener noreferrer"
-                className={orange + " text-xs font-semibold underline"}
-                aria-label={`Find us in ${city}`}
-              >
+              <a href={map} target="_blank" rel="noopener noreferrer" className={orange + " text-xs underline"}>
                 Find Us
               </a>
             </motion.div>
@@ -317,63 +266,42 @@ const AbsoluteContact = () => {
         </motion.div>
       </section>
 
-      {/* Bold Quote */}
-      <section className="py-20 text-center px-6 relative z-20">
-        <motion.h2
-          initial={{ opacity: 0, y: 40 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
-          className="text-4xl md:text-6xl font-extrabold text-white drop-shadow-[0_0_15px_rgba(0,0,0,0.5)]"
-        >
-          &quot;Creativity takes courage.&quot;
-        </motion.h2>
-      </section>
-
-      {/* Reveal Links Section */}
-
       {/* Footer */}
       <footer className="bg-orange-500 py-12 px-8 mt-10 text-white relative z-20">
         <RevealLinks />
       </footer>
-  {/* LocalBusiness + ContactPoint JSON-LD */}
-  <script
-    type="application/ld+json"
-    dangerouslySetInnerHTML={{
-      __html: JSON.stringify({
-        "@context": "https://schema.org",
-        "@type": "LocalBusiness",
-        name: "Plantus Media",
-        url: "https://plantusmedia.com",
-        email: "plantusmedia1@gmail.com",
-        telephone: "+44 (0)1204 669566",
-        address: [
-          {
-            "@type": "PostalAddress",
-            streetAddress: "Rugby House, Hampson Street",
-            addressLocality: "Horwich",
-            postalCode: "BL6 7JH",
-            addressCountry: "UK",
-          },
-          {
-            "@type": "PostalAddress",
-            streetAddress: "3rd Floor, 86-90 Paul Street",
-            addressLocality: "London",
-            postalCode: "EC2A 4NE",
-            addressCountry: "UK",
-          },
-        ],
-        contactPoint: [
-          {
-            "@type": "ContactPoint",
-            telephone: "+44 (0)1204 669566",
-            contactType: "sales",
-            areaServed: "GB",
-            availableLanguage: ["en"],
-          },
-        ],
-      }),
-    }}
-  />
+
+      {/* ✅ JSON-LD Schema for Ghaziabad */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "LocalBusiness",
+            name: "Plantus Media",
+            url: "https://plantusmedia.com",
+            email: "plantusmedia1@gmail.com",
+            telephone: "+91 8368344943",
+            address: {
+              "@type": "PostalAddress",
+              streetAddress: "SE 87A, Jaipurua Sunrise Plaza, Ahinsa Khand 1, Indirapuram",
+              addressLocality: "Ghaziabad",
+              postalCode: "201014",
+              addressRegion: "Uttar Pradesh",
+              addressCountry: "India",
+            },
+            contactPoint: [
+              {
+                "@type": "ContactPoint",
+                telephone: "+91 8368344943",
+                contactType: "customer support",
+                areaServed: "IN",
+                availableLanguage: ["en", "hi"],
+              },
+            ],
+          }),
+        }}
+      />
     </div>
   );
 };
