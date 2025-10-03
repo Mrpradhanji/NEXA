@@ -67,12 +67,12 @@ export default function Footer() {
         <div>
           <div className="text-3xl md:text-4xl font-extrabold mb-3">
             <a href="mailto:hello@plantusmedia.com" className="hover:underline">
-              hello@plantusmedia.com
+              plantusmediaconsulting@gmail.com
             </a>
           </div>
           <div className="font-bold text-lg mb-4">
-            <a href="tel:+441204669566" className="hover:underline">UK: +44 (0)1204 669566</a> <br />
-            <a href="tel:+442045388086" className="hover:underline">DUBAI: +44 (0)20 4538 8086</a>
+            <a href="tel:+918368344943" className="hover:underline">IND:+91 8368344943</a> <br />
+
           </div>
 
           {/* Social + Quick Links */}

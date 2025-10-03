@@ -6,10 +6,6 @@ import Breadcrumbs from "../components/Breadcrumbs";
 import { title } from "process";
 
 // Lazy load heavy components
-const ParticleRing = dynamic(() => import("../components/ParticleRing"), {
-  ssr: false,
-  loading: () => <div className="h-[90vh] flex items-center justify-center text-white">Loading...</div>,
-});
 const Footer = dynamic(() => import("../components/Footer"), {
   ssr: false,
   loading: () => <div className="text-center py-10 text-black">Loading footer...</div>,
@@ -91,24 +87,20 @@ export default function ServicesPage() {
 
   return (
     <div className="min-h-screen bg-white font-[Borna]">
-      {/* Hero Section */}
-      <section className="py-0 px-4 bg-black relative overflow-hidden">
-        <div className="container mx-auto text-center relative z-10">
-          <div className="relative w-full h-[90vh]">
-            <Suspense
-              fallback={
-                <div className="h-[90vh] flex items-center justify-center text-white">
-                  Loading effect...
-                </div>
-              }
-            >
-              <ParticleRing />
-            </Suspense>
+      {/* Hero Section (Text-based, lightweight) */}
+      <section className="w-full bg-white">
+        <div className="container mx-auto px-4 sm:px-6 md:px-8">
+          <div className="flex items-center justify-center text-center min-h-[50vh] sm:min-h-[60vh] md:min-h-[70vh]">
+            <div className="max-w-4xl mx-auto">
+              <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-orange-600 leading-tight">
+                Helping businesses achieve their goals since 2018
+              </h1>
+              <p className="mt-4 text-black text-base sm:text-lg md:text-xl max-w-2xl mx-auto leading-relaxed">
+                Strategic, creative, and performance-driven services tailored to your brand.
+              </p>
+            </div>
           </div>
         </div>
-
-        {/* Optional gradient overlay */}
-        <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-b from-black/70 to-black/30 pointer-events-none"></div>
       </section>
 
       {/* Breadcrumbs - placed after hero */}
@@ -165,15 +157,15 @@ export default function ServicesPage() {
           </motion.div>
 
           {/* Services Grid */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 md:gap-6 lg:gap-8">
             {serviceCategories.map((service, index) => (
               <motion.div
                 key={index}
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                transition={{ duration: 0.6, delay: index * 0.1 }}
-                whileHover={{ y: -5, scale: 1.02 }}
+                transition={{ duration: 0.5, delay: index * 0.08 }}
+                whileHover={{ y: -3, scale: 1.01 }}
                 className="bg-white backdrop-blur-sm rounded-xl p-6 md:p-8 border border-black md:hover:bg-orange-100 md:hover:border-orange-500/50 transition-all duration-300 group cursor-pointer"
               >
                 <div className="space-y-4">
