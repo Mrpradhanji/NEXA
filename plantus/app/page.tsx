@@ -54,7 +54,7 @@ export default function Home() {
       >
         <video
           ref={videoRef}
-          src="/images/video.mp4"
+          src="/images/PlantusMedia.webm"
           autoPlay
           loop
           muted={muted}

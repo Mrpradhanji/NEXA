@@ -35,7 +35,7 @@ export default function AboutUs() {
             {/* Stats Cards */}
             <dl className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 w-full mt-8">
               {[
-                { value: "70+", label: "Years Experience" },
+                { value: "7+", label: "Years Experience" },
                 { value: "500+", label: "Projects" },
                 { value: "98%", label: "Success Rate" },
               ].map((stat, idx) => (
@@ -65,7 +65,7 @@ export default function AboutUs() {
           >
             <div className="relative overflow-hidden rounded-2xl shadow-2xl w-full max-w-[600px] aspect-[4/3] md:aspect-square">
               <Image
-                src="/images/hero-image.jpg"
+                src="/images/digital.jpg"
                 alt="Creative team at PlantusMedia working together"
                 width={600}
                 height={600}
