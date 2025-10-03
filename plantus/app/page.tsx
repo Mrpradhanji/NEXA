@@ -65,10 +65,7 @@ export default function Home() {
         {/* Hero Title Overlay */}
         <div className="absolute inset-0 flex items-center justify-center z-20 px-4">
           <div className="text-center w-full max-w-4xl mx-auto px-4">
-            <p className="text-white text-base sm:text-lg md:text-xl mt-6 max-w-2xl mx-auto font-weight-graphicxe">
-            We are Your one-stop to get all digital services. Learn more how we work to provide you the best by understanding your business as well as the industry requirements.
-            </p>
-            {/* Mobile mute toggle */}
+                        {/* Mobile mute toggle */}
             <div className="mt-4 flex justify-center md:hidden">
               <button
                 type="button"
