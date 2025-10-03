@@ -7,7 +7,7 @@ export const metadata: Metadata = {
   alternates: { canonical: "/about" },
   openGraph: {
     title: "About | Plantus Media",
-    url: "https://plantusmedia.com/about",
+    url: "https://www.plantusmediaconsulting.com/about",
     images: [{ url: "/opengraph-image?title=About%20%E2%80%93%20Plantus%20Media" }],
   },
 };
@@ -31,8 +31,8 @@ export default function AboutLayout({
             "@context": "https://schema.org",
             "@type": "BreadcrumbList",
             itemListElement: [
-              { "@type": "ListItem", position: 1, name: "Home", item: "https://plantusmedia.com/" },
-              { "@type": "ListItem", position: 2, name: "About", item: "https://plantusmedia.com/about" },
+              { "@type": "ListItem", position: 1, name: "Home", item: "https://www.plantusmediaconsulting.com/" },
+              { "@type": "ListItem", position: 2, name: "About", item: "https://www.plantusmediaconsulting.com/about" },
             ],
           }),
         }}

@@ -13,7 +13,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://plantusmedia.com"),
+  metadataBase: new URL("https://www.plantusmediaconsulting.com/"),
   title: {
     default: "PLANTUSMEDIA | Digital Marketing, SEO, and Growth",
     template: "%s | PlantusMedia",
@@ -45,7 +45,7 @@ export const metadata: Metadata = {
   },
   openGraph: {
     type: "website",
-    url: "https://plantusmedia.com/",
+    url: "https://www.plantusmediaconsulting.com/",
     siteName: "PLANTUSMEDIA",
     title: "PLANTUSMEDIA | Digital Marketing, SEO, and Growth",
     description:
@@ -101,8 +101,8 @@ export default function RootLayout({
               "@context": "https://schema.org",
               "@type": "Organization",
               name: "PLANTUSMEDIA",
-              url: "https://plantusmedia.com",
-              logo: "https://plantusmedia.com/images/logo.png",
+              url: "https://www.plantusmediaconsulting.com/",
+              logo: "https://www.plantusmediaconsulting.com/images/logo.png",
               sameAs: [
                 "https://www.linkedin.com/company/plantusmedia",
                 "https://twitter.com/plantusmedia",
@@ -119,10 +119,10 @@ export default function RootLayout({
               "@context": "https://schema.org",
               "@type": "WebSite",
               name: "PLANTUSMEDIA",
-              url: "https://plantusmedia.com",
+              url: "https://www.plantusmediaconsulting.com/",
               potentialAction: {
                 "@type": "SearchAction",
-                target: "https://plantusmedia.com/blog?q={search_term_string}",
+                target: "https://www.plantusmediaconsulting.com/blog?q={search_term_string}",
                 "query-input": "required name=search_term_string",
               },
             }),

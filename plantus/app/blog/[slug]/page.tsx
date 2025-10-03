@@ -223,8 +223,8 @@ export default function BlogPostPage({ params }: Props) {
             headline: post.title,
             description: post.excerpt,
             image: [
-              `https://plantusmedia.com${post.image}`,
-              `https://plantusmedia.com${ogImage}`,
+              `https://www.plantusmediaconsulting.com${post.image}`,
+              `https://www.plantusmediaconsulting.com${ogImage}`,
             ],
             datePublished: new Date(post.date).toISOString(),
             author: {
@@ -236,12 +236,12 @@ export default function BlogPostPage({ params }: Props) {
               name: "Plantus Media",
               logo: {
                 "@type": "ImageObject",
-                url: "https://plantusmedia.com/images/logo.png",
+                url: "https://www.plantusmediaconsulting.com/images/logo.png",
               },
             },
             mainEntityOfPage: {
               "@type": "WebPage",
-              "@id": `https://plantusmedia.com/blog/${post.slug}`,
+              "@id": `https://www.plantusmediaconsulting.com/blog/${post.slug}`,
             },
           }),
         }}
@@ -258,19 +258,19 @@ export default function BlogPostPage({ params }: Props) {
                 "@type": "ListItem",
                 position: 1,
                 name: "Home",
-                item: "https://plantusmedia.com/",
+                item: "https://www.plantusmediaconsulting.com/",
               },
               {
                 "@type": "ListItem",
                 position: 2,
                 name: "Blog",
-                item: "https://plantusmedia.com/blog",
+                item: "https://www.plantusmediaconsulting.com/blog",
               },
               {
                 "@type": "ListItem",
                 position: 3,
                 name: post.title,
-                item: `https://plantusmedia.com/blog/${post.slug}`,
+                item: `https://www.plantusmediaconsulting.com/blog/${post.slug}`,
               },
             ],
           }),
@@ -306,7 +306,7 @@ export async function generateMetadata(
       type: "article",
       title,
       description,
-      url: `https://plantusmedia.com${url}`,
+      url: `https://www.plantusmediaconsulting.com${url}`,
       images: [{ url: image }],
       authors: [post.author.name],
       publishedTime: new Date(post.date).toISOString(),

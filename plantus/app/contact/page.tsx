@@ -279,8 +279,8 @@ const AbsoluteContact = () => {
             "@context": "https://schema.org",
             "@type": "LocalBusiness",
             name: "Plantus Media",
-            url: "https://plantusmedia.com",
-            email: "plantusmedia1@gmail.com",
+            url: "https://www.plantusmediaconsulting.com/",
+            email: "plantusmediaconsulting@gmail.com",
             telephone: "+91 8368344943",
             address: {
               "@type": "PostalAddress",

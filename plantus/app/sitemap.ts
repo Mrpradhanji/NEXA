@@ -2,7 +2,7 @@ import type { MetadataRoute } from "next";
 import { getAllPosts } from "./blog/data";
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const base = "https://plantusmedia.com";
+  const base = "https://www.plantusmediaconsulting.com";
 
   const staticRoutes: MetadataRoute.Sitemap = [
     "",

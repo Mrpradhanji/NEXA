@@ -2,7 +2,7 @@ import { NextResponse } from "next/server";
 import { getAllPosts } from "../data";
 
 export async function GET() {
-  const base = "https://plantusmedia.com";
+  const base = "https://www.plantusmediaconsulting.com";
   const posts = getAllPosts();
 
   const items = posts

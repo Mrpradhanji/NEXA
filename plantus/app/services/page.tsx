@@ -204,7 +204,7 @@ export default function ServicesPage() {
             provider: {
               "@type": "Organization",
               name: "Plantus Media",
-              url: "https://plantusmedia.com",
+              url: "https://www.plantusmediaconsulting.com/",
             },
             areaServed: "GB",
             serviceType: [

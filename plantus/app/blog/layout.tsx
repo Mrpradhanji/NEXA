@@ -7,7 +7,7 @@ export const metadata: Metadata = {
   alternates: { canonical: "/blog" },
   openGraph: {
     title: "Blog | Plantus Media",
-    url: "https://plantusmedia.com/blog",
+    url: "https://www.plantusmediaconsulting.com/blog",
     images: [{ url: "/opengraph-image?title=Plantus%20Media%20Blog" }],
   },
   other: {

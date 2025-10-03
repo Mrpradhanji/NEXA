@@ -7,7 +7,7 @@ export const metadata: Metadata = {
   alternates: { canonical: "/industry" },
   openGraph: {
     title: "Industry Expertise | Plantus Media",
-    url: "https://plantusmedia.com/industry",
+    url: "https://www.plantusmediaconsulting.com/industry",
     images: [{ url: "/opengraph-image?title=Industry%20Expertise%20%E2%80%93%20Plantus%20Media" }],
   },
 };
@@ -27,8 +27,8 @@ export default function IndustryLayout({
             "@context": "https://schema.org",
             "@type": "BreadcrumbList",
             itemListElement: [
-              { "@type": "ListItem", position: 1, name: "Home", item: "https://plantusmedia.com/" },
-              { "@type": "ListItem", position: 2, name: "Industry", item: "https://plantusmedia.com/industry" },
+              { "@type": "ListItem", position: 1, name: "Home", item: "https://www.plantusmediaconsulting.com/" },
+              { "@type": "ListItem", position: 2, name: "Industry", item: "https://www.plantusmediaconsulting.com/industry" },
             ],
           }),
         }}
