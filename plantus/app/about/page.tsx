@@ -73,14 +73,14 @@ export default function AboutPage() {
   ];
 
   return (
-    <div className="min-h-screen bg-white font-[Borna]">
+    <div className="min-h-screen bg-white font-anton font-medium">
       {/* Hero Section */}
       <section className="relative py-16 sm:py-20 md:py-24 lg:py-32 px-4 sm:px-6 md:px-8 bg-gradient-to-br from-orange-50 via-white to-orange-50 overflow-hidden">
         <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[300px] h-[300px] sm:w-[400px] sm:h-[400px] md:w-[500px] md:h-[500px] lg:w-[600px] lg:h-[600px] bg-orange-200 opacity-20 rounded-full animate-pulse"></div>
 
         <div className="container mx-auto flex flex-col-reverse lg:flex-row items-center justify-between gap-12 lg:gap-8">
           <div className="text-center lg:text-left lg:max-w-xl xl:max-w-2xl">
-            <motion.h1 initial={{ opacity: 0, y: 40 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8 }} className="text-3xl xs:text-4xl sm:text-5xl lg:text-6xl font-extrabold text-black mb-4 sm:mb-6 leading-tight">
+            <motion.h1 initial={{ opacity: 0, y: 40 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8 }} className="text-3xl xs:text-4xl sm:text-5xl lg:text-6xl font-bold mb-4 sm:mb-6 leading-tight">
               Who We Are
             </motion.h1>
 

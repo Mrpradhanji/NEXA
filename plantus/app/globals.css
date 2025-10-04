@@ -1,74 +1,149 @@
+/* Inter Font Family */
 @font-face {
-  font-family: 'Anton';
-  src: url('/Anton-Regular.ttf') format('truetype');
+  font-family: 'Inter';
+  src: url('/extras/ttf/Inter-Thin.ttf') format('truetype');
+  font-weight: 100;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Inter';
+  src: url('/extras/ttf/Inter-ThinItalic.ttf') format('truetype');
+  font-weight: 100;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Inter';
+  src: url('/extras/ttf/Inter-ExtraLight.ttf') format('truetype');
+  font-weight: 200;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Inter';
+  src: url('/extras/ttf/Inter-ExtraLightItalic.ttf') format('truetype');
+  font-weight: 200;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Inter';
+  src: url('/extras/ttf/Inter-Light.ttf') format('truetype');
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Inter';
+  src: url('/extras/ttf/Inter-LightItalic.ttf') format('truetype');
+  font-weight: 300;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Inter';
+  src: url('/extras/ttf/Inter-Regular.ttf') format('truetype');
   font-weight: 400;
   font-style: normal;
   font-display: swap;
 }
 
 @font-face {
-  font-family: 'Borna';
-  src: url('/Borna-Regular.otf') format('opentype');
-  font-weight: 400;
-  font-style: normal;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: 'Borna';
-  src: url('/Borna-Italic.otf') format('opentype');
+  font-family: 'Inter';
+  src: url('/extras/ttf/Inter-Italic.ttf') format('truetype');
   font-weight: 400;
   font-style: italic;
   font-display: swap;
 }
 
 @font-face {
-  font-family: 'Borna';
-  src: url('/Borna-Medium.otf') format('opentype');
+  font-family: 'Inter';
+  src: url('/extras/ttf/Inter-Medium.ttf') format('truetype');
   font-weight: 500;
   font-style: normal;
   font-display: swap;
 }
 
 @font-face {
-  font-family: 'Borna';
-  src: url('/Borna-MediumItalic.otf') format('opentype');
+  font-family: 'Inter';
+  src: url('/extras/ttf/Inter-MediumItalic.ttf') format('truetype');
   font-weight: 500;
   font-style: italic;
   font-display: swap;
 }
 
 @font-face {
-  font-family: 'Borna';
-  src: url('/Borna-SemiBold.otf') format('opentype');
+  font-family: 'Inter';
+  src: url('/extras/ttf/Inter-SemiBold.ttf') format('truetype');
   font-weight: 600;
   font-style: normal;
   font-display: swap;
 }
 
 @font-face {
-  font-family: 'Borna';
-  src: url('/Borna-SemiBoldItalic.otf') format('opentype');
+  font-family: 'Inter';
+  src: url('/extras/ttf/Inter-SemiBoldItalic.ttf') format('truetype');
   font-weight: 600;
   font-style: italic;
   font-display: swap;
 }
 
 @font-face {
-  font-family: 'Borna';
-  src: url('/Borna-Bold.otf') format('opentype');
+  font-family: 'Inter';
+  src: url('/extras/ttf/Inter-Bold.ttf') format('truetype');
   font-weight: 700;
   font-style: normal;
   font-display: swap;
 }
 
 @font-face {
-  font-family: 'Borna';
-  src: url('/Borna-BoldItalic.otf') format('opentype');
+  font-family: 'Inter';
+  src: url('/extras/ttf/Inter-BoldItalic.ttf') format('truetype');
   font-weight: 700;
   font-style: italic;
   font-display: swap;
 }
+
+@font-face {
+  font-family: 'Inter';
+  src: url('/extras/ttf/Inter-ExtraBold.ttf') format('truetype');
+  font-weight: 800;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Inter';
+  src: url('/extras/ttf/Inter-ExtraBoldItalic.ttf') format('truetype');
+  font-weight: 800;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Inter';
+  src: url('/extras/ttf/Inter-Black.ttf') format('truetype');
+  font-weight: 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Inter';
+  src: url('/extras/ttf/Inter-BlackItalic.ttf') format('truetype');
+  font-weight: 900;
+  font-style: italic;
+  font-display: swap;
+}
+
+
 
 @import "tailwindcss";
 
@@ -81,38 +156,15 @@
     }
   }
 
-  /* Tailwind v4 font token for custom Weight font */
-  --font-weight: "Weight", "WeightSans", "Inter", sans-serif;
+  --font-weight: "Inter", sans-serif;
 }
 
-/* Single-file Weight.ttf in /public */
-@font-face {
-  font-family: "Weight";
-  src: url("/Weight.ttf") format("truetype");
-  font-weight: normal;
-  font-style: normal;
-  font-display: swap;
-}
-
-/* Direct utility class to force the font without relying on token build */
-.font-weight {
-  font-family: "Weight", "WeightSans", "Inter", sans-serif;
-}
-
-
-
-@font-face {
-  font-family: "WeightSans";
-  src: url("/fonts/weight-sans/WeightSans-Regular.woff2") format("woff2"),
-       url("/fonts/weight-sans/WeightSans-Regular.woff") format("woff");
-  font-weight: normal;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: "WeightSans";
-  src: url("/fonts/weight-sans/WeightSans-Bold.woff2") format("woff2"),
-       url("/fonts/weight-sans/WeightSans-Bold.woff") format("woff");
-  font-weight: bold;
-  font-style: normal;
-}
+/*
+<p className="font-inter font-light">Light weight text</p>
+<p className="font-inter font-normal">Regular weight text</p>
+<p className="font-inter font-medium">Medium weight text</p>
+<p className="font-inter font-semibold">Semi-bold text</p>
+<p className="font-inter font-bold">Bold text</p>
+<p className="font-inter font-extrabold">Extra bold text</p>
+<p className="font-inter font-black">Black weight text</p>
+*/

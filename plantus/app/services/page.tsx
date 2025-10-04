@@ -86,7 +86,7 @@ export default function ServicesPage() {
   ];
 
   return (
-    <div className="min-h-screen bg-white font-[Borna]">
+    <div className="min-h-screen bg-white font-[Inter]">
       {/* Hero Section (Text-based, lightweight) */}
       <section className="w-full bg-white">
         <div className="container mx-auto px-4 sm:px-6 md:px-8">
@@ -149,7 +149,7 @@ export default function ServicesPage() {
             <h2 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-black leading-tight mb-4 md:mb-6">
               What We Provide
             </h2>
-            <p className="text-orange-600 text-base sm:text-lg md:text-xl max-w-3xl mx-auto leading-relaxed">
+            <p className="text-orange-600 text-base sm:text-lg md:text-xl max-w-3xl mx-auto leading-relaxed font-medium">
               We offer comprehensive digital marketing solutions designed to
               elevate your brand and drive sustainable growth in today&apos;s
               competitive landscape.
@@ -172,14 +172,14 @@ export default function ServicesPage() {
                   <h3 className="text-lg sm:text-xl font-semibold text-orange-600 group-hover:text-orange-400 transition-colors">
                     {service.title}
                   </h3>
-                  <p className="text-black leading-relaxed group-hover:text-black transition-colors text-sm sm:text-base">
+                  <p className="text-black leading-relaxed group-hover:text-black transition-colors text-sm sm:text-base font-medium">
                     {service.description}
                   </p>
                   <ul className="space-y-2 mt-4">
                     {service.features.map((feature, idx) => (
                       <li
                         key={idx}
-                        className="text-black text-xs sm:text-sm flex items-center"
+                        className="text-black text-xs sm:text-sm flex items-center font-medium"
                       >
                         <span className="w-2 h-2 bg-orange-500 rounded-full mr-3"></span>
                         {feature}
@@ -228,10 +228,10 @@ export default function ServicesPage() {
             transition={{ duration: 0.6 }}
             className="text-center mb-10 md:mb-16"
           >
-            <h2 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-black leading-tight mb-4 md:mb-6">
+            <h2 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold leading-tight mb-4 md:mb-6">
               Our Process
             </h2>
-            <p className="text-orange-600 text-base sm:text-lg md:text-xl max-w-3xl mx-auto leading-relaxed">
+            <p className="text-orange-600 text-base sm:text-lg md:text-xl max-w-3xl mx-auto leading-relaxed font-medium">
               Plantusmedia follows a proven methodology that delivers results
               through strategic planning, creative execution, and continuous
               optimization.
@@ -276,10 +276,10 @@ export default function ServicesPage() {
                 <div className="text-4xl sm:text-5xl md:text-6xl font-bold text-orange-500 mb-3 md:mb-4">
                   {process.step}
                 </div>
-                <h3 className="text-lg sm:text-xl font-semibold text-black mb-2 md:mb-3">
+                <h3 className="text-lg sm:text-xl font-medium text-black mb-2 md:mb-3">
                   {process.title}
                 </h3>
-                <p className="text-black text-sm sm:text-base">{process.description}</p>
+                <p className="text-black text-sm sm:text-base font-medium">{process.description}</p>
               </motion.div>
             ))}
           </div>
@@ -295,10 +295,10 @@ export default function ServicesPage() {
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
           >
-            <h2 className="text-4xl sm:text-5xl font-bold text-black leading-tight mb-6">
+            <h2 className="text-4xl sm:text-5xl text-black leading-tight mb-6 font-medium">
               Ready to Get Started?
             </h2>
-            <p className="text-black text-base sm:text-lg max-w-2xl mx-auto mb-8">
+            <p className="text-black text-base sm:text-lg max-w-2xl mx-auto mb-8 font-medium">
               Let&apos;s discuss how we can help accelerate your business growth
               through strategic digital marketing.
             </p>

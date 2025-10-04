@@ -128,7 +128,7 @@ export default function OurWorksPage() {
 
   const processSteps = ["Discover", "Design", "Develop", "Launch", "Optimize"];
   return (
-    <div className="min-h-screen bg-white text-black font-[Borna]">
+    <div className="min-h-screen bg-white text-black font-[Inter]">
       {/* Hero Section */}
       <section className="py-20 px-4 text-center">
         <motion.h1
@@ -298,10 +298,10 @@ export default function OurWorksPage() {
                 viewport={{ once: true }}
                 transition={{ duration: 0.6, delay: idx * 0.2 }}
               >
-                <div className="text-5xl font-bold text-orange-500 mb-2">
+                <div className="text-5xl font-medium text-orange-500 mb-2">
                   {stat.number}
                 </div>
-                <div className="text-black">{stat.label}</div>
+                <div className="text-black font-medium">{stat.label}</div>
               </motion.div>
             ))}
           </div>
@@ -329,12 +329,12 @@ export default function OurWorksPage() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: idx * 0.2 }}
-              className="bg-white rounded-xl p-6 shadow-md hover:shadow-lg transition-all duration-300"
+              className="bg-white/5 backdrop-blur-sm rounded-xl p-6 shadow-md hover:shadow-lg transition-all duration-300"
             >
               <div className="w-16 h-16 mx-auto mb-4 bg-orange-100 text-orange-500 rounded-full flex items-center justify-center text-2xl font-bold">
                 {idx + 1}
               </div>
-              <h3 className="font-semibold text-black text-lg mb-2">{step}</h3>
+              <h3 className="font-medium text-black text-lg mb-2">{step}</h3>
               <p className="text-gray-700 text-sm">
                 Short description of what happens in this step.
               </p>
@@ -351,7 +351,7 @@ export default function OurWorksPage() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="text-4xl sm:text-5xl font-bold mb-6"
+          className="text-4xl sm:text-5xl font-medium mb-6"
         >
           Ready to Start Your Project?
         </motion.h2>
@@ -363,7 +363,7 @@ export default function OurWorksPage() {
           href="/contact"
           whileHover={{ scale: 1.05 }}
           whileTap={{ scale: 0.95 }}
-          className="inline-block bg-orange-500 text-white font-semibold px-8 py-4 rounded-full transition-all duration-300 shadow-lg hover:shadow-xl"
+          className="inline-block bg-orange-500 text-white font-medium px-8 py-4 rounded-full transition-all duration-300 shadow-lg hover:shadow-xl"
         >
           Start Your Project
         </MotionLink>

@@ -63,21 +63,21 @@ export function Services() {
   };
 
   return (
-    <div className="flex flex-col items-center justify-center space-y-12 sm:space-y-14 md:space-y-16 py-16 sm:py-20 md:py-24 px-4 sm:px-6 md:px-8">
+    <div className="flex flex-col items-center font-[Inter]justify-center space-y-12 sm:space-y-14 md:space-y-16 py-16 sm:py-20 md:py-24 px-4 sm:px-6 md:px-8">
       {/* Animated Heading */}
       <motion.h2
         initial={{ opacity: 0, y: 40 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
         transition={{ duration: 0.8 }}
-        className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl text-black font-['Borna'] font-bold text-center"
+        className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl text-black font-inter font-semibold text-center"
       >
         What We Provide
       </motion.h2>
 
       {/* Grid for Cards */}
       <motion.div
-        className="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8 font-['Borna'] font-bold"
+        className="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8 font-inter font-medium"
         variants={containerVariants}
         initial="hidden"
         whileInView="visible"
@@ -93,7 +93,7 @@ export function Services() {
               >
                 <div className="flex flex-col">
                   <p className="text-lg sm:text-xl font-bold text-orange-600">{service.title}</p>
-                  <div className="mt-2 text-sm sm:text-base text-gray-800 leading-relaxed">
+                  <div className="mt-2 text-sm sm:text-base text-gray-800 leading-relaxed font-[Inter] font-medium">
                     {service.description}
                   </div>
                 </div>

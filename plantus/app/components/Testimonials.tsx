@@ -5,13 +5,13 @@ import { InfiniteMovingCards } from "./ui/infinite-moving-cards";
 
 export function InfiniteMovingCardsDemo() {
   return (
-    <div className="w-full min-h-[28rem] sm:min-h-[32rem] md:min-h-[40rem] py-12 sm:py-16 md:py-20 flex flex-col antialiased bg-black dark:bg-white dark:bg-grid-orange/[0.5] items-center justify-center relative overflow-hidden px-4 sm:px-6 md:px-8 font-[Borna]">
+    <div className="w-full min-h-[28rem] sm:min-h-[32rem] md:min-h-[40rem] py-12 sm:py-16 md:py-20 flex flex-col antialiased bg-black dark:bg-white dark:bg-grid-orange/[0.5] items-center justify-center relative overflow-hidden px-4 sm:px-6 md:px-8 font-inter">
       {/* Heading */}
       <div className="w-full max-w-7xl mx-auto text-center mb-8 sm:mb-12 md:mb-16 px-4">
         <h2 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-white dark:text-black mb-3 sm:mb-4">
           What Our Clients Say
         </h2>
-        <p className="text-orange-600 text-sm sm:text-base md:text-lg max-w-3xl mx-auto">
+        <p className="text-orange-600 text-sm sm:text-base md:text-lg max-w-3xl mx-auto font-medium">
           Hear from businesses that have transformed their digital presence with
           us
         </p>

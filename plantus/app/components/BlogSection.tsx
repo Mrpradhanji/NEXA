@@ -47,7 +47,7 @@ export function BlogSection() {
   ];
 
   return (
-    <section className="py-16 sm:py-20 md:py-24 bg-white w-full font-[Borna]">
+    <section className="py-16 sm:py-20 md:py-24 bg-white w-full font-inter">
       <div className="container mx-auto px-4 sm:px-6 md:px-8">
         {/* Section Header */}
         <motion.div
@@ -57,10 +57,10 @@ export function BlogSection() {
           transition={{ duration: 0.6 }}
           className="text-center mb-10 md:mb-16"
         >
-          <h2 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-black leading-tight mb-4 md:mb-6">
+          <h2 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl leading-tight mb-4 md:mb-6 font-semibold">
             Latest Insights
           </h2>
-          <p className="text-orange-600 text-base sm:text-lg md:text-xl max-w-3xl mx-auto leading-relaxed">
+          <p className="text-orange-600 text-base sm:text-lg md:text-xl max-w-3xl mx-auto leading-relaxed font-medium">
             Stay ahead of the curve with our latest thoughts on digital
             marketing, branding, and emerging technologies.
           </p>
@@ -96,14 +96,14 @@ export function BlogSection() {
                 </div>
 
                 <div className="p-5 md:p-6 text-left break-words">
-                  <h3 className="text-lg sm:text-xl font-semibold text-gray-900 mb-2 md:mb-3 group-hover:text-orange-600 transition-colors line-clamp-2 text-left">
+                  <h3 className="text-lg sm:text-xl font-semibold text-black mb-2 md:mb-3 group-hover:text-orange-600 transition-colors line-clamp-2 text-left">
                     {post.title}
                   </h3>
-                  <p className="text-gray-600 leading-relaxed mb-3 md:mb-4 line-clamp-3 text-left break-words group-hover:text-gray-800 transition-colors text-sm sm:text-base">
+                  <p className="text-black leading-relaxed mb-3 md:mb-4 line-clamp-3 text-left break-words group-hover:text-gray-800 transition-colors text-sm sm:text-base">
                     {post.excerpt}
                   </p>
 
-                  <div className="flex items-center justify-between text-xs sm:text-sm text-gray-500 mb-3 md:mb-4">
+                  <div className="flex items-center justify-between text-xs sm:text-sm text-black mb-3 md:mb-4">
                     <div className="flex items-center space-x-3 sm:space-x-4">
                       <div className="flex items-center space-x-1">
                         <User className="w-4 h-4" />

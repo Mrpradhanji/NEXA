@@ -99,7 +99,7 @@ const AbsoluteContact = () => {
   };
 
   return (
-    <div className="relative font-sans bg-black min-h-screen text-white overflow-hidden">
+    <div className="relative font-[Inter] bg-black min-h-screen text-white overflow-hidden">
       {/* Hero */}
       <section className="py-28 text-center relative z-20">
         <motion.div

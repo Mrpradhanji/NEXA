@@ -77,10 +77,10 @@ export function ImageCards() {
           transition={{ duration: 0.6 }}
           className="text-center mb-6"
         >
-          <h2 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-['Borna'] font-bold text-black leading-tight mb-4">
+          <h2 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-inter font-medium text-black leading-tight mb-4">
             Case Studies
           </h2>
-          <p className="text-orange-600 text-base sm:text-lg md:text-xl max-w-3xl mx-auto leading-relaxed font-[Borna]">
+          <p className="text-orange-600 text-base sm:text-lg md:text-xl max-w-3xl mx-auto leading-relaxed font-inter">
             Explore our latest projects and see how we bring creative visions to
             life through innovative design and cutting-edge technology.
           </p>
@@ -110,7 +110,7 @@ export function ImageCards() {
               >
                 {/* Front of Card */}
                 <div
-                  className="absolute inset-0 w-full h-full backface-hidden font-[Borna]"
+                  className="absolute inset-0 w-full h-full backface-hidden font-inter font-normal"
                   style={{ backfaceVisibility: "hidden" }}
                 >
                   <div className="relative w-full h-full rounded-xl overflow-hidden group">

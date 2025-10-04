@@ -89,8 +89,8 @@ export default function IndustryPage() {
   ];
 
   const stats = [
-    { number: "50+", label: "Industries Served" },
-    { number: "500+", label: "Successful Projects" },
+    { number: "10+", label: "Industries Served" },
+    { number: "20+", label: "Successful Projects" },
     { number: "98%", label: "Client Retention Rate" },
     { number: "200%", label: "Average ROI Increase" },
   ];
@@ -147,7 +147,7 @@ export default function IndustryPage() {
   ];
 
   return (
-    <div className="min-h-screen bg-white font-[Borna]">
+    <div className="min-h-screen bg-white font-[Inter]">
       {/* Hero Section */}
       <section className="relative py-24 px-4 overflow-hidden bg-gradient-to-br from-gray-50 to-white">
         {/* Background pattern */}
@@ -161,7 +161,7 @@ export default function IndustryPage() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.1 }}
-              className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 mb-4 sm:mb-6 leading-tight"
+              className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-black mb-4 sm:mb-6 leading-tight"
             >
               Tailored Digital Solutions for{" "}
               <span className="text-orange-500">Your Industry</span>
@@ -171,7 +171,7 @@ export default function IndustryPage() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.2 }}
-              className="text-base sm:text-lg md:text-xl text-gray-600 max-w-3xl mx-auto mb-8 sm:mb-10 leading-relaxed"
+              className="text-base sm:text-lg md:text-xl text-black max-w-3xl mx-auto mb-8 sm:mb-10 leading-relaxed font-medium"
             >
               We combine deep industry knowledge with cutting-edge digital
               strategies to deliver measurable results. Our expertise spans
@@ -219,7 +219,7 @@ export default function IndustryPage() {
                   {industry}
                 </span>
               ))}
-            </motion.div>
+            </motion.div> 
           </div>
         </div>
 
@@ -267,10 +267,10 @@ export default function IndustryPage() {
             transition={{ duration: 0.6 }}
             className="text-center mb-12 sm:mb-16"
           >
-            <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-black mb-4 sm:mb-6">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-black mb-4 sm:mb-6 ">
               Our Industry Expertise
             </h2>
-            <p className="text-orange-600 text-base sm:text-lg max-w-3xl mx-auto leading-relaxed">
+            <p className="text-orange-600 text-base sm:text-lg max-w-3xl mx-auto leading-relaxed font-medium">
               We bring specialized knowledge and proven strategies to help
               businesses in various industries achieve their digital marketing
               goals.
@@ -292,7 +292,7 @@ export default function IndustryPage() {
                   <h3 className="text-xl font-semibold text-orange-600 group-hover:text-orange-600 transition-colors">
                     {industry.title}
                   </h3>
-                  <p className="text-black leading-relaxed group-hover:text-black transition-colors">
+                  <p className="text-black leading-relaxed group-hover:text-black transition-colors font-medium">
                     {industry.description}
                   </p>
                   <div className="space-y-3">
@@ -303,7 +303,7 @@ export default function IndustryPage() {
                       {industry.services.map((service, idx) => (
                         <span
                           key={idx}
-                          className="px-2 py-1 bg-orange-50 text-black text-xs rounded-full group-hover:bg-orange-200 transition"
+                          className="px-2 py-1 bg-orange-50 text-black text-xs font-medium rounded-full group-hover:bg-orange-200 transition"
                         >
                           {service}
                         </span>
@@ -335,7 +335,7 @@ export default function IndustryPage() {
             <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-black mb-4 sm:mb-6">
               Why Industry Expertise Matters
             </h2>
-            <p className="text-orange-600 text-base sm:text-lg max-w-3xl mx-auto leading-relaxed">
+            <p className="text-orange-600 text-base sm:text-lg max-w-3xl mx-auto leading-relaxed font-medium">
               Our deep understanding of industry-specific challenges and
               opportunities allows us to deliver targeted, effective solutions.
             </p>
@@ -374,7 +374,7 @@ export default function IndustryPage() {
             <h2 className="text-4xl sm:text-5xl font-bold text-black leading-tight mb-6">
               Ready to Grow Your Industry Presence?
             </h2>
-            <p className="text-black text-lg max-w-2xl mx-auto mb-8">
+            <p className="text-black font-medium text-lg max-w-2xl mx-auto mb-8">
               Let&apos;s discuss how our industry expertise can help you achieve
               your business goals and stay ahead of the competition.
             </p>
