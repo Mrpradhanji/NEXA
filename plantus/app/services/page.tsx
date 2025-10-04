@@ -3,7 +3,7 @@ import React, { Suspense } from "react";
 import { motion } from "framer-motion";
 import dynamic from "next/dynamic";
 import Breadcrumbs from "../components/Breadcrumbs";
-import { title } from "process";
+
 
 // Lazy load heavy components
 const Footer = dynamic(() => import("../components/Footer"), {

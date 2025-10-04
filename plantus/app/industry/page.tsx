@@ -157,13 +157,11 @@ export default function IndustryPage() {
 
         <div className="container mx-auto relative z-10">
           <div className="max-w-4xl mx-auto text-center">
-            
-
             <motion.h1
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.1 }}
-              className="text-5xl md:text-6xl lg:text-7xl font-bold text-gray-900 mb-6 leading-tight"
+              className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 mb-4 sm:mb-6 leading-tight"
             >
               Tailored Digital Solutions for{" "}
               <span className="text-orange-500">Your Industry</span>
@@ -173,7 +171,7 @@ export default function IndustryPage() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.2 }}
-              className="text-xl text-gray-600 max-w-3xl mx-auto mb-10 leading-relaxed"
+              className="text-base sm:text-lg md:text-xl text-gray-600 max-w-3xl mx-auto mb-8 sm:mb-10 leading-relaxed"
             >
               We combine deep industry knowledge with cutting-edge digital
               strategies to deliver measurable results. Our expertise spans
@@ -231,7 +229,9 @@ export default function IndustryPage() {
 
       {/* Breadcrumbs - placed after hero */}
       <div className="container mx-auto px-4 pt-4">
-        <Breadcrumbs items={[{ label: "Home", href: "/" }, { label: "Industry" }]} />
+        <Breadcrumbs
+          items={[{ label: "Home", href: "/" }, { label: "Industry" }]}
+        />
       </div>
 
       {/* Stats Section */}
@@ -265,12 +265,12 @@ export default function IndustryPage() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
-            className="text-center mb-16"
+            className="text-center mb-12 sm:mb-16"
           >
-            <h2 className="text-7xl font-bold text-black leading-tight mb-6">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-black mb-4 sm:mb-6">
               Our Industry Expertise
             </h2>
-            <p className="text-orange-600 text-lg max-w-3xl mx-auto leading-relaxed">
+            <p className="text-orange-600 text-base sm:text-lg max-w-3xl mx-auto leading-relaxed">
               We bring specialized knowledge and proven strategies to help
               businesses in various industries achieve their digital marketing
               goals.
@@ -330,12 +330,12 @@ export default function IndustryPage() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
-            className="text-center mb-16"
+            className="text-center mb-12 sm:mb-16"
           >
-            <h2 className="text-7xl font-bold text-black leading-tight mb-6">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-black mb-4 sm:mb-6">
               Why Industry Expertise Matters
             </h2>
-            <p className="text-orange-600 text-lg max-w-3xl mx-auto leading-relaxed">
+            <p className="text-orange-600 text-base sm:text-lg max-w-3xl mx-auto leading-relaxed">
               Our deep understanding of industry-specific challenges and
               opportunities allows us to deliver targeted, effective solutions.
             </p>

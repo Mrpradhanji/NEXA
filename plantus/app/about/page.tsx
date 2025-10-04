@@ -26,31 +26,31 @@ export default function AboutPage() {
 
   const teamMembers = [
     {
-      name: "Sarah Johnson",
+      name: "Devesh Mehendiratta",
       role: "CEO & Founder",
       bio: "With over 15 years in digital marketing, Sarah leads our strategic vision and client relationships.",
-      image: "/images/hero-image.jpg",
+      image: "/images/avatar.jpg",
       expertise: ["Strategic Planning", "Client Relations", "Business Development"],
     },
     {
-      name: "Michael Chen",
+      name: "Akash",
       role: "Creative Director",
-      bio: "Michael brings innovative design thinking and creative solutions to every project we undertake.",
-      image: "/images/3.png.jpg",
+      bio: "Akash brings innovative design thinking and creative solutions to every project we undertake.",
+      image: "/images/avatar.jpg",
       expertise: ["Brand Design", "Creative Strategy", "Visual Identity"],
     },
     {
-      name: "Alex Rodriguez",
+      name: "Ankit",
       role: "Technical Lead",
-      bio: "Alex ensures our technical solutions are robust, scalable, and deliver exceptional user experiences.",
-      image: "/images/hero-image.jpg",
+      bio: "Ankit ensures our technical solutions are robust, scalable, and deliver exceptional user experiences.",
+      image: "/images/avatar.jpg",
       expertise: ["Web Development", "Technical Architecture", "Performance Optimization"],
     },
     {
-      name: "Emma Wilson",
+      name: "Rahul",
       role: "Marketing Strategist",
-      bio: "Emma develops data-driven marketing strategies that drive growth and deliver measurable results.",
-      image: "/images/3.png.jpg",
+      bio: "Rahul develops data-driven marketing strategies that drive growth and deliver measurable results.",
+      image: "/images/avatar.jpg",
       expertise: ["Digital Strategy", "Analytics", "Campaign Management"],
     },
   ];

@@ -1,5 +1,5 @@
 "use client";
-import React, { useRef, useState } from "react";
+import React, { useRef, useState, useEffect } from "react";
 import { Volume2, VolumeX } from "lucide-react";
 //import ClientsMarquee from "./components/ClientsMarquee";
 import AboutUs from "./components/AboutUs";
@@ -19,6 +19,23 @@ export default function Home() {
   const [hover, setHover] = useState(false);
   const [mousePos, setMousePos] = useState({ x: 0, y: 0 });
   const [isTouch, setIsTouch] = useState(false);
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    // Check if window is defined (client-side) and set initial mobile state
+    const checkIfMobile = () => {
+      setIsMobile(window.innerWidth < 768);
+    };
+
+    // Set initial value
+    checkIfMobile();
+
+    // Add event listener for window resize
+    window.addEventListener("resize", checkIfMobile);
+
+    // Cleanup
+    return () => window.removeEventListener("resize", checkIfMobile);
+  }, []);
 
   const toggleMute = () => {
     if (videoRef.current) {
@@ -54,7 +71,7 @@ export default function Home() {
       >
         <video
           ref={videoRef}
-          src="/images/PlantusMedia.webm"
+          src={isMobile ? "/images/phone.webm" : "/images/PlantusMedia.webm"}
           autoPlay
           loop
           muted={muted}
@@ -65,14 +82,18 @@ export default function Home() {
         {/* Hero Title Overlay */}
         <div className="absolute inset-0 flex items-center justify-center z-20 px-4">
           <div className="text-center w-full max-w-4xl mx-auto px-4">
-                        {/* Mobile mute toggle */}
+            {/* Mobile mute toggle */}
             <div className="mt-4 flex justify-center md:hidden">
               <button
                 type="button"
                 onClick={toggleMute}
                 className="inline-flex items-center gap-2 rounded-full bg-black/60 px-4 py-2 text-white"
               >
-                {muted ? <VolumeX className="w-5 h-5" /> : <Volume2 className="w-5 h-5" />}
+                {muted ? (
+                  <VolumeX className="w-5 h-5" />
+                ) : (
+                  <Volume2 className="w-5 h-5" />
+                )}
                 <span className="text-sm">{muted ? "Unmute" : "Mute"}</span>
               </button>
             </div>

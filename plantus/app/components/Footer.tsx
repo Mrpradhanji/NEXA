@@ -65,13 +65,13 @@ export default function Footer() {
       {/* Middle Section with Email + Social Links */}
       <div className="flex flex-col md:flex-row md:justify-between items-start">
         <div>
-          <div className="text-2xl sm:text-3xl md:text-4xl font-extrabold mb-3 break-words">
+          <div className="text-md sm:text-md md:text-4xl font-extrabold mb-3 break-words">
             <a href="mailto:hello@plantusmedia.com" className="hover:underline inline-block max-w-full break-all">
               plantusmediaconsulting@gmail.com
             </a>
           </div>
           <div className="font-bold text-lg mb-4">
-            <a href="tel:+918368344943" className="hover:underline">IND: +91 8368344943</a> <br />
+            <a href="tel:+918368344943" className="hover:underline">IND : +91 8368344943</a> <br />
 
           </div>
 
@@ -114,9 +114,9 @@ export default function Footer() {
       <div className="flex flex-col md:flex-row justify-between items-center text-sm text-white text-opacity-80 gap-2">
         <span>© Plantusmedia 2025. All rights reserved.</span>
         <span className="flex gap-4">
-          <Link href="/privacy" className="hover:underline">Privacy Policy</Link>
-          <Link href="/terms" className="hover:underline">Terms of Service</Link>
-          <Link href="/accessibility" className="hover:underline">Accessibility</Link>
+          <Link href="#" className="hover:underline">Privacy Policy</Link>
+          <Link href="#" className="hover:underline">Terms of Service</Link>
+          <Link href="#" className="hover:underline">Accessibility</Link>
         </span>
       </div>
     </footer>
