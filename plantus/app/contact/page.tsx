@@ -142,7 +142,7 @@ const AbsoluteContact = () => {
             <div className="text-3xl font-extrabold">
               <span className={orange}>Work with us</span>
             </div>
-            <div className="text-2xl font-bold">plantusmedia1@gmail.com</div>
+            <div className="text-2xl font-bold">plantusmediaconsulting@gmail.com</div>
             <div className={orange + " text-xl font-semibold"}>Talk to us</div>
             <a href="tel:+918368344943" className="text-lg font-bold underline">
               India: +91 8368344943
