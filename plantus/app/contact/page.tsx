@@ -81,7 +81,7 @@ const AbsoluteContact = () => {
         name,
         email,
         message,
-        to_email: "plantusmedia1@gmail.com",
+        to_email: "plantusmediaconsulting@gmail.com",
       };
 
       await emailjs.send(serviceId, templateId, templateParams);
