@@ -101,12 +101,12 @@ const AbsoluteContact = () => {
   return (
     <div className="relative font-[Inter] bg-black min-h-screen text-white overflow-hidden">
       {/* Hero */}
-      <section className="py-28 text-center relative z-20">
+      <section className="py-20 sm:py-24 md:py-28 text-center relative z-20">
         <motion.div
           initial={{ opacity: 0, y: 40 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
-          className="text-6xl md:text-7xl font-extrabold leading-tight"
+          className="text-4xl sm:text-5xl md:text-7xl font-extrabold leading-tight"
         >
           Connect. <br /> Collaborate. <br /> Be Bold.
         </motion.div>
@@ -130,13 +130,13 @@ const AbsoluteContact = () => {
       </div>
 
       {/* Contact & Location */}
-      <section className="flex flex-col md:flex-row items-start justify-center max-w-6xl mx-auto px-4 py-12 gap-12 z-20 relative">
+      <section className="flex flex-col md:flex-row items-start justify-center max-w-6xl mx-auto px-4 py-8 sm:py-10 md:py-12 gap-6 md:gap-12 z-20 relative">
         {/* Contact Form Card */}
         <motion.div
           initial={{ opacity: 0, scale: 0.92 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.9 }}
-          className="flex-1 bg-black bg-opacity-70 backdrop-blur-lg rounded-3xl shadow-2xl border border-orange-500 border-opacity-20 p-10 space-y-10"
+          className="flex-1 w-full bg-black bg-opacity-70 backdrop-blur-lg rounded-3xl shadow-2xl border border-orange-500 border-opacity-20 p-6 md:p-10 space-y-8 md:space-y-10"
         >
           <div className="text-center space-y-2">
             <div className="text-3xl font-extrabold">
@@ -163,7 +163,7 @@ const AbsoluteContact = () => {
               <select
                 value={about}
                 onChange={(e) => setAbout(e.target.value)}
-                className="border-b border-orange-400 bg-transparent py-2 outline-none text-lg"
+                className="w-full border-b border-orange-400 bg-transparent py-2 outline-none text-lg"
                 required
               >
                 <option value="">About...</option>
@@ -178,7 +178,7 @@ const AbsoluteContact = () => {
               <input
                 type="text"
                 placeholder="Name*"
-                className="border-b border-orange-400 bg-transparent py-2 outline-none text-lg"
+                className="w-full border-b border-orange-400 bg-transparent py-2 outline-none text-lg"
                 required
                 value={name}
                 onChange={(e) => setName(e.target.value)}
@@ -188,7 +188,7 @@ const AbsoluteContact = () => {
               <input
                 type="email"
                 placeholder="Email*"
-                className="border-b border-orange-400 bg-transparent py-2 outline-none text-lg"
+                className="w-full border-b border-orange-400 bg-transparent py-2 outline-none text-lg"
                 required
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
@@ -201,7 +201,7 @@ const AbsoluteContact = () => {
               <textarea
                 rows={6}
                 placeholder="Message"
-                className="border-b border-orange-400 bg-transparent py-2 outline-none text-lg resize-none h-full"
+                className="w-full border-b border-orange-400 bg-transparent py-2 outline-none text-lg resize-none"
                 value={message}
                 onChange={(e) => setMessage(e.target.value)}
               />
