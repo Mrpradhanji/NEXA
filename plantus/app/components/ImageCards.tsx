@@ -13,7 +13,7 @@ export function ImageCards() {
       frontImage: "/images/social.jpg",
       backTitle: "Digital Strategy",
       backDescription:
-        "Comprehensive digital marketing strategies tailored to your business goals.",
+        "We craft comprehensive digital marketing strategies tailored to your business objectives. Our approach integrates SEO, content marketing, social media, and analytics to ensure measurable results, maximum engagement, and brand growth across all digital channels.",
       category: "Strategy",
     },
     {
@@ -21,7 +21,7 @@ export function ImageCards() {
       frontImage: "/images/3.png.jpg",
       backTitle: "Brand Development",
       backDescription:
-        "Creating compelling brand identities that resonate with your customers.",
+        "From logos to brand messaging, we create compelling brand identities that resonate with your target audience. Our branding process includes market research, visual design, and storytelling techniques to establish a strong, memorable presence in your industry.",
       category: "Branding",
     },
     {
@@ -29,7 +29,7 @@ export function ImageCards() {
       frontImage: "/images/web.jpg",
       backTitle: "Web Development",
       backDescription:
-        "Modern, responsive websites that provide exceptional user experiences.",
+        "Our team develops modern, responsive, and user-friendly websites that deliver exceptional experiences. We focus on performance, accessibility, and aesthetics to ensure your website not only looks stunning but also drives conversions and engagement.",
       category: "Development",
     },
     {
@@ -37,7 +37,7 @@ export function ImageCards() {
       frontImage: "/images/content.jpg",
       backTitle: "Content Marketing",
       backDescription:
-        "Engaging content that tells your story and drives meaningful connections.",
+        "We create high-quality, engaging content that tells your brand story and drives meaningful connections. From blogs to video scripts, we optimize content for both audience engagement and search engine visibility to strengthen your online presence.",
       category: "Content",
     },
     {
@@ -45,7 +45,7 @@ export function ImageCards() {
       frontImage: "/images/media.jpg",
       backTitle: "Social Media",
       backDescription:
-        "Strategic social media management to build communities and amplify your brand.",
+        "Our social media management ensures consistent brand messaging and builds thriving communities. We design campaigns, create content calendars, manage engagement, and analyze performance metrics to maximize reach and ROI across all social platforms.",
       category: "Social",
     },
     {
@@ -53,10 +53,11 @@ export function ImageCards() {
       frontImage: "/images/insights.jpg",
       backTitle: "Analytics & Insights",
       backDescription:
-        "Data-driven insights and performance tracking to optimize your marketing efforts.",
+        "We leverage data-driven insights to optimize marketing strategies and business decisions. By tracking key metrics, analyzing user behavior, and generating actionable reports, we help you maximize efficiency and achieve your goals with measurable impact.",
       category: "Analytics",
     },
   ];
+
 
   const handleCardClick = (cardId: number) => {
     setFlippedCards((prev) =>
@@ -67,7 +68,7 @@ export function ImageCards() {
   };
 
   return (
-    <section className="py-16 sm:py-20 md:py-24 bg-white w-full">
+    <section className="py-16 sm:py-20 md:py-24 bg-white w-full font-[Inter]">
       <div className="container mx-auto px-4 sm:px-6 md:px-8">
         {/* Section Header */}
         <motion.div
@@ -110,7 +111,7 @@ export function ImageCards() {
               >
                 {/* Front of Card */}
                 <div
-                  className="absolute inset-0 w-full h-full backface-hidden font-inter font-normal"
+                  className="absolute inset-0 w-full h-full backface-hidden font-[Inter] font-normal"
                   style={{ backfaceVisibility: "hidden" }}
                 >
                   <div className="relative w-full h-full rounded-xl overflow-hidden group">
@@ -157,7 +158,7 @@ export function ImageCards() {
 
                 {/* Back of Card */}
                 <div
-                  className="absolute inset-0 w-full h-full backface-hidden font-[Borna]"
+                  className="absolute inset-0 w-full h-full backface-hidden font-[Inter]"
                   style={{
                     backfaceVisibility: "hidden",
                     transform: "rotateY(180deg)",
@@ -166,24 +167,17 @@ export function ImageCards() {
                   <div className="w-full h-full bg-gradient-to-br from-gray-900 to-black rounded-xl p-5 md:p-6 border border-orange-500/20 overflow-visible">
                     <div className="flex flex-col justify-between h-full">
                       <div>
-                        <span className="inline-block px-3 py-1 bg-orange-500 text-white text-xs sm:text-sm font-semibold rounded-full mb-4">
+                        <span className="inline-block px-3 py-1 bg-orange-500 text-white text-xs sm:text-sm font-normal rounded-full mb-4">
                           {card.category}
                         </span>
-                        <h3 className="text-white text-lg sm:text-xl font-bold mb-4">
+                        <h3 className="text-white text-lg sm:text-xl font-normal mb-4">
                           {card.backTitle}
                         </h3>
-                        <p className="text-gray-300 leading-relaxed text-sm sm:text-base">
+                        <p className="text-gray-300 leading-relaxed text-sm sm:text-base font-normal">
                           {card.backDescription}
                         </p>
                       </div>
-                      <div className="mt-6">
-                        {/* Button 1 (SVG border animation) */}
-                        <CTAButton
-                          label="View Projects"
-                          type="2"
-                          href="/projects"
-                        />
-                      </div>
+                      
                     </div>
                   </div>
                 </div>
@@ -201,7 +195,7 @@ export function ImageCards() {
           className="text-center mt-12 md:mt-16"
         >
           {/* Main CTA also uses Button 1 */}
-          <CTAButton label="View All Projects" type="2" href="/portfolio" />
+          <CTAButton label="View All Projects" type="2" href="/our-works" />
         </motion.div>
       </div>
     </section>
