@@ -13,7 +13,7 @@ export function ImageCards() {
       frontImage: "/images/social.jpg",
       backTitle: "Digital Strategy",
       backDescription:
-        "We craft comprehensive digital marketing strategies tailored to your business objectives. Our approach integrates SEO, content marketing, social media, and analytics to ensure measurable results, maximum engagement, and brand growth across all digital channels.",
+        "We craft comprehensive digital marketing strategies tailored to your business objectives. Our approach integrates SEO, content marketing, social media, and analytics to ensure measurable results, maximum engagement, and brand growth.",
       category: "Strategy",
     },
     {
@@ -21,7 +21,7 @@ export function ImageCards() {
       frontImage: "/images/3.png.jpg",
       backTitle: "Brand Development",
       backDescription:
-        "From logos to brand messaging, we create compelling brand identities that resonate with your target audience. Our branding process includes market research, visual design, and storytelling techniques to establish a strong, memorable presence in your industry.",
+        "From logos to brand messaging, we create compelling brand identities that resonate with your target audience. Our branding process includes market research and visual design to establish a strong, memorable presence in your industry.",
       category: "Branding",
     },
     {
@@ -29,7 +29,7 @@ export function ImageCards() {
       frontImage: "/images/web.jpg",
       backTitle: "Web Development",
       backDescription:
-        "Our team develops modern, responsive, and user-friendly websites that deliver exceptional experiences. We focus on performance, accessibility, and aesthetics to ensure your website not only looks stunning but also drives conversions and engagement.",
+        "Our team develops modern, responsive, and user-friendly websites that deliver exceptional experiences. We focus on performance, accessibility, and aesthetics to ensure your website not only looks stunning and drives conversions.",
       category: "Development",
     },
     {
@@ -37,7 +37,7 @@ export function ImageCards() {
       frontImage: "/images/content.jpg",
       backTitle: "Content Marketing",
       backDescription:
-        "We create high-quality, engaging content that tells your brand story and drives meaningful connections. From blogs to video scripts, we optimize content for both audience engagement and search engine visibility to strengthen your online presence.",
+        "We create high-quality, engaging content that tells your brand story and drives meaningful connections. We optimize content for both audience engagement and search engine visibility to strengthen your online presence.",
       category: "Content",
     },
     {
@@ -45,7 +45,7 @@ export function ImageCards() {
       frontImage: "/images/media.jpg",
       backTitle: "Social Media",
       backDescription:
-        "Our social media management ensures consistent brand messaging and builds thriving communities. We design campaigns, create content calendars, manage engagement, and analyze performance metrics to maximize reach and ROI across all social platforms.",
+        "Our social media management ensures consistent brand messaging and builds thriving communities. We design campaigns, create content calendars, manage engagement, and analyze performance metrics to maximize reach.",
       category: "Social",
     },
     {
@@ -53,7 +53,7 @@ export function ImageCards() {
       frontImage: "/images/insights.jpg",
       backTitle: "Analytics & Insights",
       backDescription:
-        "We leverage data-driven insights to optimize marketing strategies and business decisions. By tracking key metrics, analyzing user behavior, and generating actionable reports, we help you maximize efficiency and achieve your goals with measurable impact.",
+        "We leverage data-driven insights to optimize marketing strategies and business decisions. By tracking key metrics, analyzing user behavior, and generating actionable reports and achieve your goals with measurable impact.",
       category: "Analytics",
     },
   ];
