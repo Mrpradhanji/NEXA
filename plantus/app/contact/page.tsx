@@ -139,10 +139,17 @@ const AbsoluteContact = () => {
           className="flex-1 w-full bg-black bg-opacity-70 backdrop-blur-lg rounded-3xl shadow-2xl border border-orange-500 border-opacity-20 p-6 md:p-10 space-y-8 md:space-y-10"
         >
           <div className="text-center space-y-2">
-            <div className="text-3xl font-extrabold">
+            <div className="text-xl font-extrabold">
               <span className={orange}>Work with us</span>
             </div>
-            <div className="text-2xl font-bold">plantusmediaconsulting@gmail.com</div>
+            <div className="w-full font-bold mb-3 text-sm sm:text-base md:text-2xl">
+              <a
+                href="mailto:plantusmediaconsulting@gmail.com"
+                className="block max-w-full break-all break-words whitespace-normal"
+              >
+                plantusmediaconsulting@gmail.com
+              </a>
+            </div>
             <div className={orange + " text-xl font-semibold"}>Talk to us</div>
             <a href="tel:+918368344943" className="text-lg font-bold underline">
               India: +91 8368344943

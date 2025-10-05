@@ -66,7 +66,7 @@ export default function Footer() {
       <div className="flex flex-col md:flex-row md:justify-between items-start">
         <div>
           <div className="text-md sm:text-md md:text-4xl font-bold mb-3 break-words">
-            <a href="mailto:hello@plantusmedia.com" className="hover:underline inline-block max-w-full break-all">
+            <a href="mailto:plantusmediaconsulting@gmail.com" className="hover:underline inline-block max-w-full break-all">
               plantusmediaconsulting@gmail.com
             </a>
           </div>
