@@ -22,6 +22,6 @@
       "@/*": ["./*"]
     }
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", "app/components/menu/Menu.tsx", "app/components/ui/TiltCard.jsx"],
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", "app/components/menu/Menu.tsx", "app/components/ui/TiltCard.jsx", "app/components/Services.jsx"],
   "exclude": ["node_modules"]
 }
