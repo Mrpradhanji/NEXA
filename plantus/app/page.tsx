@@ -83,11 +83,11 @@ export default function Home() {
         <div className="absolute inset-0 flex items-center justify-center z-20 px-4">
           <div className="text-center w-full max-w-4xl mx-auto px-4">
             {/* Mobile mute toggle */}
-            <div className="mt-4 flex justify-center md:hidden">
+            <div className="mt-30 flex justify-center md:hidden">
               <button
                 type="button"
                 onClick={toggleMute}
-                className="inline-flex items-center gap-2 rounded-full bg-black/60 px-4 py-2 text-white"
+                className="inline-flex items-center gap-2 rounded-full bg-black/30 px-4 py-2 text-white"
               >
                 {muted ? (
                   <VolumeX className="w-5 h-5" />

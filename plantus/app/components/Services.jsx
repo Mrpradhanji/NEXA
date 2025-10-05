@@ -103,7 +103,8 @@ export function Services() {
               {/* Hover image */}
               <DirectionAwareHover
                 imageUrl={service.img}
-                className="w-full h-full object-cover"
+                className="w-full"
+                imageClassName="object-cover"
               />
               {/* Text overlay */}
               <div className="absolute bottom-0 left-0 w-full p-4 md:p-6 bg-gray-100/60 backdrop-blur-sm rounded-t-lg">
