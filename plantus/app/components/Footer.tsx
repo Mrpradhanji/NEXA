@@ -10,10 +10,26 @@ export default function Footer() {
       <div className="max-w-7xl mx-auto flex flex-col md:flex-row md:justify-between md:items-start font-bold">
         {/* Left - Big Section Links */}
         <ul className="space-y-4 text-4xl md:text-5xl font-extrabold mb-10 md:mb-0">
-          <li><Link href="/our-works" className="hover:underline transition-all">Work</Link></li>
-          <li><Link href="/about" className="hover:underline transition-all">Agency</Link></li>
-          <li><Link href="/blog" className="hover:underline transition-all">Insights</Link></li>
-          <li><Link href="/contact" className="hover:underline transition-all">Contact</Link></li>
+          <li>
+            <Link href="/our-works" className="hover:underline transition-all">
+              Work
+            </Link>
+          </li>
+          <li>
+            <Link href="/about" className="hover:underline transition-all">
+              Agency
+            </Link>
+          </li>
+          <li>
+            <Link href="/blog" className="hover:underline transition-all">
+              Insights
+            </Link>
+          </li>
+          <li>
+            <Link href="/contact" className="hover:underline transition-all">
+              Contact
+            </Link>
+          </li>
         </ul>
 
         {/*If we have more than*/}
@@ -63,39 +79,88 @@ export default function Footer() {
       <hr className="border-white border-opacity-30 my-10" />
 
       {/* Middle Section with Email + Social Links */}
-      <div className="flex flex-col md:flex-row md:justify-between items-start">
+      <div className="flex flex-col md:flex-row justify-between items-start">
         <div>
           <div className="text-md sm:text-md md:text-4xl font-bold mb-3 break-words">
-            <a href="mailto:plantusmediaconsulting@gmail.com" className="hover:underline inline-block max-w-full break-all">
+            <a
+              href="mailto:plantusmediaconsulting@gmail.com"
+              className="hover:underline inline-block max-w-full break-all"
+            >
               plantusmediaconsulting@gmail.com
             </a>
           </div>
           <div className="font-bold text-lg mb-4">
-            <a href="tel:+918368344943" className="hover:underline">IND : +91 8368344943</a> <br />
-
+            <a href="tel:+918368344943" className="hover:underline">
+              IND : +91 8368344943
+            </a>{" "}
+            <br />
           </div>
 
-          {/* Social + Quick Links */}
+          {/*
           <div className="flex flex-col md:flex-row gap-8 text-base">
             <ul className="space-y-1 font-bold">
-              <li>→ <a href="https://linkedin.com/company/plantusmedia" target="_blank" rel="noopener noreferrer" className="hover:underline">LinkedIn</a></li>
-              <li>→ <a href="https://instagram.com/plantusmedia" target="_blank" rel="noopener noreferrer" className="hover:underline">Instagram</a></li>
-              <li>→ <a href="https://youtube.com/@plantusmedia" target="_blank" rel="noopener noreferrer" className="hover:underline">YouTube</a></li>
+              <li>
+                →{" "}
+                <a
+                  href="https://linkedin.com/company/plantusmedia"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="hover:underline"
+                >
+                  LinkedIn
+                </a>
+              </li>
+              <li>
+                →{" "}
+                <a
+                  href="https://instagram.com/plantusmedia"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="hover:underline"
+                >
+                  Instagram
+                </a>
+              </li>
+              <li>
+                →{" "}
+                <a
+                  href="https://youtube.com/@plantusmedia"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="hover:underline"
+                >
+                  YouTube
+                </a>
+              </li>
             </ul>
             <ul className="space-y-1 font-bold">
-              <li><Link href="/blog" className="hover:underline">Blogs</Link></li>
-              <li><Link href="/contact" className="hover:underline">Contact Us</Link></li>
-              <li><Link href="/services" className="hover:underline">Services</Link></li>
+              <li>
+                <Link href="/blog" className="hover:underline">
+                  Blogs
+                </Link>
+              </li>
+              <li>
+                <Link href="/contact" className="hover:underline">
+                  Contact Us
+                </Link>
+              </li>
+              <li>
+                <Link href="/services" className="hover:underline">
+                  Services
+                </Link>
+              </li>
             </ul>
-          </div>
+          </div>*/}
         </div>
+      
 
         {/* Logos / Membership badges */}
         <div className="flex flex-wrap items-center gap-6 mt-8 md:mt-0">
           <div className="text-center">
             <div className="text-sm font-bold mb-2">Certified</div>
-            <div className="text-xs opacity-80">ISO 9001</div>
+            <div className="text-xs opacity-80">2018</div>
           </div>
+          {/** 
           <div className="text-center">
             <div className="text-sm font-bold mb-2">Awards</div>
             <div className="text-xs opacity-80">Best Agency 2024</div>
@@ -104,6 +169,7 @@ export default function Footer() {
             <div className="text-sm font-bold mb-2">Partnerships</div>
             <div className="text-xs opacity-80">Google Partner</div>
           </div>
+          */}
         </div>
       </div>
 
@@ -112,11 +178,20 @@ export default function Footer() {
 
       {/* Bottom Section */}
       <div className="flex flex-col md:flex-row justify-between items-center text-sm text-white text-opacity-80 gap-2">
-        <span className="font-bold">© Plantusmedia 2025. All rights reserved.</span>
+        <span className="font-bold">
+          {" "}
+          Plantusmedia 2025. All rights reserved.
+        </span>
         <span className="flex gap-4">
-          <Link href="#" className="font-bold hover:underline">Privacy Policy</Link>
-          <Link href="#" className="font-bold hover:underline">Terms of Service</Link>
-          <Link href="#" className="font-bold hover:underline">Accessibility</Link>
+          <Link href="#" className="font-bold hover:underline">
+            Privacy Policy
+          </Link>
+          <Link href="#" className="font-bold hover:underline">
+            Terms of Service
+          </Link>
+          <Link href="#" className="font-bold hover:underline">
+            Accessibility
+          </Link>
         </span>
       </div>
     </footer>
