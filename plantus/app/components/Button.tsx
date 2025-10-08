@@ -20,7 +20,7 @@ const CTAButton: React.FC<CTAButtonProps> = ({
   // Button 1 classes
   const btn1Classes = `
     relative inline-block px-6 py-3 text-white font-thin uppercase tracking-wide
-    transition-all duration-300 bg-red-700 rounded-md overflow-hidden
+    transition-all duration-300 bg-red-500 rounded-md overflow-hidden
   `;
 
   // Button 2 classes
