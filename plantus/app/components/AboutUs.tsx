@@ -43,7 +43,7 @@ export default function AboutUs() {
           >
             <div className="relative overflow-hidden rounded-2xl shadow-2xl w-full max-w-[600px] aspect-[4/3] md:aspect-square">
               <Image
-                src="/images/new.jpg"
+                src="/images/Aboutus.png"
                 alt="Creative team at PlantusMedia working together"
                 width={600}
                 height={600}

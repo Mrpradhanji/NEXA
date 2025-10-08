@@ -132,7 +132,7 @@ export default function Home() {
           <InfiniteMovingCardsDemo />
           {/* <HoverImageLinks />*/}
           {/* CTA Section */}
-          <section className="py-24 px-4 bg-white text-center text-black font-[Borna]">
+          <section className="py-24 px-4 bg-white text-center text-black font-[Inter]">
             <div className="container mx-auto">
               <h2 className="text-4xl sm:text-5xl font-bold mb-6">
                 Ready to Grow with Us?
