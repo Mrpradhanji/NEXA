@@ -11,7 +11,8 @@ const menuLinks = [
   { name: 'Services', href: '/services' },
   { name: 'Industry', href: '/industry' },
   { name: 'About', href: '/about' },
-  { name: 'Our-Works', href: '/our-works' },
+  { name: 'Our-Work', href: '/our-work' },
+  { name: 'Pricing', href: '/pricing' },
   { name: 'Contact', href: '/contact' },
 ];
 
